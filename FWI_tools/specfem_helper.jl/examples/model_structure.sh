@@ -1,0 +1,1 @@
+python ../tasks/generate_new_gll/structure.py --wbase /work/05880/tg851791/stampede2/japan_slab/gll_models/normal_6/work --sbase /scratch/05880/tg851791/japan_slab/gll_models/normal_6 --specfem /work/05880/tg851791/stampede2/japan_slab/gll_models/normal_6/specfem --taogll /work/05880/tg851791/stampede2/model/FWEA18_smooth --mingll /work/05880/tg851791/stampede2/model/EARA2014
