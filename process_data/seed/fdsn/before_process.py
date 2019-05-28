@@ -7,9 +7,11 @@ from os.path import join
 def process(main_path):
     events = glob(join(main_path, "*"))
     dirlist = [item.split("/")[-1].split(".")[0] for item in events]
-    for item in dirlist:
+    hashlist = [item.split("/")[-1].split(".")[1] for item in events]
+    for item, itemhash in zip(dirlist, hashlist):
         sh.mkdir("-p", join(main_path, item))
-        sh.mv(join(main_path, f"{item}.seed"), join(main_path, item))
+        sh.mv(join(main_path, f"{item}.{itemhash}.seed"),
+              join(main_path, item))
 
 
 @click.command()
