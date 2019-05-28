@@ -25,17 +25,17 @@ def process_seeds(event_paths):
     logger.info(f"[rank:{rank}] start to rdseed")
     rdseed(event_path_this_rank)
 
-    # logger.info(f"[rank:{rank}] start to merge")
-    # merge(event_path_this_rank)
+    logger.info(f"[rank:{rank}] start to merge")
+    merge(event_path_this_rank)
 
-    # logger.info(f"[rank:{rank}] start to rename")
-    # rename(event_path_this_rank)
+    logger.info(f"[rank:{rank}] start to rename")
+    rename(event_path_this_rank)
 
-    # logger.info(f"[rank:{rank}] start to transfer")
-    # transfer(event_path_this_rank)
+    logger.info(f"[rank:{rank}] start to transfer")
+    transfer(event_path_this_rank)
 
-    # logger.info(f"[rank:{rank}] start to rotate")
-    # rotate(event_path_this_rank)
+    logger.info(f"[rank:{rank}] start to rotate")
+    rotate(event_path_this_rank)
 
     logger.success(f"[rank:{rank}] finished!")
 

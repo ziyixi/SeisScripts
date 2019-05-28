@@ -3,3 +3,4 @@
 3. stations: my stations in the simulation region
 4. fdsn_stations: my fdsn stations in the simulation region
 5. event_info.csv: event info used by SOD.
+6. event_info.pkl: event info pickle file.

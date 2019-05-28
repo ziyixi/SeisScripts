@@ -12,7 +12,7 @@ gmt begin events png,pdf,eps
 
     gmt set FONT_LABEL 6p,20 MAP_LABEL_OFFSET 4p
     gmt coast -JD125/35/30/40/7.0i -R70/180/0/70 -G244/243/239 -S167/194/223 -Bxafg -Byafg -Lg85/11+o-0.3c/0.0c+c11+w900k+f+u+l'scale'
-    gmt meca  -Sd0.2c -Z$CPT -M ../data/psmeca_gcmts.log
+    gmt meca  -Sd0.2c/0.05c -Z$CPT -M ../data/psmeca_gcmts.log
 
     gmt colorbar -C$CPT -DjBR+w3c/0.3c+ml+o3.0c/0.0c -Bx+lDepth -By+lkm -L -S
 
