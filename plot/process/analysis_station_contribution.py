@@ -10,19 +10,20 @@ def count_stations(base_path, station_ids):
     event_dirs = glob(join(base_path, "*"))
     contribution = np.zeros(len(station_ids), dtype=np.int)
     for index_station, id in enumerate(station_ids):
+        print(index_station, id)
         for dir in event_dirs:
             allfiles = glob(join(dir, "*"))
             status = False
             for item in allfiles:
                 if(id in item):
-                    sttaus = True
+                    status = True
             if(status):
                 contribution[index_station] += 1
     return contribution
 
 
 def get_station_ids(base_path):
-    stationlist_path = ",,/data/fdsn.stations"
+    stationlist_path = "../data/fdsn.stations"
     fdsn_list = np.loadtxt(stationlist_path, dtype=np.str)
     fnet_list = np.loadtxt("../data/fnet.stations", dtype=np.str)
     cea_list = np.loadtxt("../data/cea.stations", dtype=np.str)
