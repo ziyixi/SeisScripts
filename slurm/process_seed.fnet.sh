@@ -19,7 +19,7 @@ PY="/mnt/home/xiziyi/anaconda3/envs/seismology/bin/python"
 cd /mnt/home/xiziyi/SeisScripts/slurm                ### change to the directory where your code is located
 
 # python process_seed.py
-srun -n 50 $PY ../process_seed/seed/process_seed.py --main_path $data
+srun -n 50 $PY ../process_data/seed/process_seed.py --main_path $data
 
 # python after_structure.py
 $PY ../../data/process/handle_cea_directory_structure/after_structure.py --processedurl $data --seedurl $seed --sacpzurl $sacpz
