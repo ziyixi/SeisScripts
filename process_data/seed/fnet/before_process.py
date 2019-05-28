@@ -9,7 +9,7 @@ def process(main_path):
     dirlist = [item.split("/")[-1].split(".")[0] for item in events]
     for item in dirlist:
         sh.mkdir("-p", join(main_path, item))
-        sh.mv(join(main_path, f"{item}.seed"),
+        sh.mv(join(main_path, f"{item}.SEED"),
               join(main_path, item))
 
 
