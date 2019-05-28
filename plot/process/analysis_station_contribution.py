@@ -40,3 +40,12 @@ def get_station_ids(base_path):
             f.write(f"{row[3]} {row[2]} 284 \n")
         for row in cea_list:
             f.write(f"{row[3]} {row[2]} 284 \n")
+
+
+def main():
+    base_path = "/mnt/research/seismolab2/japan_slab/data/fdsn/data"
+    get_station_ids(base_path)
+
+
+if __name__ == "__main__":
+    main()
