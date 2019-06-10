@@ -1,9 +1,9 @@
 CPT=events.cpt
 
 cat << EOF > $CPT
-0 red 30 red
-30 green 120 green
-120 blue 800 blue
+0 red 70 red
+70 green 150 green
+150 blue 700 blue
 EOF
 
 gmt begin events.25 png,pdf,eps

@@ -1,0 +1,1180 @@
+#SN.ZOZ1 SN.ZOZT are at same location, different sensor and different location
+#SN.XANT XAN 108.9242 34.0317  are at same location different location
+#SN.ANKG SN.ANKT are at same location, different sensor and different location
+#JL.BCT  JL.TYT are at same location, different sensor
+#
+#ANHUI    lon_Q   lat_Q                                                  lon(Q-S) lat(Q-S)  alt(Q-S)
+#Q: Quyu file, S: SHIWU file
+AH.HBE   116.7900 33.9817    90 KS2000           DR24              50 B R |   0.0000  -0.0017     0
+AH.JAS   118.2625 32.8106    95 KS2000           DR24              50 B R |  -0.0025  -0.0006     0
+AH.JZA   115.8839 31.6889    50 KS2000           DR24              50 B R |  -0.0039   0.0011     0
+AH.JIX   118.3778 30.6992    55 KS2000           DR24              50 B R |   0.0000   0.0000     0
+AH.HUS   118.2803 29.7061   130 KS2000           DR24              50 B R |   0.0000   0.0000     0
+AH.ANQ   117.0200 30.5800   697 KS2000           DR24              50 B R |   0.0000   0.0000  -622  75 (ANQING altitude ?)
+AH.FYT   115.8031 32.9460    42 FSS              EDAS             100 S R |   0.0000   0.0000  -315
+AH.SIX   117.8591 33.5576    42 KS2000           SMART24          100 B R |   0.0009   0.0024     0
+AH.CHZ   118.2801 32.2855   112 KS2000           SMART24          100 B R |  -0.0001   0.0045     0
+AH.FZL   116.2704 31.3487   119 KS2000           SMART24          100 B R |   0.0000   0.0000   -29
+AH.BEB   117.2974 32.9055    49 KS2000           SMART24          100 B R |   0.0026   0.0045    -9
+AH.SCH   116.9842 31.3480    65 KS2000           SMART24          100 B R |  -0.0042   0.0000     0
+AH.DYN   117.4689 32.6442   196 KS2000           SMART24          100 B R |   0.0011  -0.0042     0
+AH.HNA   116.8039 32.6335    86 KS2000           SMART24          100 B R |  -0.0039  -0.0035     0
+AH.LAN   116.5010 31.7150    60 BBVS-60          EDAS24IP         100 B R |  -0.0010   0.0000     0
+AH.MAS   118.5689 31.6927    33 KS2000           SMART24          100 B R |   0.0011   0.0073     0
+AH.HSH   118.0577 31.7696   181 KS2000           SMART24          100 B R |   0.0003   0.0004     0
+AH.BAS   117.3800 31.4700    48 KS2000           SMART24          100 B R |  -0.0044   0.0027     0 (QUYU not listed)
+AH.TOL   117.8190 30.9246    49 KS2000           SMART24          100 B R |   0.0010  -0.0046     0
+AH.BZY   116.2164 31.3986   240 FSS-3B           EDAS24IP         100 S R |   0.0036   0.0014     0
+AH.SJH   116.0859 31.4361   240 FSS-3B           EDAS24IP         100 S R |   0.0041   0.0039     0
+AH.LNA   116.1300 31.3400   424 FSS-3B           EDAS24IP         100 S R |   0.0000   0.0000     0
+AH.HEF   117.1700 31.8400    77 CTS-1            EDAS24IP         100 B N |  -0.0280  -0.0160     0  CC.HEF
+AH.MCG   116.4800 33.3500    55 KS2000           SMART24          100 B N |   0.0000   0.0000     0  CC.MCG AH.MCG1 
+#BEIJING    lon_Q   lat_Q                                                  lon(Q-S) lat(Q-S)  alt(Q-S)
+#Q: Quyu file, S: SHIWU file
+BJ.XBZ   115.9694 40.3428   640 CTS-1            EDAS24IP          50 B R CC  0.0000  0.0000     0
+BJ.FHY   116.6852 39.6153  -185 FSS-3DBH         EDAS24IP          50 S R CC  0.0000  0.0000     0
+BJ.BBS   116.2411 39.9139    58 FBS-3B           EDAS24IP          50 B R |   0.0000  0.0000     0 BBVS-120
+BJ.CIQ   116.5668 39.7864  -174 FSS-3DBH         EDAS24IP          50 S R |   0.0000  0.0000     0
+BJ.DHC   116.1100 39.8611   140 FBS-3B           EDAS24IP          50 B N |   0.0000  0.0000     0 BBVS-120
+BJ.JIZ   116.5623 40.0027  -173 FSS-3DBH         EDAS24IP          50 S R |   0.0000  0.0000     0
+BJ.LBP   116.2055 40.5714   570 FBS-3B           EDAS24IP          50 B N |   0.0000  0.0000     0 BBVS-120
+BJ.LLM   116.6376 40.6294   500 FBS-3B           EDAS24IP          50 B R |   0.0000  0.0000     0 BBVS-60
+BJ.MAF   116.9977 40.0458  -255 FSS-3DBH         EDAS24IP          50 S R |   0.0000  0.0000     0
+BJ.MIY   116.8333 40.4667   107 FBS-3B           EDAS24IP          50 B R |   0.0000  0.0000     0 BBVS-120
+BJ.NKY   115.9733 39.6917    70 FBS-3B           EDAS24IP          50 B N |   0.0000  0.0000     0 BBVS-120
+BJ.NLS   116.6549 40.2101  -160 FSS-3DBH         EDAS24IP          50 S R |   0.0000  0.0000     0
+BJ.SSL   116.2252 40.2510   100 FBS-3B           EDAS24IP          50 B N |   0.0000  0.0000     0 BBVS-120
+BJ.SZJ   116.3019 39.9789  -118 FSS-3DBH         EDAS24IP          50 S R |   0.0000  0.0000     0
+BJ.TIT   116.4059 39.8856  -210 FSS-3DBH         EDAS24IP          50 S R |   0.0000  0.0000     0
+BJ.XIJ   116.8835 39.8300  -283 FSS-3DBH         EDAS24IP          50 S R |   0.0000  0.0000     0
+BJ.YAZ   116.8250 40.1531  -158 FSS-3DBH         EDAS24IP          50 S R |   0.0000  0.0000     0
+BJ.YUF   116.3155 39.5207  -172 FSS-3DBH         EDAS24IP          50 S R |   0.0000  0.0000     0
+BJ.ZHT   115.6798 39.9618   500 FBS-3B           EDAS24IP          50 B R |   0.0000  0.0000     0 BBVS-120
+#Q: Quyu file, S: SHIWU file
+#SODOUQUAN    lon_Q   lat_Q                                                  lon(Q-S) lat(Q-S)  alt(Q-S)
+BU.BDH   119.4735 39.8254    48 FBS-6B           EDAS24L           50 B R |   0.0065 -0.0054   -28
+BU.BJT   116.1680 40.0200   197 GS-13            Q680              50 B N |   0.0070  0.0200     0 CC.BJI
+BU.CDT   117.9158 41.0153   398 FSS-3B           EDAS24L           50 S R |   0.0000  0.0000     0
+BU.CHL   119.0962 39.7585    70 FBS-6B           EDAS24L           50 B R |  -0.0862 -0.0085     4
+BU.DAX   116.3447 39.7506  -110 FSS-DH           EDAS24L           50 S R |  -0.0147 -0.0306   168
+BU.DOH   118.3278 39.7522    25 FBS-6B           EDAS24L           50 B R |  -0.0278 -0.0122    30
+BU.DSQ   116.4264 40.0811  -250 FSS-DH           EDAS24L           50 S R |  -0.0064 -0.0111   287
+BU.FHS   116.3093 39.9459    50 FSS-3B           EDAS24L           50 S R |   0.0207 -0.0370    10
+BU.GUY   115.8217 41.6645  1444 BKD-2B           EDAS24IP          50 B R |   0.0000  0.0000     0 FBS-3B 
+BU.HBZ   114.3082 38.2482   131 FBS-6B           EDAS24L           50 B R |   0.1585  0.1185     1
+BU.HUA   114.5239 40.8108   840 FBS-6B           EDAS24L           50 B R |  -0.0739 -0.1508   -15
+BU.LAY   114.9797 39.5103   880 FBS-6B           EDAS24L           50 B R |  -0.2897 -0.1903    -2
+BU.LBG   116.5956 40.8994   510 FBS-6B           EDAS24L           50 B R |   0.0044  0.0006     8
+BU.LQS   116.0817 40.1017   200 FBS-6B           EDAS24L           50 B R |  -0.0117  0.0083     0
+BU.MDY   116.5602 40.3944   155 FBS-6B           EDAS24L           50 B R |  -0.0102  0.0056     0
+BU.NSC   117.2544 40.1397   100 FSS-3B           EDAS24L           50 S R |   0.0000  0.0000    10
+BU.QSD   115.9669 40.3164  1159 FBS-3A           EDAS24L           50 B R |   0.0070  0.0200     0
+BU.SFS   115.8138 39.6611   173 FBS-6B           EDAS24L           50 B R |  -0.0138 -0.0111     1
+BU.SHC   115.5231 40.4406   659 FBS-6B           EDAS24L           50 B R |   0.0021 -0.0493   -23
+BU.SZL   117.2170 40.3072  1063 FBS-6B           EDAS24L           50 B R |  -0.0670 -0.0772    -3
+BU.TST   117.1276 40.5371   180 FBS-6B           EDAS24L           50 B R |  -0.0076 -0.0071     9
+BU.WAX   115.0628 38.8639   100 FBS-6B           EDAS24L           50 B R |  -0.0128 -0.0139     0
+BU.WEA   116.4534 38.8469   210 FSS-DH           EDAS24L           50 S R |   0.0004  0.0000  -203
+BU.XOX   116.0936 38.9594  -360 FSS-DH           EDAS24IP          50 S R |   0.0000  0.0000     0 
+BU.XUH   115.0428 40.4783   820 BKD-2B           EDAS24IP          50 B R |   0.0000  0.0000     0 FBS-3B 
+BU.ZHL   115.1331 40.1572  1100 FBS-6B           EDAS24L           50 B R |  -0.0031  0.0028     0
+BU.ZJT   114.9018 40.8307   869 FSS-3B           EDAS24L           50 S R |  -0.0018 -0.0015   -11
+BU.ZKD   115.9222 39.6881   120 FSS-3B           EDAS24L           50 S R |   0.0000  0.0000     0 should  be SP
+BU.ZUH   117.6761 40.1919    60 FBS-6B           EDAS24L           50 B R |   0.1739 -0.0919    65
+BU.TAS	115.493	40.0836	1276.17	BBVS-60	EDAS-24IP	100
+#
+CQ.ROC   105.4431 29.3793   213 CMG-3ESPC        TDE324CI         100 B R |   0.0000  0.0000   217
+CQ.WUX   109.6107 31.4010   195 CMG-3ESPC        TDE324CI         100 B R |   0.0000  0.0000    89
+CQ.YUB   106.8273 29.8583   160 CMG-3ESPC        TDE324CI         100 B R |   0.0000  0.0000    89
+CQ.CHK   108.6461 31.9627   840 CMG-3ESPC        TDE324CI         100 B R |   0.0000  0.0000     0
+CQ.WUL   107.8265 29.1881    90 CMG-3ESPC        TDE324CI         100 B R |   0.0000  0.0000   240
+CQ.CHS   107.2325 29.9050   140 CMG-3ESPC        TDE324CI         100 B R |   0.0000  0.0000   235
+CQ.QIJ   108.7958 29.5639   170 CMG-3ESPC        TDE324CI         100 B R |   0.0000  0.0000   880
+CQ.FUL   107.4375 29.7263    90 CMG-3ESPC        TDE324CI         100 B R |   0.0000  0.0000   605
+CQ.WAS   106.9167 28.8750   110 CMG-3ESPC        TDE324CI         100 B R |   0.0000  0.0000   378
+CQ.WAZ   108.4607 30.7520   280 CMG-3ESPC        TDE324CI         100 B R |   0.0000  0.0000   550
+CQ.CQT   106.5730 29.4222   255 KS2000           SMART24          100 B N |   0.0000  0.0000     0 CC.CQT
+CQ.SHZ   108.3700 30.2450  1530 CMG-3ESPC        TDE324CI         100 B R |   0.0147 -0.0006   -18
+#FUJIAN    lon_Q   lat_Q                                                  lon(Q-S) lat(Q-S)  alt(Q-S)
+#Q: Quyu file, S: SHIWU file
+FJ.FZCM  119.3670 26.0080   110 CTS-1            EDAS24IP         100 B N |   0.0000  0.0000     0 CC.FZCM
+FJ.NPDK  118.1880 26.6150   180 KS2000           SMART24          100 B N |   0.0000  0.0000     0 CC.NPDK
+FJ.WYXF  118.0110 27.7480   276 BBVS-60          EDAS24IP         100 B R |   0.0000  0.0000     0
+FJ.ZHNZ  118.8600 27.3570   277 BBVS-60          EDAS24IP         100 B R |   0.0000  0.0000     0
+FJ.PCNP  118.5200 27.9100   255 CMG-3ESP         EDAS24IP         100 B R |   0.0000  0.0000     0
+FJ.SWDT  117.4810 27.3310   194 CMG-3ESP         EDAS24IP         100 B R |   0.0000  0.0000     0
+FJ.NDZW  119.5360 26.6670    30 CMG-3ESP         EDAS24IP         100 B R |   0.0000  0.0000     0
+FJ.FDQY  120.2590 27.1190    10 CMG-3ESP         EDAS24IP         100 B R |  -0.0090  0.0000     0
+FJ.SNQY  119.4830 27.4030   973 CMG-3ESP         EDAS24IP         100 B R |   0.0000  0.0000     0
+FJ.QZH   118.5980 24.9400    21 CTS-1            EDAS24            50 B N |  -0.0040  0.0020     0  FJ.QUZ
+FJ.DSXP  117.4260 23.7080    47 BBVS-60          EDAS24IP         100 B R |  -0.0840  0.6920     3
+FJ.FQDZ  119.2850 25.7190    80 CMG-3ESP         EDAS24IP         100 B R |   0.0820  0.2890    30
+FJ.HAHF  117.5210 25.0120   105 CMG-3ESP         EDAS24IP         100 B R |   0.7500  0.3870     0
+FJ.HAJF  118.9590 24.9790    70 CMG-3ESP         EDAS24IP         100 B R |   0.5110  0.2410     2
+FJ.LJTL  119.9200 26.3530   130 CMG-3ESP         EDAS24IP         100 B R |  -0.6350 -0.6340   -50
+FJ.MQDQ  118.9080 26.3810   103 CMG-3ESP         EDAS24IP         100 B R |   1.0120 -0.0280    27
+FJ.MXXF  117.1890 26.3540   438 CMG-3ESP         EDAS24IP         100 B R |  -0.0080  0.5530  -238
+FJ.PHSG  117.3420 24.4000    50 CMG-3ESP         EDAS24IP         100 B R |   0.1790  0.6120    55
+FJ.PTLC  119.0250 25.4470    49 CMG-3ESP         EDAS24IP         100 B R |  -0.1170  0.9340    54
+FJ.PTNR  119.4700 25.2200    72 CMG-3ESP         EDAS24IP         100 B R |  -0.4450  0.2270   -23
+FJ.TNSC  117.1810 26.9070   200 BBVS-60          EDAS24IP         100 B R |   0.9290 -0.8680     1
+FJ.YAXT  117.1250 25.7230   250 CMG-3ESP         EDAS24IP         100 B R |   0.2330  0.2660   -71
+FJ.YAYX  117.3580 25.9890   179 CMG-3ESP         EDAS24IP         100 B R |  -0.7280 -1.2920    11
+FJ.YCTM  118.2710 25.3990  1050 CMG-3ESP         EDAS24IP         100 B R |   0.6880 -0.4200  -980
+FJ.YDXS  116.6300 24.6970   190 CMG-3ESP         EDAS24IP         100 B R |   0.7950 -0.9890  -145
+FJ.YXBM  118.1100 26.0390   201 BBVS-60          EDAS24IP         100 B R |  -0.9850 -0.3160    49
+FJ.CTTZ  116.3550 25.8410   338 FBS-3B           EDAS-24IP   100
+FJ.XMSM  118.0830 24.4510 	 87	FBS-3B	EDAS-24IP
+FJ.YCSG  118.2270 25.3360   266 CMG-3ESPC	EDAS-24IP	100
+FJ.LYXP  117.0280 25.1280   404 FBS-3B  EDAS-24IP
+#
+#GUANGDONG    lon_Q   lat_Q                                                  lon(Q-S) lat(Q-S)  alt(Q-S)
+#Q: Quyu file, S: SHIWU file
+GD.SHT   116.6258 23.4158    19 KS2000           EDAS24IP         50 B N |   0.0000  0.0000     0 CC.SHT
+GD.XNY   110.9292 22.3531    90 KS2000           SMART24R        100 B N |   0.0000  0.0000     0 CC.XNY
+GD.SHG   113.5839 24.8567   200 KS2000           EDAS24IP        100 B N |   0.0000  0.0000     0 CC.SHG
+GD.XFJ   114.6567 23.7385   101 KS2000           EDAS24IP        100 B R |   0.0000  0.0000    -1
+GD.MEZ   116.1375 24.3167   115 FSS-3A           EDASC24B         50 B R |   0.0000  0.0000     0
+GD.ZHJ   110.3764 21.3944     8 KS2000           TDE324CI         50 B R |   0.0000  0.0000     0
+GD.YND   113.3626 24.1261   134 KS2000           EDAS24IP        100 B R |   0.0000  0.0000     0
+GD.DGD   114.3029 22.0602    31 KS2000           TDE324CI        100 B R |   0.0000  0.0000     0
+GD.SCD   112.7961 21.7112     1 KS2000           EDAS24IP        100 B R |   0.0000  0.0000     0
+GD.NAP   117.5000 23.4000 -9999 KS2000           TDE324CI        100 B R |   0.0000  0.0000     0 altitude
+GD.LCH   115.2706 24.1044   135 FSS-3A           EDAS24CA         50 B R |   0.0000  0.0000     0
+GD.SHW   115.3701 22.7916    15 FSS-3A           TDE324CI         50 B R |   0.0000  0.0000     0
+GD.LIZ   112.3853 24.8016   108 KS2000           EDAS24IP        100 B R |   0.0000  0.0000     0
+GD.YGJ   111.9539 21.8581    20 FSS-3A           EDASC24A         50 B R |   0.0000  0.0000     0
+GD.ZHQ   112.5394 23.1783    50 KS2000           TDE324CI        100 B R |   0.0000  0.0000     0
+GD.ZHH   113.5658 22.2706    50 KS2000           TDE324CI        100 B R |   0.0000  0.0000     0
+GD.HUZ   114.4237 23.2424    44 KS2000           EDAS24IP        100 B R |   0.0000  0.0000     0
+GD.SLG   113.3468 23.0911    26 CMG-3TB          DM24            100 B R |   0.0000  0.0000     0
+GD.LIP   114.4649 24.3609   276 KS2000           EDAS24IP        100 B R |   0.0000  0.0000     0
+GD.JIX   115.7046 23.4269   123 KS2000           EDAS24IP        100 B R |   0.0000  0.0000     0
+GD.YGC   111.9423 22.4170    28 KS2000           TDE324CI        100 B R |   0.0000  0.0000     0
+GD.ZIJ   115.1673 23.7040   253 KS2000           EDAS24IP        100 B R |   0.0000  0.0000     0
+GD.PUN   116.1362 23.2883    53 KS2000           EDAS24IP        100 B R |   0.0000  0.0000     0
+GD.HUJ   112.3016 24.0353   133 KS2000           TDE324CI        100 B R |   0.0000  0.0000     0
+GD.YGD   112.2454 21.7113    18 KS2000           TDE324CI        100 B R |   0.0000  0.0000     0
+GD.YGX   111.6000 21.7500    13 KS2000           TDE324CI        100 B R |   0.0000  0.0000     0 altitude
+GD.HUD   113.2267 23.5164    65 KS2000           TDE324CI        100 B R |   0.0000  0.0000     0
+GD.TIS   112.8850 22.2698    20 KS2000           TDE324CI        100 B R |   0.0000  0.0000     0
+GD.GAZ   111.0137 22.0545    72 KS2000           TDE324CI        100 B R |   0.0000  0.0000     0
+GD.HEJ   110.5508 21.9297   113 KS2000           TDE324CI        100 B R |   0.0000  0.0000     0
+GD.SHD   111.0029 21.4410    58 KS2000           TDE324CI        100 B R |   0.0000  0.0000     0
+GD.DNB   111.2128 21.6500   240 KS2000           TDE324CI        100 B R |   0.0000  0.0000     0
+GD.DOG   113.7225 22.8750    59 KS2000           TDE324CI        100 B R |   0.0000  0.0000     0
+GD.ZHS   113.3605 22.4873    50 KS2000           EDAS24IP        100 B R |   0.0000  0.0000     0
+GD.FES   116.2081 23.8221    84 KS2000           EDAS24IP        100 B R |   0.0000  0.0000     0
+GD.XNH   113.0336 22.5697    86 KS2000           EDAS24IP        100 B R |   0.0000  0.0000     0
+GD.XIG   114.6350 23.7883   107 FSS-3B           EDAS24B         100 B R |   0.0000  0.0000     0
+GD.LTK   114.6467 23.6619   103 FSS-3B           EDAS24B         100 B R |   0.0000  0.0000     0
+GD.HYJ   114.5883 23.7244   152 FSS-3B           EDAS24B         100 B R |   0.0000  0.0000     0
+GD.CHZ   116.6374 23.6723    13 FSS-3B           EDAS24B          50 B R |   0.0000  0.0000     0
+GD.NAO   117.0067 23.4287     5 FSS-3B           EDAS24B          50 B R |   0.0000  0.0000     0
+GD.TIX   116.5091 23.1345    17 FSS-3B           EDASC24B         50 B R |   0.0000  0.0000     0
+GD.SZN   114.1330 22.5330    30 CTS-1            EDAS24           50 B N |   0.0610  0.0380     0 CC.SZN
+GD.GZH   113.6525 23.6525    65 JCZ-1            EDASC24A         50 B N |   0.0000  0.0000     0 CC.GZH
+GD.JIY   116.3667 23.5789    58 FSS-3B           EDASC24B         50 B N |   0.0000  0.0000     0 CC.JIY
+#GANSU    lon_Q   lat_Q                                                  lon(Q-S) lat(Q-S)  alt(Q-S)
+#Q: Quyu file, S: SHIWU file
+GS.AXX    95.8000 40.5167  1178 CTS-1            EDAS24L          50 B N |   0.0000  0.0000     0 CC.AXX GS.AXT
+GS.GTA    99.8167 39.4000  1345 JCZ-1            EDAS24L          50 B N |   0.0000  0.0000     0 CC.GTA
+GS.LZH   103.8444 36.0870  1560 CTS-1            EDAS24L          50 B N |  -0.0111 -0.0037     0 CC.LZH
+GS.TSS   106.0206 34.3425  1160 CTS-1            EDAS24L6        100 B N |   0.0000  0.0000   547 CC.TSS
+GS.JYG    98.2155 39.8092  1714 KS2000           SMART24R        100 B N |  -0.0051  0.0022     0 CC.JYG
+GS.PLT   106.6786 35.4495  1478 BBVS-60          EDAS24IP        100 B R |   0.0025  0.0013     0
+GS.SDT   101.0401 38.7727  1770 BBVS-60          EDAS24IP        100 B R |   0.0000 -0.0014     0
+GS.WDT   104.9917 33.3574  1060 BBVS-60          EDAS24IP        100 B R |   0.0000  0.0032     0
+GS.DBT   103.2308 34.0618  1400 BBVS-60          EDAS24IP        100 B R |  -0.0004 -0.0017     0
+GS.HZT   102.9056 35.0077  2900 BBVS-60          EDAS24IP        100 B R |   0.0059  0.0023     0
+GS.HXP   102.1066 38.3901  1700 BBVS-60          EDAS24IP        100 B R |   0.0036  0.0006     0
+GS.HYS   102.8271 38.4047  1455 BBVS-60          EDAS24IP        100 B R |   0.0043 -0.0040     0
+GS.JTA   104.0920 37.1945  1645 BBVS-60          EDAS24IP        100 B R |  -0.0018 -0.0042     0
+GS.MXT   104.0232 34.4289  2325 BBVS-60          EDAS24IP        100 B R |  -0.0032  0.0018     0
+GS.SGT   102.7587 37.6227  1920 BBVS-60          EDAS24IP        100 B R |   0.0026 -0.0017     0
+GS.SNT    99.6124 38.8376  2323 BBVS-60          EDAS24IP        100 B R |  -0.0014  0.0038     0
+GS.WXT   104.6775 32.9497   980 BBVS-60          EDAS24IP        100 B R |   0.0036  0.0019     0
+GS.JFS    98.7442 39.3928  1998 BBVS-60          EDAS24IP        100 B R |  -0.0030 -0.0021     0
+GS.QTS    97.7384 39.7003  2572 BBVS-60          EDAS24IP        100 B R |   0.0028  0.0000     0
+GS.MIQ   103.2526 39.0680  1352 BBVS-60          EDAS24IP        100 B R |  -0.0022  0.0020     0
+GS.BYT   104.1302 36.5809  1766 BBVS-60          EDAS24IP        100 B R |   0.0000  0.0000     0
+GS.YWX    96.8969 41.0855  1869 BBVS-60          EDAS24IP        100 B R |   0.0046  0.0051     0
+GS.YJZ    98.6416 40.3881  1359 BBVS-60          EDAS24IP        100 B R |  -0.0005  0.0026     0
+GS.WYT   104.1000 35.0400  2320 CMG-3ESPC        CMGDM24         100 B R |   0.0000  0.0000     0
+GS.LXA   103.2630 35.6275  1822 CMG-3ESPC        CMGDM24         100 B R |   0.0000  0.0000     0
+GS.MQT   102.0601 34.0200  3520 CMG-3ESPC        CMGDM24         100 B R |   0.0000  0.0000     0
+GS.YDT   103.3192 36.8010  2318 CMG-3ESPC        CMGDM24         100 B R |   0.0013  0.0003     0
+GS.CXT   105.7641 33.7328   980 CMG-3ESPC        CMGDM24         100 B R |  -0.0028 -0.0016     0
+GS.JNT   105.7672 35.5284  1730 CMG-3ESPC        CMGDM24         100 B R |   0.0041  0.0025     0
+GS.YMG    93.6582 40.5174  1123 CMG-3ESPC        CMGDM24         100 B R |   0.0029  0.0034     0
+GS.HJT   102.0053 37.8325  2317 CMG-3ESPC        CMGDM24         100 B R |   0.0061 -0.0011     0
+GS.HNT   105.0701 35.6911  1772 CMG-3ESPC        CMGDM24         100 B R |   0.0000  0.0000     0
+GS.NXT   107.9215 35.5609   925 CMG-3ESPC        CMGDM24         100 B R |   0.0000  0.0000     0
+GS.HCH   108.4608 36.2504  1193 CMG-3ESPC        CMGDM24         100 B R |   0.0000  0.0000     0
+GS.HXT   107.2705 36.5896  1224 CMG-3ESPC        CMGDM24         100 B R |   0.0000  0.0000     0
+GS.WSH   105.0500 34.6611  1757 CMG-3ESPC        CMGDM24         100 B R |   0.0000  0.0000     0
+GS.ZHC   106.3005 34.9316  1723 CMG-3ESPC        CMGDM24         100 B R |   0.0000  0.0000     0
+GS.LYT    95.4998 41.0889  1741 CMG-3ESPC        CMGDM24         100 B R |   0.0010  0.0012     0
+GS.ZHY   100.4924 39.1121  1501 CMG-3ESPC        CMGDM24         100 B R |   0.0385 -0.0206     0
+GS.LTT   103.3606 34.6711  2703 CMG-3ESPC        CMGDM24         100 B R |   0.0000  0.0000     0
+GS.ZHQ   104.3806 33.8114  1460 CMG-3ESPC        CMGDM24         100 B R |   0.0000  0.0000     0
+GS.DHT    94.8299 40.0391  1330 CMG-3ESPC        CMGDM24         100 B R |   0.0015  0.0010     0
+GS.SBC    94.8267 39.5892  1129 BBVS-60          EDAS24IP        100 B R |   1.0948 -0.0984     0
+GS.SGS   103.8852 37.5359  1678 CMG-3ESPC        CMGDM24         100 B R |   0.0063  0.2053     0
+GS.BKT   105.2430 32.7520   629
+GS.DPT   104.7650 32.8620	904
+GS.SFT   104.5670 33.0010  1030
+GS.SHT   104.2540 33.1740  1291
+GS.SJB   104.4490 33.0640  1122
+GS.YLT   105.0270 32.8300   744
+GS.ZYT   107.0180 35.77800   1317
+#
+#GUANGXI   lon_Q   lat_Q                                                  lon(Q-S) lat(Q-S)  alt(Q-S)
+#Q: Quyu file, S: SHIWU file
+GX.HZS   111.5673 24.4258   144 CMG-3ESPC        EDAS24IP        100 B R |   0.0000  0.0000     1
+GX.PNX   110.4350 23.6137    76 CMG-3ESPC        EDAS24IP        100 B R |   0.0001 -0.0001    -6
+GX.XCT   108.6101 23.9483   220 CMG-3ESPC        EDAS24IP        100 B R |   0.0000  0.0000     0
+GX.WZD   109.1015 21.0306    57 CMG-3ESPC        EDAS24IP        100 B R |  -0.0005  0.0000   -24
+GX.NNS   108.1520 22.8910   360 CMG-3ESPC        EDAS24IP         50 B R |  -0.0008  0.0001     6
+GX.YLS   110.1726 22.6351    88 CMG-3ESPC        EDAS24IP        100 B R |   0.0004  0.0000    -7
+GX.QZS   108.6368 22.2760   394 CMG-3ESPC        EDAS24IP        100 B R |  -0.0004  0.0004    -3
+GX.GUL   110.3661 25.2911   198 CTS-1            EDAS24IP        100 B N |   0.0000  0.0000     0 CC.GUL GX.GLS
+GX.PXS   106.7510 22.1301   236 CTS-1            EDAS24IPU       100 B N |   0.0000  0.0000   -50 CC.PXS Equipments corrected from shiwu
+GX.LNS   109.2808 22.4203    61 JCZ-1            EDAS24IPU       100 B N |   0.0002 -0.0001    -1 CC.LNS
+GX.HCS   108.0215 24.6730   199 CTS-1            EDAS24IPU       100 B N |  -0.0102 -0.0024     2 CC.HCS Equipments corrected from shiwu
+GX.BHS   109.2125 21.6525    47 CMG-3ESPC        CMG24           100 B R |   0.0000  0.0000     0 Equipments corrected from shiwu
+GX.CZS   107.3540 22.3735   105 CMG-3ESPC        EDAS24IP        100 B R |   0.0000 -0.0001    -6
+GX.GGS   109.6180 23.0553    51 CMG-3ESPC        EDAS24IP        100 B R |   0.0000  0.0000    58
+GX.DXX   107.1860 22.8385   242 CMG-3ESPC        EDAS24IP        100 B R |   0.0000  0.0000     0
+GX.TE    107.1680 24.9823   298 CMG-3ESPC        EDAS24IP        100 B R |   0.0000  0.0000    14
+GX.PGX   107.5781 23.3277    92 CMG-3ESPC        EDAS24IP        100 B R |  -0.0001  0.0000     8
+GX.YTT   107.5175 24.0293   291 CMG-3ESPC        EDAS24IP        100 B R |   0.0000  0.0000     0
+GX.DHX   107.9890 23.7490   163 CMG-3ESPC        EDAS24IP        100 B R |  -0.0007 -0.0001    21
+GX.BSS   106.5565 23.8952   174 CMG-3ESPC        EDAS24IP        100 B R |   0.0000 -0.0001     4
+GX.DXS   107.9470 21.6718   112 CMG-3ESPC        EDAS24IP        100 B R |  -0.4504  0.0000   -22
+GX.WZS   111.2339 23.4808    25 CMG-3ESPC        EDAS24IP        100 B R |   0.0000  0.0000     0
+#GUIZHOU    lon_Q   lat_Q                                                  lon(Q-S) lat(Q-S)  alt(Q-S)
+#Q: Quyu file, S: SHIWU file
+GZ.XYT   104.9000 25.0353  1191 CTS-1            EDAS6L          100 S N |   0.0000 -0.0020    17
+GZ.DJT   108.1300 28.2200   550 CTS-1            EDAS6L          100 B N |   0.0033 -0.0033   -21 CC.DJT
+GZ.LPS   104.7700 26.6500  2142 KS-2000          SMART24         100 B N |  -0.0033  0.0000     0 CC.LPS
+GZ.ZFT   105.6290 25.3872  1049 BBVS-60          EDAS24IP        100 B R |   0.0043 -0.0039    10
+GZ.AST   106.0552 26.1518  1307 BBVS-60          EDAS24IP        100 B R |  -0.0052 -0.0018   -12
+GZ.LPT   109.2170 26.1787   472 BBVS-60          EDAS24IP        100 B R |  -0.0003  0.0046   -22
+GZ.BJT   105.3500 27.2435  1462 BBVS-60          EDAS24IP        100 B R |  -0.0333 -0.0268    23
+GZ.WNT   104.3030 26.9071  2334 BBVS-60          EDAS24IP        100 B R |  -0.0197  0.0096  -104
+GZ.LBT   108.0274 25.3226   556 BBVS-60          EDAS24IP        100 B R |   0.0059 -0.0393     0
+GZ.LDT   106.7488 25.4249   431 BBVS-60          EDAS24IP        100 B R |  -0.0155 -0.0082   -33
+GZ.ZYT   106.8510 27.7663   896 BBVS-60          EDAS24IP        100 B R |  -0.0510 -0.0996    91
+GZ.GYA   106.6600 26.4600  1162 CTS-1            EDAS24           50 B N |   0.0040 -0.0010     0 CC.GYA
+YN.GYA   106.6600 26.4600  1162 CTS-1            EDAS24           50 B N |   0.0040 -0.0010     0 CC.GYA
+GZ.KLT   107.9860 26.5438   980 BBVS-60          EDAS24IP        100 B R |  -0.1527  0.0729  -183
+GZ.YPT   108.8132 27.2121   428 BBVS-60          EDAS24IP        100 B R |   0.1368  0.0546   -85
+#HENAN    lon_Q   lat_Q                                                  lon(Q-S) lat(Q-S)  alt(Q-S)
+#Q: Quyu file, S: SHIWU file
+HA.AY    114.2960 36.0841    83 FSS-3DBH         EDAS24IP        100 S R |   0.0000  0.0000  -203
+HA.DA    111.3200 34.8000    50 BBVS-60          EDAS24IP        100 B R |   0.0000  0.0000     0
+HA.HH    113.6100 34.7100   350 FSS-3DBH         EDAS24IP        100 S R |   0.0000  0.0000  -520
+# This seems to be wrong
+#HA.HUX   120.7582 41.0890   106 BBVS-60	         EDAS24IP        100 B R |   0.0000  0.0000     0 
+HA.JS    113.2400 34.6100   200 BBVS-60          EDAS24IP         50 B R |   0.0000  0.0000   -50 HA.JSA
+HA.JY    112.4490 35.1629   295 BBVS-60          EDAS24IP        100 B R |   0.0000  0.0000    -5 HA.JYU
+HA.JZ    113.2130 35.2675   238 BBVS-60          EDAS24IP        100 B R |   0.0000  0.0000     2 HA.JZO
+HA.LS    111.0400 34.0183   595 CMG-3ESPC        EDAS24IP        100 B R |   0.0000  0.0000    -5
+HA.LYN   112.4700 34.5500   170 CTS-1            EDAS24IP        100 B N |  -0.0020  0.0010     0 CC.LYN
+HA.NY    112.2700 33.1400   250 KS-2000          SMART24R        100 B N |   0.0000  0.0000  -110 CC.NY HA.NYA
+HA.PDS   113.2980 33.7116   107 BBVS-60          EDAS24IP        100 B R |   0.0000  0.0000     3
+HA.PY    115.0100 35.7700    90 FSS-3DBH         EDAS24L3        100 S R |   0.0000  0.0000  -270
+HA.QF    115.1500 35.9000  -120 FSS-3DBH         EDAS24IP        100 S R |   0.0000  0.0000     0
+HA.SC    115.4180 31.7905   124 CMG-3ESPC        EDAS24IP        100 B R |   0.0000  0.0000    -4
+HA.SQ    115.6400 34.4600   -90 FSS-3DBH         EDAS24IP        100 S R |   0.0000  0.0000     0
+HA.XC    113.8381 34.0304   223 FSS-3DBH         EDAS24IP        100 S R |   0.0000  0.0000    -3
+HA.XX    114.5390 35.6618    86 BBVS-60          EDAS24IP        100 B R |   0.0000  0.0000     4
+HA.XY    114.0120 32.1326    87 CTS-1            EDAS24L6        100 B N |   0.0000  0.0000     3 CC.XY HA.XYA
+HA.YJ    114.2000 35.1500   570 FSS-3DBH         EDAS24IP        100 S R |  -0.0167 -0.0333  -690
+HA.ZK    114.6400 33.6600   -80 FSS-3DBH         EDAS24IP        100 S R |   0.0000  0.0000     0
+HA.ZMD   113.7450 33.1334   159 BBVS-60          EDAS24IP        100 B R |   0.0000  0.0000    21
+#HUBEI    lon_Q   lat_Q                                                  lon(Q-S) lat(Q-S)  alt(Q-S)
+#Q: Quyu file, S: SHIWU file
+# there is another station belongs to Hebei that has the same name with ZHX, need be careful
+HB.DJI   111.5254 32.5527   144 BBVS-120         EDAS24IP         100 B R |   0.0000   0.0000   -22
+HB.DWU   114.1201 31.4985    73 BBVS-60          EDAS24IP         100 B R |  -0.0001   0.0001   -13
+HB.FXI   110.7240 31.9382   819 BBVS-60          EDAS24IP         100 B R |   0.0000  -0.0001    -4
+HB.ENS   109.4944 30.2762   473 BBVS-120         EDAS24IP          50 B N |   0.0000   0.0000    -1 CC.ENS HB.EHS 
+HB.HFE   110.0213 29.9036   768 BBVS-60          EDAS24IP         100 B R |   0.0000   0.0000   -28
+HB.HME   115.8940 30.1349    61 BBVS-60          EDAS24IP         100 B R |   0.0000   0.0001     8
+HB.JME   112.1688 31.1189   184 BBVS-60          EDAS24IP         100 B R |   0.0000   0.0002   -32
+HB.JYU   113.8387 29.8160    66 BBVS-60          EDAS24IP         100 B R |   0.0002   0.0000     1
+HB.LCH   108.8793 30.3731  1108 BBVS-60          EDAS24IP         100 B R |   0.0028  -0.0013   148
+HB.MCH   115.1551 31.1315   105 CTS-1            EDAS24L6         100 B N |   0.0000   0.0000   -10 CC.MCH
+HB.NZH   111.6160 31.3919   393 BBVS-120         EDAS24IP         100 B R |  -0.0003   0.0000    23
+HB.QJI   112.8890 30.4260    -2 FSS-3DBH         EDAS24IP         100 S R |  -0.1157   0.0237    62
+HB.SSH   112.6898 29.6463    49 BBVS-60          EDAS24IP         100 B R |   0.0000   0.0000   -10
+HB.SYA   110.7186 32.5968   662 KS2000           SMART24          100 B N |   0.0000   0.0000     0 CC.SYA
+HB.SZH   113.3860 31.6303    83 BBVS-60          EDAS24IP         100 B R |   0.0040  -0.0003   -12
+HB.SZI   111.8000 30.2000  -232 FSS-3DBH         EDAS24IP         100 S R |  -0.0029   0.0010   268
+HB.WHA   114.5068 30.5059    85 BBVS-120         EDAS24IP         100 B N |   0.0000   0.0000     0 SHIWU
+HB.WHN   114.3539 30.5428    80 JCZ-1            EDAS24L6          50 B N |   0.0000   0.0000     0 QIYU
+HB.XFA   112.0420 32.0027   115 BBVS-60          EDAS24IP         100 B R |  -0.0004  -0.0002     0
+HB.XNI   114.4109 29.7158    71 BBVS-60          EDAS24IP         100 B R |  -0.0003   0.0000    10
+HB.XSH   110.8420 31.2599   939 BBVS-60          EDAS24IP         100 B R |   0.0001   0.0001  -929
+HB.YCH   111.3150 30.7837    77 BBVS-60          EDAS24IP         100 B R |   0.0005  -0.0001    14
+HB.YDU   111.2111 30.2136   355 BBVS-60          EDAS24IP         100 B R |   0.0000   0.0000     2
+HB.YNX   115.1120 30.0227    86 BBVS-60          EDAS24IP         100 B R |   0.0004   0.0000    -7
+HB.YXI   110.4320 32.9863   273 BBVS-60          EDAS24IP         100 B R |  -0.0001   0.0001    12
+HB.ZHX   112.7273 31.1724    64 CTS-1            EDAS24L6         100 B N |   0.0000   0.0000     0
+HB.ZSH   110.2170 32.2497   378 BBVS-60          EDAS24IP         100 B R |  -0.0003   0.0000     8
+HB.ZUX   109.7110 32.3240   452 BBVS-60          EDAS24IP         100 B R |   0.0000   0.0000     3
+HB.ESH   112.1250 30.3730 	 34
+#HEBEI    lon_Q   lat_Q                                                  lon(Q-S) lat(Q-S)  alt(Q-S)
+#Q: Quyu file, S: SHIWU file
+HE.GAN   114.0241 38.3683   220 FBS-3B           EDASC24          100 B R CC  0.0689 -0.0100     0 
+HE.LUQ   114.3070 38.0024   217 FBS-3B           EDASC24          100 B R CC -0.0012 -0.0013     0 
+HE.QIL   118.9028 40.4209   294 FBS-3B           EDASC24          100 B R CC  0.0000  0.0000     0 BBVS-60  EDAS24IP
+HE.QIX   118.3180 40.2010   157 FBS-3B           EDASC24          100 B R CC -0.0072 -0.0023     0
+HE.TLK   119.0449 40.1390   132 CTS-1            EDAS24L          100 B R CC  0.0000  0.0000     0 BBVS-60  EDAS24IP
+HE.XIT   114.3662 38.5287   171 FBS-3B           EDASC24          100 B R CC -0.0034 -0.0015     0
+HE.XLD   118.0204 40.3946   280 FBS-3B           EDASC24          100 B R CC  0.0000  0.0000     0  BBVS-60  EDAS24IP
+HE.YAY   114.1685 40.1610  1070 FBS-3B           EDASC24          100 B R CC -0.0007 -0.0010     0
+HE.YIX   115.3679 39.3509   184 CTS-1            EDAS24L          100 B R CC -0.0089  0.0041     0
+HE.YUS   114.3711 37.7905   214 FBS-3B           EDASC24          100 B R CC  0.0000  0.0000     0
+HE.ZDN   114.5775 38.1472    65 FSS-3DBH         EDAS24IP         100 S R CC -0.0792  0.0431     0
+HE.ZHB   114.4927 41.4015  1346 FBS-3B           EDASC24          100 B R CC  0.0000  0.0000     0  BBVS-60  EDAS24IP
+HE.CAZ   116.8395 38.3379     7 FSS-3DBH         EDAS24IP         100 S R HB -0.0232 -0.0551     0
+HE.CHC   115.8374 40.9143   884 FBS-3B           EDASC24          100 B R HB  0.0000  0.0000     0  BBVS-60  EDAS24IP
+HE.CHD   117.9178 41.0162   397 CTS-1            EDAS24L          100 B R HB  0.0000  0.0000     0
+HE.FEN   116.6179 41.2231   677 FBS-3B           EDASC24          100 B R HB  0.0000  0.0000     0  BBVS-60  EDAS24IP
+HE.HEJ   116.0928 38.4517    11 FSS-3DBH         EDAS24IP         100 S R HB -0.0036 -0.0037     0
+HE.HUH   117.4584 38.3851     9 FSS-3DBH         EDAS24IP         100 S R HB -0.0029 -0.0006     0
+HE.JNX   114.1507 38.0274   262 FBS-3B           EDASC24          100 B R HB -0.0007 -0.0001     0
+HE.JTG   118.9878 39.2289    15 FSS-3DBH         EDAS24IP         100 S R HB  0.0372 -0.0572     0
+HE.KUC   118.4742 40.5916   320 FBS-3B           EDASC24          100 B R HB  0.0000  0.0000     0  BBVS-60  EDAS24IP
+HE.LIX   115.5603 38.4903    27 FSS-3DBH         EDAS24IP         100 S R HB  0.0408  0.0087     0
+HE.TAG   114.5519 38.0302    67 FSS-3DBH         EDAS24IP         100 S R HB  0.0013  0.0000     0
+HE.TAH   118.4259 39.2529     9 JDF-2            EDAS24IP         100 B R HB  0.0041 -0.0029     0
+HE.WUJ   114.9582 38.2404    46 FSS-3DBH         EDAS24IP         100 S R HB -0.0010 -0.0595     0
+HE.XIL   117.4712 40.4062   601 FBS-3B           EDASC24          100 B R HB  0.0000  0.0000     0  BBVS-60  EDAS24IP
+HE.XLE   114.6617 38.3535    75 FSS-3DBH         EDAS24IP         100 S R HB  0.0006  0.0005     0
+HE.XUS   115.6583 39.0154    31 FSS-3DBH         EDAS24IP         100 S R HB -0.0291 -0.0158     0
+HE.YOQ   116.4431 39.2254    13 FSS-3DBH         EDAS24IP         100 S R HB -0.0006 -0.0004     0
+HE.ZAH   114.4038 37.6555   143 FBS-3B           EDASC24          100 B R HB -0.0232  0.0086     0
+HE.ZHX   114.8015 37.7520    41 FSS-3DBH         EDAS24IP         100 S R HB  0.0000  0.0000     0
+HE.ZJK   114.9022 40.8305   857 CTS-1            EDAS24L          100 B R HB  0.0000  0.0000     0
+HE.CLI   119.0965 39.7580    79 KS2000           SMART24          100 B N |   0.0005  0.0000     0
+HE.CXT   114.0510 36.4340   320 CMG-3ESPC        CMG-24           100 B R |   0.0000  0.0000     0
+HE.FUC   116.1571 37.8586  -190 FSS-3DBH         EDAS24IP         100 S R |  -0.0001  0.0000     0
+HE.FXT   114.9953 36.6160  -357 FSS-3DBH         EDAS24IP         100 S R |  -0.0483  0.0000     0
+HE.GAZ   115.1767 37.1329  -217 FSS-3DBH         EDAS24IP         100 S R |  -0.0007 -0.0707     0
+HE.HNS   114.7100 37.4010   254 CTS-1            EDASC24          100 B N |  -0.0027 -0.0019  -223
+HE.HST   113.9500 36.1860   781 CMG-3ESPC        CMG-24           100 B R |   0.0000  0.0000     0
+HE.KAB   114.5894 41.8537  1437 CMG-3ESPC        CMG-24           100 B R |  -0.0004  0.0000     0
+HE.LIC   114.3919 37.4527   130 CMG-3ESPC        CMG-24           100 B R |   0.0001  0.0000     0
+HE.LOH   117.7125 41.3196   587 CMG-3ESPC        CMG-24           100 B R |   0.0005  0.0000     0
+HE.LZT   114.6290 36.3420  -376 FSS-3DBH         EDAS24IP         100 S R |   0.0000  0.0000     0
+HE.MEC   117.1040 38.0552  -220 FSS-3DBH         EDAS24IP         100 S R |   0.0000  0.0000     0
+HE.REX   114.6942 37.1328  -206 FSS-3DBH         EDAS24IP         100 S R |  -0.0002  0.0000     0
+HE.SHX   115.5605 38.0148  -190 JDF-2            EDAS24IP         100 B R |   0.0005  0.0000     0
+HE.SXT   113.6410 36.0616   500 CMG-3ESPC        CMG-24           100 B R |   0.0005  0.4834     0
+HE.WAT   114.0460 36.8050   510 CMG-3ESPC        CMG-24           100 B R |   0.0000  0.0000     0
+HE.WEC   117.7477 41.9294   907 CMG-3ESPC        CMG-24           100 B R |   0.0003  0.0000     0
+HE.XIH   115.2174 37.5201  -222 FSS-3DBH         EDAS24IP         100 S R |   0.0196  0.0090     0
+HE.XTT   114.3130 37.1220   320 CMG-3ESPC        CMG-24           100 B R |  -0.0010 -0.0015     0
+HE.YON   114.4220 36.7540   120 CMG-3ESPC        CMG-24           100 B R |   0.0000  0.0000     0
+HE.ZAQ   115.8479 37.4440  -220 FSS-3DBH         EDAS24IP         100 S R |   0.0071  0.0005     0
+#HAINAN    lon_Q   lat_Q                                                  lon(Q-S) lat(Q-S)  alt(Q-S)
+#Q: Quyu file, S: SHIWU file
+HI.NAD   109.6189 19.5337   142 CMG-3ESPC        TDE324CI        100 B R |   0.0000  0.0000     0
+HI.DOF   108.7292 19.0655    21 BBVS-60          EDAS24IP        100 B R |   0.0000  0.0000    -0
+HI.QZN   109.8443 19.0294   230 BBVS-60          EDAS24IP        100 B N |   0.0000  0.0000     0
+HI.SAY   109.4935 18.2040     9 BBVS-60          EDAS24IP        100 B R |   0.0000  0.0000    -0
+HI.WET   110.8700 19.9578    19 CMG-3ESPC        TDE324CI        100 B R |   0.0000  0.0000     0
+HI.QIH   110.4762 19.2217    32 BBVS-60          EDAS24IP        100 B R |   0.0000  0.0000    -0
+HI.WAN   110.4238 18.8007    77 BBVS-60          EDAS24IP        100 B R |   0.0000  0.0000     0
+HI.LSH   109.9957 18.4998    31 BBVS-60          EDAS24IP        100 B R |   0.0000  0.0000    -0
+HI.WZS   109.5276 18.7972   506 BBVS-60          EDAS24IP        100 B R |   0.0000  0.0000     0
+HI.JFL   108.8115 18.6977    99 BBVS-60          EDAS24IP        100 B R |   0.0000  0.0000     0
+HI.BSH   109.1810 19.2480   178 BBVS-60          EDAS24IP        100 B R |   0.0000  0.0000     0
+HI.SLL   109.4323 19.8082   165 CMG-3ESPC        TDE324CI        100 B R |   0.0000  0.0000     0
+HI.CHM   110.0034 19.5968    88 BBVS-60          EDAS24IP        100 B R |   0.0000  0.0000     0
+HI.HSK   110.2150 19.9285   160 BBVS-60          EDAS24IP        100 B O |  -0.0020 -0.0005     4
+HI.YML   110.2795 19.8530   128 BBVS-60          EDAS24IP        100 B O |   0.0005  0.0000   -22
+HI.SHP   110.3151 19.9499    54 BBVS-60          EDAS24IP        100 B O |  -0.0021  0.0001    10
+HI.SAJ   110.6413 19.8887     9 BBVS-60          EDAS24IP        100 B O |  -0.0013  0.0013     6
+HI.QXL   110.5990 20.0869    92 BBVS-60          EDAS24IP        100 B R |   0.0000  0.0000     0
+HI.QSL   110.7542 19.6656    50 BBVS-60          EDAS24IP        100 B R |   0.0000  0.0000     0
+HI.BSL   110.2616 19.3633   180 BBVS-60          EDAS24IP        100 B R |   0.0000  0.0000     0
+HI.DAN   110.3239 19.6695    26 BBVS-60          EDAS24IP        100 B R |   0.0000  0.0005     0
+HI.LZH   110.1760 20.5812   219 BBVS-60          EDAS24IP        100 B R |   0.0000  0.0000     0
+HI.XSA   112.3000 16.8000    19 CTS-1            EDAS24           50 B N |   0.1800 -0.4400   -17
+HI.NSH   113.1020  9.6250     6 JCZ-1            EDAS24L6      -9999 B N |   0.0000  0.0000     0
+#HELONGJIANG  lon_Q   lat_Q                                                  lon(Q-S) lat(Q-S)  alt(Q-S)
+#Q: Quyu file, S: SHIWU file
+HL.BAQ   132.2200 46.3400   158 BBVS-60          EDAS24IP         100 B R |  -0.0711 -0.0104    22
+HL.BEL   127.1600 46.9700   152 BBVS-60          EDAS24IP         100 B O |  -0.0019  0.0017    18
+HL.BJS   126.0810 48.6870   455 CMG-3ESPC        EDAS24IP         100 B O |   0.0000  0.0000     0
+HL.BNX   127.4000 45.7390   215 CTS-1            EDASC24           50 B N |   0.0050  0.0000     0
+HL.DNI   131.0910 44.8910   248 KS2000           EDAS24IP         100 B R |   0.0001 -0.8338   -48
+HL.FUY   134.2700 48.3600   267 KS2000           EDAS24IP         100 B R |   0.0050 -0.0050   -22 BBVS-60
+HL.HEG   130.2300 47.3600   190 CTS-1            EDAS24L          100 B N |   0.0064 -0.0072     0
+HL.HEH   127.4100 50.2530   165 JCZ-1            EDASC24           50 B N |   0.0000 -0.0030     0
+HL.HHL   128.8900 44.3500   420 CMG-3ESPC        EDAS24IP         100 B O |   0.0000  0.0000     0
+HL.JGD   124.1000 50.3700   270 CTS-1            EDAS24L          100 B N |   0.0040  0.0035   110
+HL.JIY   129.9900 49.0000   199 KS2000           EDAS24IP         100 B R |  -0.1240  0.0412   -49 BBVS-60
+HL.JMS   130.3200 46.7300   219 BBVS-60          EDAS24IP         100 B R |   0.0045  0.0025   -39 
+HL.LBE   130.8290 47.5960   201 BBVS-60          EDAS24IP         100 B R |  -0.0004  0.0000   -41
+HL.LIH   128.4996 44.3312   245 BBVS-60          EDAS24IP         100 B O |   0.0000  0.0000     0 CMG-3ESPC
+HL.MDJ   129.5890 44.6160   255 STS-2            EDASC24           50 B N |   0.0030  0.0000     0
+HL.MIH   131.8100 45.6300   168 CTS-1            EDAS24L          100 B N |  -0.0001 -0.0037   -23
+HL.MOH   122.3500 53.4800   766 KS2000           SMART24R         100 B N |  -0.0110 -0.0250  -191 EDAS24IP
+HL.NEH   124.5470 48.5040   200 CMG-3ESPC        EDAS24IP         100 B R |   0.0167 -0.0196     9 KS2000
+HL.NZN   122.8800 47.5400   320 CTS-1            EDAS24L          100 B N |   0.0021 -0.0026   -15 HL.NAN
+HL.QAN   127.6200 46.5800   258 BBVS-60          EDAS24IP         100 B R |  -0.0019  0.0040   -28
+HL.QTH   130.9900 45.7900   238 BBVS-60          EDAS24IP         100 B R |   0.0890 -0.0478   102 CMG-3ESPC
+HL.SEL   128.5300 44.1900   790 CMG-3ESPC        EDAS24IP         100 B R |   0.0000  0.0000     0
+HL.SHZ   128.9560 44.0620   330 CMG-3ESPC        EDAS24IP         100 B O |   0.0000  0.0000     0
+HL.SYS   131.0900 46.6500   158 BBVS-60          EDAS24IP         100 B R |   0.0030  0.0089    52
+HL.TAH   124.6900 52.3000   361 KS2000           EDAS24IP         100 B R |  -0.0228  0.0361    99 BBVS-60
+HL.TOH   128.7000 46.0000   100 BBVS-60          EDAS24IP         100 B R |  -0.0492  0.0847    50
+HL.TUJ   126.0000 48.6100   410 FSS-3DBH         EDAS24IP         100 S O |   0.0000  0.0000     0
+HL.WDL   126.1500 48.6800   235 CTS-1            EDAS24L          100 B N |  -0.0139 -0.0082    65
+HL.WUC   126.7100 45.3900   251 BBVS-60          EDAS24IP         100 B R |   0.3701 -0.2653   -11
+HL.XBH   128.6600 44.1800   490 CMG-3ESPC        EDAS24IP         100 B O |   0.0000  0.0000     0
+HL.XUK   128.8600 48.8700   245 KS2000           EDAS24IP         100 B R |   0.0559  0.2113    20
+HL.YAS   128.4000 45.5600   183 BBVS-60          EDAS24IP         100 B R |   0.0036 -0.2223    77
+HL.YCH   128.8800 47.7500   413 KS2000           EDAS24IP         100 B R |  -0.3153 -0.1155   -73 BBVS-60
+HL.YIL   129.2850 46.4763   235 KS2000           EDAS24IP         100 B R |   0.0004  0.0000     4
+HL.ZHY   124.8820 45.6840    85 FSS-3DBH         EDAS24IP         100 S R |  -0.5036 -0.0025    60  
+# HL.ZHY is named as HL.ZHY.BHZ, so it should be renamed as HL.ZHY.SHZ  
+#HUNAN    lon_Q   lat_Q                                                  lon(Q-S) lat(Q-S)  alt(Q-S)
+#Q: Quyu file, S: SHIWU file
+HN.JGS   111.8900 29.3900    63 3ESPB            TDE324CI        100 B R |   0.0000  0.0000     0
+HN.TAY   111.4603 28.8770    40 3ESPB            TDE324CI        100 B N |   0.0000  0.0000     0
+HN.CHL   113.5059 26.7951   280 CTS-1            EDAS24L         100 B R |   0.0000  0.0000     0
+HN.SHY   111.4506 27.2121   256 CTS-1            EDAS24L         100 B N |  -0.0006  0.0000     9
+HN.CHZ   113.0397 25.8187   185 3ESPC            TDE324CI        100 B R |   0.0000  0.0000     0
+HN.NIX   112.3449 27.9915   110 3ESPC            TDE324CI        100 B R |   0.0000  0.0000     0
+HN.YOZ   111.6169 26.2224   120 3ESPC            TDE324CI        100 B R |   0.0000  0.0000     0
+HN.HEY   112.5189 26.9203    65 3ESPC            TDE324CI        100 B R |   0.0000  0.0000    36
+HN.HOJ   109.9951 27.1145    50 3ESPC            TDE324CI        100 B R |   0.0000  0.0000   170
+HN.YIY   112.3230 28.5771    70 3ESPC            TDE324CI        100 B R |   0.0000  0.0000    37
+HN.ZJJ   110.5567 29.3510   350 3ESPC            TDE324CI        100 B R |   0.0000  0.0000  -100
+HN.LOD   112.0001 27.7301   132 3ESPC            TDE324CI        100 B R |   0.0053 -0.0010   -54
+HN.MIL   113.0800 28.8000    45 3ESPB            TDE324CI        100 B R |  -0.0031  0.0044    20
+HN.JIS   109.7469 28.1483   195 KS2000           SMART24         100 B N |   0.0000  0.0000     0
+HN.CNS   112.9311 28.1819   105 CTS-1E           EDAS24          100 B N |  -0.0011  0.0000   -19
+HN.HUR   112.6000 29.5490    43 JDF-1            TDE324CI         -1 S R |  -0.0437  0.0008     1  sample rate
+#JILIN    lon_Q   lat_Q                                                  lon(Q-S) lat(Q-S)  alt(Q-S)
+#Q: Quyu file, S: SHIWU file
+#JL.SLT is SP station, but was named as BHZ
+JL.YNB   129.4900 43.0000   295 JCZ-1T           EDAS24L          100 B N |   0.0000  0.0000    38
+JL.CBS   128.0700 42.0700  1790 CTS-1            EDAS24L          100 B N |   0.0000  0.0000     0
+JL.BCT   122.2068 45.5543   247 BBVS-60          EDAS24IP         100 B R |   0.0032 -0.0043     0
+JL.TYT   122.2068 45.5543   247 FSS-3DBH         EDAS24IP         100 S R |   0.8232 -0.7643   -64
+JL.DHT   128.1980 43.3446   583 BBVS-60          EDAS24IP         100 B R |   0.0020 -0.0046    -0
+JL.SYZT  125.6740 43.5389   251 BBVS-60          EDAS24IP         100 B R |  -0.0040  0.0011     0
+JL.HCT   130.4660 42.6422    94 BBVS-60          EDAS24IP         100 B R |  -0.0060 -0.0022     0
+JL.JYT   126.8100 42.3700   621 BBVS-60          EDAS24IP         100 B O |   0.0000  0.0000    33
+JL.YFT   126.5120 41.3623   328 BBVS-60          EDAS24IP         100 B R |  -0.0020 -0.0023     0
+JL.SPT   124.5349 43.1997   256 BBVS-60          EDAS24IP         100 B R |   0.0000  0.0003     0
+JL.PST   126.0780 42.9501   408 BBVS-60          EDAS24IP         100 B R |   0.0020 -0.0001     0
+JL.JCT   126.3930 42.3517   669 BBVS-60          EDAS24IP         100 B O |  -0.0030 -0.0017     0
+JL.LYT   125.1490 42.9476   352 BBVS-60          EDAS24IP         100 B R |   0.0010  0.0024     0
+JL.LHT   125.7170 42.2860   426 BBVS-60          EDAS24IP         100 B O |  -0.0070 -0.0060     0
+JL.MJT   127.5940 41.9478   854 BBVS-60          EDAS24IP         100 B O |  -0.0040  0.0022    -0
+JL.CLT   124.0450 44.2781   217 FSS-3DBH         EDAS24IP         100 S R |   0.0000  0.0019    -0
+JL.QAT   124.0040 45.0061   164 FSS-3DBH         EDAS24IP         100 S R |   0.0000  0.0039    -0
+JL.ZXT   128.1100 42.4100   713 FSS-3DBH         EDAS24IP         100 S O |   0.0000  0.0000     0
+JL.SMT   128.1700 42.1800  1139 FSS-3DBH         EDAS24IP         100 S O |   0.0000  0.0000     0
+JL.AGT   123.7630 45.5980   171 FSS-3DBH         EDAS24IP         100 S R |  -0.0030  0.0020    -0
+JL.SYT   124.7600 45.2517   162 FSS-3DBH         EDAS24IP         100 S R |   0.0000 -0.0017    -0
+JL.SLT   123.9005 43.6881   160 FSS-3DBH         EDAS24IP         100 S R |   0.0000  0.0019    -0
+JL.FMT   126.6640 43.7278   260 CMG-3ESPC        EDAS24IP         100 B R |   0.0000  0.0022    -0
+JL.CBT   128.1740 41.4200   752 CMG-3ESPC        EDAS24IP         100 B O |  -0.0040  0.0000    -0
+JL.FST   127.3810 42.2576   770 CMG-3ESPC        EDAS24IP         100 B R |  -0.0010 -0.0076     0
+JL.YST   126.7520 44.7600   244 KS2000           SMART24R         100 B N |  -0.0020  0.0000     0
+JL.SGT   124.9060 44.0900   241 CMG-3ESPC        EDAS24IP         100 B R |   0.0040  0.0000     0
+JL.BST   126.2300 41.9300   580 BBVS-60          EDAS24IP         100 B O |  -0.0100 -0.0100     0
+JL.CN2   125.2600 43.4800   223 CTS-1            EDAS24L           50 B N |   0.1880  0.3210     0
+JL.THT   125.6000 41.4200   440 CTS-1            EDAS24L          100 B N |   0.3900  0.2800    15
+JL.DDP   128.0600 42.0500  2300 CMG-3ESPC        EDAS24IP         100 B O |   0.0000  0.0000     0  
+JL.SMF   128.2600 42.0300  1440 CMG-3ESPC        EDAS24IP         100 B O |   0.0000  0.0000     0 
+JL.XDP   128.0300 42.0600  1950 CMG-3ESPC        EDAS24IP         100 B O |   0.0000  0.0000     0  
+JL.QXZ   128.0600 42.0300  2660 CMG-3ESPC        EDAS24IP         100 B O |   0.0000  0.0000     0 
+JL.WDT   128.0100 41.9900  2253 CMG-3ESPC        EDAS24IP         100 B O |   0.0000  0.0000     0 
+JL.HNS   128.1000 41.7300  1380 CMG-3ESPC        EDAS24IP         100 B O |   0.0000  0.0000     0 JL.HSN
+JL.HST   127.1400 42.9492   377 BBVS-60          EDAS24IP         100 B R |   0.0000  0.0008     0 JL.HNS
+#
+JS.XZ    117.1658 34.2314    62 CMG-3ESPC        DM24             100 B R |  -0.0158 -0.0114     0
+JS.NT    120.8906 31.9517  -105 CMG-3ESPB        DM24             100 B R |  -0.0106 -0.0017   135
+JS.XIY   118.3892 34.3808    35 CMG-3ESPC        DM24             100 B R |  -0.0092 -0.0108     0
+JS.LY    119.4619 31.3839    20 CMG-3ESPB        DM24             100 B R |   0.0000  0.0000     0
+JS.LYG   119.2425 34.6414    40 KS2000           SMART24R         100 B N |  -0.0125 -0.0114     0
+JS.GY    119.4481 32.7453  -440 CMG-3ESPC        DM24             100 B R |  -0.0181 -0.0153   445
+JS.YC    120.1333 33.3667  -400 CMG-3ESPC        DM24             100 B R |  -0.0133  0.0033   -60
+JS.SY    120.2500 33.7667  -380 CMG-3ESPC        DM24             100 B R |   0.0000  0.0033    16
+JS.HUA   119.0050 33.6147  -345 JDF-2B           DM24             100 B R |   0.0150 -0.0147  -115
+JS.WX    120.2228 31.5253    30 CMG-3ESPB        DM24             100 B R |  -0.0028 -0.0053     0
+JS.GAY   118.9831 34.9433    65 CMG-3ESPB        DM24             100 B R |  -0.0131 -0.0133     0
+JS.DH    118.7719 34.5050    30 CMG-3ESPC        DM24             100 B R |  -0.0219 -0.0050     1
+JS.JJ    120.3031 32.0658    10 CMG-3ESPC        DM24             100 B R |  -0.0031 -0.0158     0
+JS.CZ    120.0978 31.7725   106 CMG-3ESPB        DM24             100 B R |   0.0022 -0.0425  -566
+JS.JT    119.5428 31.7342    80 CMG-3ESPC        DM24             100 B R |  -0.0128  0.0358   -60
+JS.XY    118.4919 33.0667    40 CMG-3ESPB        DM24             100 B R |  -0.0119 -0.0667     0
+JS.ZJ    119.4472 32.1483    34 CMG-3ESPB        DM24             100 B R |  -0.0172 -0.0183     0
+JS.LH    118.9447 32.5150   104 CMG-3ESPB        DM24             100 B R |  -0.0147 -0.0150     0
+JS.GC    119.0169 31.3531    50 CMG-3ESPC        DM24             100 B R |   0.0031 -0.0031   -30
+JS.XW    119.5422 34.4981    82 CMG-3ESPC        DM24             100 B R |   0.0078  0.0019     0
+JS.QSD   119.8225 34.9953    23 CMG-3ESPC        DM24             100 B R |   0.0075 -0.0753    -3
+JS.KS    120.9500 31.3900    30 CMG-3ESPB        DM24             100 B R |  -0.0500  0.0100   -10
+JS.QD    121.6700 31.8000  -380 CMG-3ESPB        DM24             100 B R |   0.0000  0.0000  -200
+JS.XH    119.8467 32.8886  -450 CMG-3ESPC        DM24             100 B R |  -0.0167  0.0314   -10
+JS.TZ    119.9192 32.4092  -490 CMG-3ESPC        DM24             100 B R |   0.0008  0.0108    30
+JS.LAS   119.4700 33.7500  -400 CMG-3ESPC        DM24             100 B R |   0.0000  0.0000   -60
+JS.RD    121.1353 32.4014  -430 CMG-3ESPC        DM24             100 B R |  -0.0053 -0.0714   -30
+JS.SH    118.1564 33.5444    35 CMG-3ESPC        DM24             100 B R |  -0.0064 -0.0144   -15
+JS.NJ2   118.8544 32.0517    45 CMG-3ESPC        DM24             100 B N |  -0.0044 -0.0017     0 JS.NJ
+JS.BY    119.2733 33.2625  -500 CMG-3ESPC        DM24             100 B R |   0.1467 -0.0925    40
+JS.CS    120.7147 31.8667    27 CMG-3ESPB        DM24             100 B R |  -0.0147 -0.1867     0
+JS.GUY   119.2378 34.3094    43 CMG-3ESPC        DM24             100 B R |  -0.0378  0.1106     2
+JS.HA    120.6589 32.4989  -450 CMG-3ESPB        DM24             100 B R |  -0.1889  0.0311    23
+JS.LIS   119.1136 31.6464    36 CMG-3ESPC        DM24             100 B R |  -0.1136  0.0036   -16
+JS.PX    116.9000 34.8000  -370 JDF-2            DM24             100 B R |  -0.3700 -0.3200    70
+JS.PZ    117.9769 34.5194    50 CMG-3ESPC        DM24             100 B R |  -0.1469 -0.3194     0
+JS.YX    119.6369 31.1550    20 CMG-3ESPC        DM24             100 B R |   0.1931  0.1750     0
+JS.SQ    118.3100 34.0500    69 FBS-3A           EDAS              50 B R |    0.0000  0.0000    0 only in the Qiyu
+#JIANGXI    lon_Q   lat_Q                                                  lon(Q-S) lat(Q-S)  alt(Q-S)
+#Q: Quyu file, S: SHIWU file
+JX.ANY   115.3900 25.1400   197 KS2000M-60S EDAS24IP        100 B R |   0.0040  0.0030   142
+JX.XUW   115.6100 25.0000   200 KS2000M-60S EDAS24IP        100 B R |  -0.0020 -0.0046   150
+JX.HUC   115.7745 25.6062   229 JCZ-1       EDASIPU         100 B N |  -0.0005  0.0001    22
+JX.SHC   116.3300 26.3000   280 KS2000M-60S EDAS24IP        100 B R |   0.0010 -0.0013   -24
+JX.DAY   114.3600 25.3900   200 KS2000M-60S EDAS24IP        100 B R |   0.0040  0.0008    -1
+JX.LON   114.8000 24.7600   160 KS2000M-60S EDAS24IP        100 B R |   0.0170  0.0094   114
+JX.GAZ   114.9800 25.7900   220 KS2000M-60S EDAS24IP        100 B R |  -0.0050  0.0003   -61
+JX.SHR   117.9760 28.4434   110 CTS-1       EDASIPU         100 B N |   0.0000  0.0000    -0
+JX.WAA   114.8000 26.3700   200 KS2000M-60S EDAS24IP        100 B R |   0.0030 -0.0048   -73
+JX.NNC   115.8000 28.7700    78 CTS-1       EDASIPU         100 B N |   0.0000  0.0000     0
+JX.YIC   114.3700 27.8100   143 BBVS-60     EDAS24IP        100 B R |   0.0000 -0.0010   -41
+JX.XIS   114.5627 29.0397   159 KS2000M-60S EDAS24IP        100 B R |   0.0003  0.0000    -0
+JX.JIJ   116.0100 29.6472   103 CTS-1       EDASIPU         100 B N |   0.0000  0.0002    17
+JX.JIX   116.2300 28.2000   225 BBVS-60     EDAS24IP        100 B R |   0.0174  0.0122     9
+JX.DUC   116.1935 29.2562   136 KS2000M-60S EDAS24IP        100 B R |   0.0005  0.0001    37
+JX.YOX   115.6065 29.0832   561 KS2000M-60S EDAS24IP        100 B R |  -0.0005  0.0000     0
+JX.YUG   116.6247 28.8265    40 KS2000M-60S EDAS24IP        100 B R |   0.0003 -0.0005     0
+JX.JDZ   117.2609 29.2755    80 KS2000M-60S EDAS24IP        100 B R |   0.0001 -0.0001     9
+JX.GAA   115.3100 28.5500   302 BBVS-60     EDAS24IP        100 B R |   0.0220  0.0135    10
+JX.FEC   115.7280 27.9326    59 KS2000M-60S EDAS24IP        100 B R |   0.0000 -0.0001     2
+JX.JGS   114.1100 26.5500  1018 KS2000M-60S EDAS24IP        100 B R |   0.0508  0.0118  -168
+JX.NAC   116.5600 27.5300   392 BBVS-60     EDAS24IP        100 B R |   0.0160  0.0093     0
+JX.LEA   115.8475 27.4102   243 KS2000M-60S EDAS24IP        100 B R |   0.0005 -0.0001    16
+JX.JIA   115.0300 27.0500   216 KS2000M-60S EDAS24IP        100 B R |   0.4100 -0.0150  -125
+LN.SNY   123.5780 41.8278    54 JCZ-1            EDAS24            50 B N |   0.0000  0.0000     0
+LN.DL2   121.6280 38.9060    65 CTS-1            EDAS24L           50 B N |   0.0003  0.0002    -3 LN.DLI
+LN.CHY   120.4870 41.5750   208 CTS-1            EDAS24C6L        100 B N |  -0.0017 -0.0017     0
+LN.DDO   124.3910 40.1456    72 CTS-1            EDAS24C6L        100 B N |  -0.0007  0.0001   -27
+LN.YKO   122.6032 40.8350    80 KS2000           SMART24          100 B N |   0.0000 -0.1515     0
+LN.ANS   123.0130 41.1053   112 BBVS-60          EDAS24IP         100 B R |   0.0004  0.0001   -34
+LN.LYN   123.2860 41.2720    67 BBVS-60          EDAS24IP         100 B R |  -0.0027 -0.0053     0
+LN.XYN   123.2600 40.2148   107 BBVS-60          EDAS24IP         100 B R |  -0.0005  0.0597     0
+LN.FKU   123.3980 42.5092   177 BBVS-60          EDAS24IP         100 B R |  -0.0512 -0.0009    -7
+LN.XFN   124.7109 42.7427   212 BBVS-60          EDAS24IP         100 B R |   0.0011 -0.0007   -77
+LN.TIL   123.9140 42.2675    97 BBVS-60          EDAS24IP         100 B R |  -0.0140 -0.0008     4
+LN.QYU   124.9330 42.0805   318 BBVS-60          EDAS24IP         100 B R |  -0.0044 -0.0017   -31
+LN.LHT   123.9500 41.8300   110 BBVS-60          EDAS24IP         100 B R |   0.0000  0.0000     0
+LN.FSH   123.9220 41.8970   126 BBVS-60          EDAS24IP         100 B R |  -0.0053 -0.0137   -13
+LN.MQI   124.6410 41.7870   312 BBVS-60          EDAS24IP         100 B R |  -0.0521 -0.0191     0
+LN.BXI   123.7800 41.2700    24 BBVS-60          EDAS24IP         100 B R |  -0.0003 -0.0030   625
+LN.HUR   125.3543 41.2780   296 BBVS-60          EDAS24IP         100 B R |  -0.0005  0.0008     0
+LN.KDN   124.7800 40.7410   321 BBVS-60          EDAS24IP         100 B R |   0.0021  0.0000     6
+LN.GAX   122.3660 40.4130    34 BBVS-60          EDAS24IP         100 B R |   0.0003  0.0003   -11
+LN.GUS   123.5950 39.8996    26 BBVS-60          EDAS24IP         100 B R |  -0.0117  0.0004    54
+LN.LYA   119.3823 41.2187   443 BBVS-60          EDAS24IP         100 B R |   0.0000  0.0000     5
+LN.JCA   119.8769 40.8286   429 BBVS-60          EDAS24IP         100 B R |   0.0000  0.0000    -3
+LN.SHS   120.9660 40.7219    65 BBVS-60          EDAS24IP         100 B R |   0.0000  0.0000     0
+LN.NAP   120.7580 41.0890   106 BBVS-60          EDAS24IP         100 B R |   0.0002  0.0000     0
+LN.BEP   120.7076 41.7887   265 BBVS-60          EDAS24IP         100 B R |  -0.0089 -0.0054    -5
+LN.JZH   121.1400 41.0800    60 BBVS-60          EDAS24IP         100 B R |  -0.0001 -0.0046   -13
+LN.FXI   121.5990 42.0527   204 BBVS-60          EDAS24IP         100 B R |   0.0003  0.0001   -27
+LN.WFD   121.9870 39.6298   240 BBVS-60          EDAS24IP         100 B R |   0.0004  0.0000    12
+LN.XMN   122.8700 42.0700    88 BBVS-60          EDAS24IP         100 B R |  -0.0022  0.0009     0
+LN.HXQ   122.7720 42.5847   191 BBVS-60          EDAS24IP         100 B R |  -0.0004 -0.0001  -118
+LN.BZH   121.7600 41.6000    75 BBVS-60          EDAS24IP         100 B R |   0.0041 -0.0009     0
+LN.HSH   121.2740 39.5373   308 BBVS-60          EDAS24IP         100 B R |   0.0000  0.0000  -243
+LN.GSH   122.2600 41.3100     6 FSS-3DBH         EDAS24           100 S R |  -0.0045  0.0048     0
+LN.H58   122.2560 40.9866   386 FSS-3DBH         EDAS24           100 S R |  -0.0005  0.0017  -379
+LN.SUZ   120.3325 40.3291    41 BBVS-60          EDAS24IP         100 B N |   0.0000  0.0000     0 #CC.SUZ      120.245     40.377
+#LN.SUZ instrument type was not given
+#NAIMEN    lon_Q   lat_Q                                                  lon(Q-S) lat(Q-S)  alt(Q-S)
+#Q: Quyu file, S: SHIWU file
+NM.AGL   122.6287 43.3034   207 CTS-1            EDAS24IP         100 B N |  -0.0012  0.0000     0
+NM.ARS   119.9520 47.1742  1077 CTS-1            EDAS24IP         100 B N |   0.0000  0.0000     0
+NM.BAC   115.2681 41.8989  1477 CTS-1            EDAS24IP         100 B N |   0.0000  0.0000     0
+NM.BHS   112.0258 40.9650  1510 BBVS-60          EDAS24IP2        100 B R |   0.0000  0.0000     0
+NM.BLM   110.4280 41.7100  1337 BBVS-60          EDAS24IP2        100 B R |   0.0000  0.0000     0
+NM.BTO   110.0330 40.5983  1076 KS2000           SMART24R         100 B N |  -0.1552  0.1454   229
+NM.BYT   105.7168 38.8461  1601 BBVS-120         EDAS24IP         100 B R |   0.0000  0.0000     0
+NM.CHF   118.9806 42.2966   559 CTS-1            EDAS24IP         100 B N |   0.0000  0.0000     0
+NM.CHR   121.1770 47.9734   797 BBVS-60          EDAS24IP2        100 B R |   0.0000  0.0000     0
+NM.CSQ   111.0480 40.7279  1067 BBVS-120         EDAS24IP         100 B R |   0.0000  0.0000     0
+NM.DSH   110.0150 39.8004  1446 BBVS-60          EDAS24IP2        100 B R |   1.0000  0.0000    20
+NM.DSM   107.0540 41.0947  1059 BBVS-60          EDAS24IP2        100 B R |   0.0000  0.0000     0
+NM.GNH   121.4618 50.7767   724 CTS-1            EDAS24IP         100 B N |   0.0000  0.0000     0
+NM.HHC   111.5640 40.8500  1169 JCZ-1            EDAS24            50 B N |   0.0000 -0.0010 -1169
+NM.HLG   111.8440 40.3762  1194 BBVS-60          EDAS24IP2        100 B R |   0.0000  0.0000     0
+NM.HLH   119.6590 45.4689   894 BBVS-60          EDAS24IP2        100 B R |   0.0000  0.0000     0
+NM.HLR   119.7420 49.2670   610 GS-13            Q680              50 S N |  -0.0010  0.0030  -610  NM.HIA
+NM.IDR   122.8900 48.0293   413 BBVS-60          EDAS24IP2        100 B R |   0.0000 -1.2980  -175
+NM.JIN   113.1520 40.9968  1364 BBVS-120         EDAS24IP         100 B R |   0.0000  0.0000     0
+NM.JIP   117.5450 43.2445  1081 BBVS-60          EDAS24IP2        100 B R |   0.0000  0.0000     0
+NM.LCH   112.5109 40.5411  1271 BBVS-120         EDAS24IP         100 B R |   0.0000  0.0000     0
+NM.LIX   118.0540 43.6221   840 BBVS-60          EDAS24IP2        100 B R |   0.0000  0.0000     0
+NM.LUB   120.8820 44.5462   303 BBVS-60          EDAS24IP2        100 B R |   0.0000  0.0000     0
+NM.MDG   120.7780 51.2719   721 BBVS-60          EDAS24IP2        100 B R |   0.0000  0.0000     0
+NM.MZL   117.4400 49.5545   755 BBVS-60          EDAS24IP2        100 B R |   0.0000  0.0000     0
+NM.NIC   118.8750 41.7251   693 BBVS-60          EDAS24IP2        100 B R |   0.0000  0.0000     0
+NM.NJT   123.3860 48.1840   291 BBVS-60          EDAS24IP2        100 B R |   0.0000  0.0000     0
+NM.QSH   111.6734 39.8998  1185 BBVS-60          EDAS24IP2        100 B R |   0.0000 -0.0010     0
+NM.RLT   111.9228 43.6860   959 BBVS-60          EDAS24IP2        100 B R |   0.0000  0.0000     0
+NM.TIS   120.1120 43.8630   396 BBVS-60          EDAS24IP2        100 B R |   0.0000  0.0000     0
+NM.WJH   108.0780 41.3041  1092 JCZ-1            EDAS24IP         100 B N |   0.0000  0.0000     0
+NM.WLH   111.7060 41.5191  1515 BBVS-60          EDAS24IP2        100 B R |   0.0000  0.0000     0
+NM.WLT   122.0271 46.0398   377 CTS-1            EDAS24IP         100 B N |   0.0000  0.0000     0
+NM.WUH   106.8392 39.6645  1120 BBVS-60          EDAS24IP2        100 B R |   0.0000  0.0000     0
+NM.XIH   119.8890 42.2524   626 BBVS-60          EDAS24IP2        100 B R |   0.0000  0.0021     0
+NM.XIQ   116.7860 48.6518   571 BBVS-60          EDAS24IP2        100 B R |   0.0000  0.0000     0
+NM.XLT   116.0790 43.9000  1030 CTS-1            EDAS24            50 B N |  -0.0050 -0.0070    0
+NM.XSZ   108.7333 40.7397  1027 BBVS-60          EDAS24IP2        100 B R |   0.0007  0.0001    91
+NM.ZLT   122.6520 48.0293   413 BBVS-60          EDAS24IP2        100 B R |   0.0000  0.0000     0
+#NINGXIA    lon_Q   lat_Q                                                  lon(Q-S) lat(Q-S)  alt(Q-S)
+#Q: Quyu file, S: SHIWU file
+NX.SZS   106.6599 39.2830  1275 FBS-3B           EDASC24           50 B R |  -0.0005 -0.0039    25 CTS-1
+NX.TLE   106.6967 38.8125  1109 JDF-2            DM24             100 B R |  -0.0134 -0.0125   -19
+NX.YCH   105.9170 38.5999  1545 CTS-1            EDAS24IP         100 B N |   0.0000  0.0401     0
+NX.NSS   106.0816 37.6953  1427 CMG-3ESP         DM24             100 B R |   0.0009  0.0045    33
+NX.YCI   107.4372 37.7785  1312 KS2000           SMART24R         100 B N |  -0.0030  0.0007    24
+NX.ZHW   105.2430 37.5830  1220 FBS-3B           EDASC24           50 B R |   0.0864  0.0169    39
+NX.XSH   105.2000 37.2000  1200 CMG-3ESP         DM24             100 B R |   0.0115  0.0333   540
+NX.HYU   105.6007 36.5012  1225 FBS-3B           EDAS24IP         100 B R |   0.0015  0.0296  1000 DS-4A
+NX.XJI   105.7582 36.0876  1830 CMG-3ESP         DM24             100 B R |   0.0202  0.0095     0
+NX.GYU   106.1694 35.9611  1926 CTS-1E           EDASC24L6        100 B N |   0.0000  0.0000     0
+NX.JYU   106.3397 35.4861  1890 FBS-3B           EDASC24           50 B R |   0.0103 -0.0094     0
+NX.LWU   106.3316 38.1013  1200 JDF-2            DM24             100 B R |   0.1337  0.2189     0
+NX.TXN   106.2827 37.3032  2553 FBS-3B           EDASC24           50 B R |   0.1256 -0.1002 -1055
+#QINGHAI    lon_Q   lat_Q                                                  lon(Q-S) lat(Q-S)  alt(Q-S)
+#Q: Quyu file, S: SHIWU file
+QH.XIN   101.7247 36.6280  2327 BBVS-60          EDAS24IP         100 B R |   0.0000 -0.0002    25
+QH.MEY   101.4000 37.4716  2948 BBVS-60          EDAS24IP         100 B R |   0.0000  0.0000    30
+QH.LED   102.3971 36.5513  2164 BBVS-60          EDAS24IP         100 B R |   0.0001  0.0001     5
+QH.TOR   102.0094 35.5192  2533 BBVS-60          EDAS24IP         100 B R |   0.0002 -0.0001   -11
+QH.DAT   101.6970 36.9439  2407 BBVS-60          EDAS24IP         100 B R |   0.0003  0.0000    68
+QH.MIH   102.7842 36.3687  2530 BBVS-60          EDAS24IP         100 B R |   0.0000  0.0000     0
+QH.HUL   102.2481 36.0737  3134 BBVS-60          EDAS24IP         100 B R |   0.0000  0.0000     0
+QH.TIJ    98.8953 37.2491  3648 BBVS-60          EDAS24IP         100 B R |   0.0000  0.0000     0
+QH.DCD    95.3759 37.9324  3570 BBVS-60          EDAS24IP         100 B R |   0.0000  0.0000     0
+QH.LEH    93.4144 38.8189  2775 BBVS-60          EDAS24IP         100 B R |   0.0000  0.0000     0
+QH.XIH    99.8089 35.5070  3832 BBVS-60          EDAS24IP         100 B R |   0.0000  0.0000   -24
+QH.MAD    98.2078 34.9199  4289 BBVS-60          EDAS24IP         100 B R |   0.0003  0.0000    -9
+QH.BAM   100.7266 32.9486  3502 BBVS-60          EDAS24IP         100 B R |   0.0004  0.0000    68
+QH.QML    95.8299 34.1709  4328 BBVS-60          EDAS24IP         100 B R |  -0.0002  0.0000    -3
+QH.ZAD    95.3169 32.8941  3916 BBVS-60          EDAS24IP         100 B R |   0.0000  0.0002   160
+QH.LJS   101.4500 36.3553  3868 BBVS-60          EDAS24IP         100 B R |   0.0000  0.0000   -10
+QH.QSS   101.9750 36.2679  3364 BBVS-60          EDAS24IP         100 B R |  -0.0001  0.0003   -22
+QH.XUH   102.4976 35.8625  1958 BBVS-60          EDAS24IP         100 B R |   0.0000  0.0000   -10
+QH.LYX   101.1817 35.8714  3310 BBVS-60          EDAS24IP         100 B R |  -0.0003  0.0000     0
+QH.LJX   101.8392 35.9929  2892 BBVS-60          EDAS24IP         100 B R |   0.0000  0.0000    42
+QH.HUY   101.2550 36.6889  2829 CTS-1            EDAS24L6         100 B N |  -0.0632 -0.0327    -3
+QH.DUL    98.1195 36.2822  3224 CTS-1            EDAS24L6         100 B N |   0.0000  0.0000    -4
+QH.DLH    97.3667 37.3667  2975 CTS-1            EDAS24L6         100 B N |   0.0108  0.0140    20
+QH.DAW   100.2482 34.4779  3735 CTS-1            EDAS24L6         100 B N |   0.0002  0.0003     1
+QH.YUS    97.0153 33.0119  3725 KS2000           SMART24R         100 B R |   0.0002  0.0000    42
+QH.QIL   100.1818 38.1497  3110 CTS-1            EDAS24L6         100 B N |   0.0000  0.0000    28
+QH.TTH    92.3208 34.2186  4640 KS2000           SMART24R         100 B N |  -0.0002  0.0001    -8
+QH.GOM    94.8145 36.1984  3121 JCZ-1            EDAS24IP         100 B N |   0.0000  0.0000     0
+QH.HTG    90.7138 37.8664  3194 CTS-1            EDAS24IP         100 B N |   0.0008 -0.0020    16 QH.GEM
+QH.LWS   102.1214 36.9182  3163 BBVS-60          EDAS24IP         100 B R |   0.0008 -0.0020    16 QH.HUZ
+QH.ZEK   101.4670 35.0330  3661
+#SICHUAN    lon_Q   lat_Q                                                  lon(Q-S) lat(Q-S)  alt(Q-S)
+#Q: Quyu file, S: SHIWU file
+SC.BTA    99.1172 30.0101  2639 CTS-1E           EDAS24L         100 B N |   0.0000  0.0000     0
+SC.GZA   102.1726 30.1173  1410 CTS-1E           EDAS24L         100 B N |   0.0000  0.0000     0
+SC.XCE    99.7917 28.9417  3000 CTS-1E           EDAS24L         100 B N |   0.0000  0.0000     0
+SC.SPA   103.6031 32.6497  2905 CTS-1E           EDAS24L         100 B N |   0.0000  0.0000     0
+SC.LZH   105.4136 28.8724   330 CMG-3ESPB        DM24            100 B R |   0.0000  0.0000     0
+SC.PZH   101.7425 26.5033  1190 CTS-1E           EDAS24IP        100 B N |   0.0000  0.0000     0
+SC.CD2   103.7578 30.9100   653 JCZ-1            EDAS24IP        100 B N |   0.0000  0.0000     0
+SC.LTA   100.2694 30.0004  3951 CMG-3ESPC        EDAS24IP        100 B R |   0.0000  0.0000     0
+SC.YJI   101.0117 30.0344  2670 CMG-3ESPC        EDAS24IP        100 B R |   0.0000  0.0000     0
+SC.XCO   105.9016 31.0183   336 CMG-3ESPC        EDAS24IP        100 B R |   0.0000  0.0000     0
+SC.XHA   107.7175 31.3738   390 CMG-3ESPC        EDAS24IP        100 B R |   0.0000  0.0000     0
+SC.BZH   106.7445 31.8408   442 CMG-3ESPC        EDAS24IP        100 B R |   0.0000  0.0000     0
+SC.WMP   103.7895 29.0526  1260 CMG-3ESPC        EDAS24IP        100 B R |   0.0000  0.0000     0
+SC.YGD   104.1025 30.2009   800 CMG-3ESPC        EDAS24IP        100 B R |   0.0000  0.0000     0
+SC.JMG   105.5597 32.2054   801 CMG-3ESPC        EDAS24IP        100 B R |   0.0000  0.0000     0
+SC.MDS   103.0408 30.0748  1210 CMG-3ESPC        EDAS24IP        100 B R |   0.0000  0.0000     0
+SC.YZP   103.5689 30.8692   766 CMG-3ESPC        EDAS24IP        100 B R |   0.0000  0.0000     0
+SC.EMS   103.4542 29.5767   467 CMG-3ESPC        EDAS24IP        100 B R |   0.0000  0.0000     0
+SC.JJS   104.5456 31.0045   908 CMG-3ESPC        EDAS24IP        100 B R |   0.0000  0.0000     0
+SC.ZJG   104.6729 31.7925   612 CMG-3ESPC        EDAS24IP        100 B R |   0.0000  0.0000     0
+SC.HYS   106.8402 30.4163   473 CMG-3ESPC        EDAS24IP        100 B R |   0.0000  0.0000     0
+SC.HMS   104.3979 29.5717   839 CMG-3ESPC        EDAS24IP        100 B R |   0.0000  0.0000     0
+SC.HWS   104.7359 28.6360   860 CMG-3ESPC        EDAS24IP        100 B R |   0.0002  0.0036     0
+SC.MEK   102.2239 31.9039  2765 CMG-3ESPC        EDAS24IP        100 B R |   0.0000  0.0000     0
+SC.REG   102.9647 33.5815  3470 CMG-3ESPC        EDAS24IP        100 B R |   0.0000  0.0000     0
+SC.QCH   105.2277 32.5932   800 CMG-3ESPC        EDAS24IP        100 B R |   0.0000  0.0000     0
+SC.PWU   104.5482 32.4157   882 CMG-3ESPC        EDAS24IP        100 B R |   0.0000  0.0000     0
+SC.RTA   100.9799 32.2687  3317 CMG-3ESPC        EDAS24IP        100 B R |   0.0000  0.0000     0
+SC.HSH   102.9867 32.0637  2344 CMG-3ESPC        EDAS24IP        100 B R |   0.0000  0.0000     0
+SC.MXI   103.8521 31.6809  1584 CMG-3ESPC        EDAS24IP        100 B R |   0.0000  0.0000     0
+SC.DFU   101.1215 30.9910  3035 CMG-3ESPC        EDAS24IP        100 B R |   0.0000  0.0000     0
+SC.GZI   100.0185 31.6101  3360 CMG-3ESPC        EDAS24IP        100 B R |   0.0000  0.0000     0
+SC.WCH   103.5876 31.4790  1315 CMG-3ESPC        EDAS24IP        100 B R |   0.0000  0.0000     0
+SC.XJI   102.3579 30.9950  2427 CMG-3ESPC        EDAS24IP        100 B R |   0.0000  0.0000     0
+SC.JYA   103.9276 29.7939   570 CMG-3ESPC        EDAS24IP        100 B R |   0.0000  0.0000     0
+SC.SMI   102.3495 29.2260   860 CMG-3ESPC        EDAS24IP        100 B R |   0.0000  0.0000     0
+SC.JLO   101.5125 28.9958  2915 CMG-3ESPC        EDAS24IP        100 B R |   0.0000  0.0000     0
+SC.MBI   103.5336 28.8405   640 CMG-3ESPC        EDAS24IP        100 B R |   0.0000  0.0000     0
+SC.JLI   104.5156 28.1789   480 CMG-3ESPC        EDAS24IP        100 B R |   0.0000  0.0000     0
+SC.LBO   103.5703 28.2722  1310 CMG-3ESPC        EDAS24IP        100 B R |   0.0000  0.0000     0
+SC.AXI   104.4311 31.6380   587 CMG-3ESPC        EDAS24IP        100 B R |   0.0000  0.0000     0
+SC.YYC   102.2596 27.8486  1608 CMG-3ESPC        EDAS24IP        100 B R |   0.0000  0.0000     0
+SC.HLI   102.2528 26.6530  1836 CMG-3ESPC        EDAS24IP        100 B R |   0.0000  0.0000     0
+SC.PGE   102.5424 27.3839  1427 CMG-3ESPC        EDAS24IP        100 B R |   0.0000  0.0000     0
+SC.YYU   101.6776 27.4669  2596 CMG-3ESPC        EDAS24IP        100 B R |   0.0000  0.0000     0
+SC.MLI   101.2719 27.9324  2437 CMG-3ESPC        EDAS24IP        100 B R |   0.0000  0.0000     0
+SC.MGU   103.1346 28.3274  2056 CMG-3ESPC        EDAS24IP        100 B R |   0.0000  0.0000     0
+SC.LGH   100.8615 27.7143  2669 CMG-3ESPC        EDAS24IP        100 B R |   0.0000  0.0000     0
+SC.BYD   103.1877 27.8095  3142 BBVS-60          EDAS24IP        100 B R |   0.0000  0.0002    18
+SC.SMK   102.7503 26.8548  2385 BBVS-60          EDAS24IP        100 B R |  -0.0003  0.0005   -25
+SC.XSB   102.4491 27.8615  2800 BBVS-60          EDAS24IP        100 B R |  -0.0013  0.0007     0
+SC.MNI   102.1739 28.3326  1657 BBVS-60          EDAS24IP        100 B R |   0.0000  0.0000     0
+SC.TQU	102.7643	30.0735	754	BBVS-60	EDAS-24IP	100	1259	1259	1259	10
+SC.BAX	102.8131	30.3715	997	BBVS-60	EDAS-24IP	100	1259	1259	1259	10
+SC.AYU	105.3365	30.0521	348	BBVS-60	EDAS-24IP	100	1259	1259	1259	10
+SC.YTI	105.3612	31.212	385	BBVS-60	EDAS-24IP	100	1259	1259	1259	10
+SC.CXI	105.9504	31.707	458	BBVS-60	EDAS-24IP	100	1259	1259	1259	10
+SC.WCA	106.1967	32.1771	610	BBVS-60	EDAS-24IP	100	1259	1259	1259	10
+SC.HYU	102.5242	32.813	3495	BBVS-60	EDAS-24IP	100	1259	1259	1259	10
+SC.JZG	104.2363	33.2573	1442	BBVS-60	EDAS-24IP	100	1259	1259	1259	10
+#SHANDONG    lon_Q   lat_Q                                                  lon(Q-S) lat(Q-S)  alt(Q-S)
+#Q: Quyu file, S: SHIWU file
+# SD.DLI instrument types were not given
+SD.RSH   121.5992 36.9202    98 BBVS-120         EDAS24IP         100 B R |   0.0000  0.0000     0
+SD.WED   121.9230 37.1781    99 BBVS-60          EDAS24IP         100 B R |   0.0000  0.0000     0
+SD.RZH   119.5230 35.4220   880 BBVS-60          EDAS24IP         100 B R |   0.0000  0.0000  -792
+SD.LQU   118.4850 36.4088   208 BBVS-120         EDAS24IP         100 B R |   0.0000  0.0000     0
+SD.YSH   118.6270 35.7878   174 BBVS-120         EDAS24IP         100 B R |   0.0000  0.0000     0
+SD.LIS   118.6850 34.9510   192 BBVS-60          EDAS24IP         100 B R |   0.0000  0.0000     0
+SD.JUN   118.8450 35.1720   134 BBVS-60          EDAS24IP         100 B R |   0.0000  0.0000     0
+SD.JIN   117.0401 36.6391   131 CMG-3ESP         EDAS24IP         100 B R |   0.0000  0.0000     0
+SD.ZCH   117.0140 35.3756   138 CMG-3ESP         EDAS24IP         100 B R |   0.0000  0.0000     0
+SD.CHW   115.8690 34.9430    63 FSS-3DBH         EDAS24IP         100 S R |   0.0000  0.0000     0
+SD.WEH   122.0930 37.5083    88 FSS-3DBH         EDAS24IP         100 S R |   0.0000  0.0000     0
+SD.RCH   122.4200 37.1706    64 BBVS-60          EDAS24IP         100 B R |   0.0000  0.0000     0
+SD.XIT   117.7633 35.9474   280 BBVS-60          EDAS24IP         100 B R |   0.0000  0.0000     0
+SD.ANQ   119.2180 36.3738   100 CMG-3ESP         EDAS24IP         100 B R |   0.0000  0.0000     0
+SD.TCH   118.4570 34.7029   110 BBVS-120         EDAS24IP         100 B R |   0.0000  0.0000     0
+SD.CSH   118.0490 34.8529    65 CMG-3ESP         EDAS24IP         100 B R |   0.0000  0.0000     0
+SD.WUL   119.2020 35.7506   152 BBVS-60          EDAS24IP         100 B R |   0.0000  0.0000     0
+SD.LAY   120.7208 36.9878    77 BBVS-120         EDAS24IP         100 B R |   0.0000  0.0000    -0
+SD.JUX   118.8950 35.5435     0 BBVS-120         EDAS24IP         100 B R |   0.0000  0.0000     0
+SD.CHD   120.7420 37.9127    50 BBVS-60          EDAS24IP         100 B R |   0.0000  0.0000     0
+SD.BHC   120.9093 38.3916    54 BBVS-60          EDAS24IP         100 B R |   0.0000  0.0000     0
+SD.DSD   116.7470 35.1011    72 BBVS-60          EDAS24IP         100 B R |   0.0000  0.0000    -0
+SD.LSH   116.0810 35.8069    60 BBVS-120         EDAS24IP         100 B R |   0.0000  0.0000    -0
+SD.LZH   121.0010 37.2236   239 BBVS-60          EDAS24IP         100 B R |   0.0000  0.0000  -154
+SD.LOK   120.5082 37.5517   168 BBVS-60          EDAS24IP         100 B R |   0.0000  0.0000     0
+SD.DOY   118.4990 37.4663    13 FSS-3DBH         EDAS24IP         100 S R |   0.0000  0.0000     0
+SD.HAY   121.3240 36.8197    79 BBVS-60          EDAS24IP         100 B R |   0.0000  0.0000    -0
+SD.WEF   119.3666 36.7025   104 FSS-3DBH         EDAS24IP         100 S R |   0.0000  0.0000     0
+SD.DZH   116.2993 37.4546    35 FSS-3DBH         EDASC24B         100 S R |   0.0000  0.0000     0
+SD.NLA   117.9830 35.5225   267 BBVS-120         EDAS24IP         100 B R |   0.0000  0.0000     0
+SD.LCH   116.0340 36.4330    34 FSS-3DBH         EDAS24IP         100 S R |   0.0000  0.0000     0
+SD.HAH   118.9816 37.1245     6 FSS-3DBH         EDAS24IP         100 S R |   0.0000  0.0000     0
+SD.YTA   121.3875 37.5203    20 KS2000           SMART24R         100 B N |   0.0000  0.0044    32
+SD.QID   120.3950 36.0570    14 CTS-1            EDAS24IP         100 B N |  -0.0012  0.0002     1
+SD.JIX   116.3499 35.4000   108 CTS-1            EDAS24IP         100 B N |  -0.0005  0.0016   -63
+SD.TIA   117.1240 36.2100   266 JCZ-1            EDAS24IP          50 B N |  -0.0012 -0.0003    -0
+SD.SHH   117.3060 37.1983    18 FSS-3DBH         EDAS24IP         100 S R |  -0.1460  0.1117     0
+SD.DLI   117.6807 38.0001    19 FSS-3DBH         EDAS24IP         100 S R |   0.0000  0.0000     0
+SD.DSH	 117.6670 38.0100    42	FBS-3H/VBB	EDAS-24L	100   SD.DAS
+SD.LAS   119.31900  35.13000   24
+#SHANGHAI    lon_Q   lat_Q                                                  lon(Q-S) lat(Q-S)  alt(Q-S)
+#Q: Quyu file, S: SHIWU file
+SH.DYS   122.0667 30.5833    10 CMG-3ESPC        TED324CI         100 B R |  -0.0067  0.0067     5
+SH.NAH   121.7556 31.0475  -320 CMG-3TB          DM24         100 B R |  -0.0056 -0.0375  -192  JDF-2    TED324I
+SH.ZHY   121.5167 31.2333  -487 CMG-3TB          DM24         100 B R |  -0.0067  0.0067  -113
+SH.TMS   121.1483 31.0783    25 KS-2000          TED324CI         100 B R |   0.0017  0.0017     1
+SH.XKS   121.1419 31.0578    20 KS-2000          TED324CI         100 B R |  -0.0019  0.0022    10
+SH.DOT   121.9500 31.5500  -421 FSS-3DBH         TED324CI         100 S R |   0.0000 -0.0300     0
+SH.JIZ   120.9033 31.0775  -305 FSS-3DBH         EADS24IP        100 S R |  -0.0033 -0.0075     0
+SH.DAX   121.5333 31.5833  -363 FSS-3DBH         EADS24IP        100 S R |  -0.0233 -0.0633     0
+SH.SSE   121.1860 31.1000    15 STS-2            Q680              50 B N |   0.0010 -0.0040     0  STS-1
+SH.HUH   119.7975 30.4478    50 CMG-3ESPC        TED324CI         100 B R |  -0.3275 -0.1878   -32
+SH.QHS   121.2592 30.7922    10 CMG-3ESPC        TED324CI         100 B R |  -0.1092  0.6778     3
+SH.TPS   120.4942 31.2892    20 CMG-3ESPC        TED324CI         100 B R |  -0.2042 -0.1192    19
+#SHANNXI
+SN.ANKG  109.0372 32.6698   297 JCZ-1            EDAS24L          100 B N |   0.0000  0.0000     0
+SN.ANKT  109.0372 32.6698   297 FBS-3A           EDASC24B          50 B R |   0.0000  0.0000     0 
+SN.BIXT  108.0833 35.0667   840 FBS-3A           EDASC24B          50 B R |   0.0000  0.0000     0
+SN.FUPI  109.1454 34.9740  1100 DS-3K            TDE324CI         100 B R |   0.0000  0.0000     0
+SN.HEYT  110.0633 35.4067  1160 KS2000           EDAS24IP         100 B R |   0.0000  0.0000     0
+SN.HUAX  109.7197 34.4009   876 KS2000           EDAS24IP         100 B R |   0.0000  0.0000     0
+SN.HUYT  110.1667 34.5200   860 FBS-3A           EDASC24B          50 B R |   0.0000  0.0000     0
+SN.HZHG  107.4325 33.2532   497 CTS-1            EDAS24L          100 B N |   0.0000  0.0000     0
+SN.HZHT  107.0097 33.0183   553 FBS-3A           EDASC24B          50 B R |   0.0000  0.0000     0
+SN.JYAT  108.7528 34.7089   685 FBS-3A           EDASC24B          50 B R |   0.0000  0.0000     0
+SN.LANT  109.3756 34.1128   740 DS-3K            TDE324CI         100 B R |   0.0000  0.0000     0
+SN.LINT  109.2124 34.3523   730 DS-3K            TDE324CI         100 B R |   0.0000  0.0000     0
+SN.LIYO  107.8064 34.6766  1027 KS2000           EDAS24IP         100 B R |   0.0000  0.0000     0
+SN.LOXT  106.7004 34.9694  1080 FBS-3A           EDASC24B          50 B R |   0.0000  0.0000     0
+SN.LUYA  106.1395 33.3568   676 KS2000           EDAS24IP         100 B R |   0.0000  0.0000     0
+SN.MEIX  107.8170 34.1283   942 KS2000           EDAS24IP         100 B R |   0.0000  0.0000     0
+SN.MIAX  106.8002 33.2293  1151 KS2000           EDAS24IP         100 B R |   0.0000  0.0000     0
+SN.NSHT  108.3234 33.3253   850 FBS-3A           EDASC24B          50 B R |   0.0000  0.0000     0
+SN.PCHT  109.4267 35.0583  1010 FBS-3A           EDASC24B          50 B R |   0.0000  0.0000     0
+SN.QLIT  108.2172 34.5697   885 FBS-3A           EDASC24B          50 B R |   0.0000  0.0000     0
+SN.SHAZ  109.8740 33.5124   836 KS2000           EDAS24IP         100 B R |   0.0000  0.0000     0
+SN.SHNA  110.8654 33.5180   461 KS2000           EDAS24IP         100 B R |   0.0000  0.0000     0
+SN.SHWA  106.9373 34.5538   971 KS2000           EDAS24IP         100 B R |   0.0000  0.0000     0
+SN.SUDE  110.2312 37.4946   856 KS2000           EDAS24IP         100 B R |   0.0000  0.0000     0
+SN.TABT  107.2852 34.0707  1710 FBS-3A           EDASC24B          50 B R |   0.0000  0.0000     0
+SN.TOCH  109.1251 35.3920  1405 KS2000           EDAS24IP         100 B R |   0.0000  0.0000     0
+SN.XANT  108.9242 34.0317   630 FBS-3A           EDASC24B          50 B N |   0.0000  0.0000     0 
+SN.XAN   108.9242 34.0317   630 FBS-3A           EDASC24B         100 B N |   0.0000  0.0000     0
+SN.XIXI  107.7161 32.9101   561 KS2000           EDAS24IP         100 B R |   0.0000  0.0000     0
+SN.YAAN  109.3254 36.8721  1138 KS2000           EDAS24IP         100 B R |   0.0000  0.0000     0
+SN.YULG  110.5075 38.8559  1010 KS2000           SMART24R         100 B N |   0.0000  0.0000     0
+SN.YULT  109.5006 38.4428  1190 KS2000           EDAS24IP         100 B R |   0.0000  0.0000     0
+SN.ZOZ1  108.3242 34.0553   610 FBS-3A           EDASC24B          50 B R |   0.0000  0.0000     0
+SN.ZOZT  108.3242 34.0553   610 KS2000           EDAS24IP         100 B R |   0.0000  0.0000     0
+#SHANXI    lon_Q   lat_Q                                                  lon(Q-S) lat(Q-S)  alt(Q-S)
+#Q: Quyu file, S: SHIWU file
+SX.SHZ   113.2374 40.1416  1180 KS2000           SMART24          100 B R |   0.0000  0.0000   -10
+SX.HSH   113.7208 39.6684  1800 BBVS-60          EDAS24IP         100 B R |   0.0000  0.0000     0
+SX.SZZ   113.7131 40.0845  1100 BBVS-120         EDAS24IP         100 B R |   0.0000  0.0000     0
+SX.YMG   112.8067 39.2289  1300 BBVS-60          EDAS24IP         100 B R |   0.0000  0.0000     0
+SX.YAY   114.1577 39.9550  1060 BBVS-120         EDAS24IP         100 B R |   0.0000  0.0000     0
+SX.YUY   112.3693 40.0235  1590 BBVS-60          EDAS24IP         100 B R |   0.0000  0.0000     0
+SX.ZCH   113.3483 40.2723  1440 CMG-3ESPC        DM24             100 B R |   0.0000  0.0000     0
+SX.DAX   113.0557 39.0518  1100 CMG-3ESPC        DM24             100 B R |   0.0000  0.0000     0
+SX.NIW   112.3360 38.6870  1700 CMG-3ESPC        DM24             100 B R |   0.0000  0.0000     0
+SX.KEL   111.7198 38.7784  1500 CMG-3ESPC        DM24             100 B R |   0.0000  0.0000     0
+SX.BOD   111.0010 38.9549   900 CMG-3ESPC        DM24             100 B R |   0.0000  0.0000     0
+SX.PIG   111.5135 39.4516  1210 CMG-3ESPC        DM24             100 B R |   0.0000  0.0000     0
+SX.DOS   112.7410 37.9294  1000 BBVS-120         EDAS24IP         100 B R |   0.0000  0.0000     0
+SX.LOF   111.9509 38.0411  1480 CMG-3ESPC        DM24             100 B R |   0.0000  0.0000     0
+SX.JIC   112.4360 37.7123   840 BBVS-120         EDAS24IP         100 B R |   0.0000  0.0000     0
+SX.XIY   113.7208 37.5690   940 CMG-3ESPC        DM24             100 B R |   0.0000  0.0000     0
+SX.TAG   112.5782 37.3671  1720 CMG-3ESPC        DM24             100 B R |   0.0000  0.0000     0
+SX.ZOQ   113.3502 37.0993   890 CMG-3ESPC        DM24             100 B R |   0.0000  0.0000     0
+SX.LIS   111.2418 37.5290  1020 CMG-3ESPC        DM24             100 B R |   0.0000  0.0000     0
+SX.LIF   111.3667 36.0883   500 CTS-1            EDAS24IP         100 B R |   0.0000  0.0000     0
+SX.XIX   110.9530 36.7026  1100 CMG-3ESPC        DM24             100 B R |  -0.0030 -0.0026     0
+SX.ANZ   112.2514 36.1571   900 CMG-3ESPC        DM24             100 B R |  -0.0014  0.0029     0
+SX.HZH   111.8990 36.6099  1020 CMG-3ESPC        DM24             100 B R |   0.0000 -0.0009     0
+SX.HMA   111.4100 35.5800   540 CMG-3ESPC        DM24             100 B R |   0.0000  0.0000     0
+SX.XAX   111.2367 35.1200   400 BBVS-120         EDAS24IP         100 B R |   0.0000  0.0000     0
+SX.YJI   110.6462 34.8389   500 BBVS-60          EDAS24IP         100 B R |   0.0000  0.0000     0
+SX.CHZ   113.1800 36.2244  1030 BBVS-60          EDAS24IP         100 B R |   0.0000  0.0000     0
+SX.XAY   112.9460 36.6677  1020 BBVS-60          EDAS24IP         100 B R |   0.0000  0.0000     0
+SX.YAC   112.4070 35.4424   640 BBVS-60          EDAS24IP         100 B R |   0.0000  0.0000     0
+SX.LIC   113.2910 35.6906  1190 BBVS-60          EDAS24IP         100 B R |   0.0000  0.0000     0
+SX.TIY   113.0030 38.4270   900 CTS-1            EDAS24IP          50 B R |   0.0140  0.0030     0
+SX.WTS   113.5740 38.9905  1610 CMG-3ESPC        DM24             100 B R |   0.0000  0.0000     0
+SX.LIQ   114.0250 39.4492  1053 BBVS-60          EDAS24IP         100 B N |   0.0000  0.0000     0  
+SX.LNQ   114.0240 39.3820  1189
+#Q: Quyu file, S: SHIWU file
+#TIANJIN    lon_Q   lat_Q                                                  lon(Q-S) lat(Q-S)  alt(Q-S)
+TJ.BET   117.7433 39.1294  -246 FSS-3DBH         EDAS24C           50 S R CC  0.0000  0.0000     0
+TJ.CHT   117.3689 39.2292  -247 FSS-3DBH         EDAS24C           50 S R CC  0.0000  0.0000     0
+TJ.EWZ   117.3700 39.3958  -247 FSS-3DBH         EDAS24C           50 S R CC  0.0000  0.0000     0
+TJ.SJZ   117.3819 38.6325  -248 FSS-3DBH         EDAS24C           50 S R CC  0.0000  0.0000     0
+TJ.T23   117.5167 39.0528  -275 FSS-3DBH         EDAS24C           50 S R CC  0.0000  0.0000     0
+TJ.TJH   117.5556 38.7497  -247 FSS-3DBH         EDAS24C           50 S R CC  0.0000  0.0000     0
+TJ.XZZ   117.1919 38.6606  -247 FSS-3DBH         EDAS24C           50 S R CC  0.0000  0.0000     0
+TJ.XAZ   117.5244 39.7581  -246 FSS-3DBH         EDAS24C           50 S R CC  0.0000  0.0000     0 TJ.XAE
+TJ.WAK   116.8531 38.7697  -247 BBVS-120         EDAS24IP          50 B R CC  0.0000  0.0000     1 
+TJ.HBT   117.1333 39.5806  -245 FSS-3DBH         EDAS24C           50 S R CC -0.0033  0.0000     0
+TJ.BAD   117.2750 39.7319  -245 FSS-3DBH         EDAS24C           50 S R |   0.0000  0.0000     0
+TJ.CAD   117.4606 39.6108  -247 FSS-3DBH         EDAS24C           50 S R |   0.0000  0.0000     0
+TJ.CGZ   117.1050 38.7781  -247 FSS-3DBH         EDAS24C           50 S R |   0.0000  0.0000     0
+TJ.CHH   117.1500 39.1344  -247 FSS-3DBH         EDAS24C           50 S R |   0.0000  0.0000     0
+TJ.DAG   117.7039 38.9778  -249 FSS-3DBH         EDAS24C           50 S R |   0.0000  0.0000     0
+TJ.DOT   117.3228 38.8325  -273 FSS-3DBH         EDAS24C           50 S R |   0.0000  0.0000     0
+TJ.DZG   117.2367 39.1094  -291 FSS-3DBH         EDAS24C           50 S R |   0.0000  0.0000     0
+TJ.FTZ   117.7542 39.5686  -247 FSS-3DBH         EDAS24C           50 S R |   0.0000  0.0000     0
+TJ.HAG   117.7931 39.2414  -247 FSS-3DBH         EDAS24C           50 S R |   0.0000  0.0000     0
+TJ.JIH   116.8611 38.9408  -277 FSS-3DBH         EDAS24C           50 S R |   0.0000  0.0000     0
+TJ.JIX   117.4964 40.0764    65 BBVS-120         EDAS6L            50 B R |   0.0000  0.0000     0
+TJ.LUT   117.7383 39.3750  -248 FSS-3DBH         EDAS24C           50 S R |   0.0000  0.0000     0
+TJ.XIZ   117.3436 39.0272  -248 FSS-3DBH         EDAS24C           50 S R |   0.0000  0.0000     0
+TJ.ZTZ   117.1994 39.2719  -247 FSS-3DBH         EDAS24C           50 S R |   0.0000  0.0000     0
+TJ.SJT   118.0020 39.2433  -250 CMG-3TB          DM24             100 B R |   0.0001  0.0000     0 CMG-5TB
+TJ.YGZ   117.2482 39.9100  -250 CMG-3TB          DM24             100 B R |   0.0018  0.0000    83 CMG-4TB
+TJ.GUG   117.5027 38.9298  -250 CMG-3TB          DM24             100 B R |   0.0273 -0.0098    -1
+TJ.QIG   117.0206 39.2050  -241 FSS-3DBH         EDAS24C           50 S R |  -0.0006  0.0000     0
+TJ.WUQ   117.0127 39.3946  -244 FSS-3DBH         EDAS24C           50 S R |  -0.0044  0.0304     0
+TJ.NHZ   117.0983 39.0283  -247 FSS-3DBH         EDAS24C           50 S R |  -0.0083  0.0000     0 TJ.NHE
+TJ.ANK   117.2189 39.1708  -247 FSS-3DBH         EDAS24C           50 S R |  -0.0089  0.0000     0
+#XIJIANG    lon_Q   lat_Q                                                  lon(Q-S) lat(Q-S)  alt(Q-S)
+#Q: Quyu file, S: SHIWU file
+XJ.RGN    87.5600 43.8700   755 FBS-3            EDAS24L          100 B R |   0.0014 -0.0047     0
+XJ.LHG    87.0600 43.6400  1621 BBVS-60          EDAS24IP         100 B R |   0.0006 -0.0022     0
+XJ.WSC    87.6900 43.4600  1500 BBVS-60          EDAS24IP         100 B R |  -0.0047 -0.0031     0
+XJ.GAZ    88.5800 43.5300  1810 BBVS-60          EDAS24IP         100 B R |  -0.0033 -0.0050    10
+XJ.STZ    86.6500 43.7100  2260 BBVS-60          EDAS24IP         100 B R |   0.0031  0.0033     0
+XJ.LSG    84.2800 45.5600  1250 BBVS-60          EDAS24IP         100 B R |  -0.0050  0.0039     0
+XJ.WSU    84.6400 44.1200  1830 BBVS-60          EDAS24IP         100 B R |   0.0008  0.0031     0
+XJ.TCH    88.0900 43.8900  2580 CMG-3ESPC        EDAS24IP         100 B R |  -0.0022 -0.0014     0
+XJ.BTS    90.5100 45.2800  1720 BBVS-60          EDAS24IP         100 B R |   0.0039  0.0039     0
+XJ.HTB    86.5800 44.0900   970 BBVS-60          EDAS24IP         100 B R |   0.0044 -0.0031   -42
+XJ.WMQ    87.6900 43.6500   970 STS-2            EDAS24IP         100 B N |   0.0050  0.0044     0
+XJ.SCH    85.6900 43.9200  1350 BBVS-60          EDAS24IP         100 B R |  -0.0031 -0.0028   -88
+XJ.SHZ    85.9000 44.2000   635 CTS-1            EDAS24L          100 B R |  -0.0500  0.0000  -115  BBVS-60
+XJ.BLT    86.6600 42.9400  2679 BBVS-60          EDAS24IP         100 B R |  -0.0010  0.0050     0
+XJ.KMS    88.1700 42.2700  1005 BBVS-60          EDAS24IP         100 B R |   0.0000  0.0000     0
+XJ.HYS    89.4400 42.9700   273 BBVS-60          EDAS24IP         100 B R |   0.0010  0.0060    -0
+XJ.WCW    89.0300 44.9000   580 FBS-3            EDAS24IP         100 B R |   0.0020  0.0010   -36
+XJ.QHE    90.7300 46.4900  1355 BBVS-60          EDAS24IP         100 B R |   0.0000  0.0010   -34
+XJ.FUY    89.6300 46.9700   957 CTS-1            EDAS24L6         100 B N |  -0.0300  0.0300     9
+XJ.HBH    86.5500 48.2300  1009 BBVS-60          EDAS24IP         100 B R |   0.0020  0.0010    -7
+XJ.FUH    87.1800 46.9900   671 BBVS-60          EDAS24IP         100 B R |  -0.0010  0.0030    -6
+XJ.HEF    85.7700 46.7700  1223 FBS-3            EDAS24L          100 B R |  -0.0020  0.0000     0
+XJ.TAC    83.1700 46.9400   951 FBS-3            EDAS24IP         100 B R |  -0.0030 -0.0020     0
+XJ.KMY    84.8500 45.6400   558 KS2000           SMART24          100 B N |   0.0044  0.0044     0
+XJ.XYD    85.4600 44.6600   360 FSS-3BDH         EDAS24IP         100 S R |  -0.0030 -0.0010   -43
+XJ.ALS    82.1200 45.1500  1215 BBVS-60          EDAS24IP          50 B R |  -0.0010  0.0030    -0
+XJ.WNQ    81.0000 44.9800  1391 CTS-1            EDAS24IP         100 B N |   0.0000  0.0200     0
+XJ.JHE    82.9700 44.6200   387 FBS-3            EDASC24           50 B R |   0.0500  0.0300   -40
+XJ.XNY    83.3000 43.5700   871 BBVS-60          EDAS24IP         100 B N |   0.0030 -0.0060   174  CTS-1E  BB  EDAS-24L6
+XJ.CBC    81.4400 43.5200  1590 CMG-3ESPC        EDAS24IP          50 B R |  -0.0010  0.0010     0
+XJ.ZSU    80.3700 42.6800  1820 CMG-3ESPC        EDAS24IP         100 B R |  -0.0030 -0.0040    22
+XJ.BAC    81.6200 41.8600  1560 CMG-3ESPC        EDAS24IP         100 B R |   0.0040 -0.0010   -17
+XJ.KUC    82.8600 41.8500  1245 CTS-1            EDAS24L6         100 B N |  -0.0028  0.0031   -31
+XJ.LTA    84.1700 42.0200  1310 BBVS-60          EDAS24L          100 B R |  -0.0030  0.0020    -0
+XJ.SMY    79.7300 41.6400  2144 CMG-3ESPC        EDAS24IP         100 B R |   0.0010 -0.0020    -0
+XJ.AKS    80.1100 41.1400  1122 CMG-3ESPC        EDAS24IP         100 B R |  -0.0010  0.0050    15
+XJ.ALR    81.3200 40.4900  1050 FSS-3BDH         EDAS24IP         100 S R |  -0.0010  0.0040   -44
+XJ.WUS    79.2200 41.2000  1457 CTS-1            EDAS24L          100 B N |  -0.0200  0.0000     0
+XJ.AHQ    78.4500 40.9300  1973 CMG-3ESPC        EDAS24IP         100 B R |   0.0080  0.0050    -1
+XJ.BCH    78.7800 39.7900  1140 CTS-1            EDAS24L6         100 B N |   0.0025  0.0033     2
+XJ.XKR    77.5800 39.8300   900 BBVS-60          EDAS24IP         100 B R |  -0.0040 -0.0020   300
+XJ.BPM    76.8360 39.8830  1313 CMG-3ESPC        EDAS24IP         100 B R |   0.0000  0.0000    12
+XJ.ATS    75.8440 39.8040   842 CMG-3ESPC        EDAS24IP         100 B R |   0.0000  0.0000   973
+XJ.WUQ    75.2000 39.7000  2207 CMG-3ESPC        EDAS24IP         100 B R |   0.0380  0.0400    10
+XJ.KSZ    75.9400 39.5900  1605 CMG-3ESPC        EDAS24IP         100 B R |   0.0010  0.0010   -23	XJ.KAZ
+XJ.YJS    76.4860 38.5200  1630 CMG-3ESPC        EDAS24IP         100 B R |   0.0000  0.0010   -27
+XJ.TAG    75.1700 37.7800  3100 CMG-3ESPC        EDAS24IP         100 B R |  -0.0010 -0.0020   182
+XJ.YCH    77.3610 37.3900  2023 BBVS-60          EDAS24IP         100 B R |   0.0000  0.0000   -23
+XJ.HTA    79.9158 37.0594  1409 JCZ-1            EDAS24L          100 B N |  -0.0158  0.0406     0  XJ.HET XJ.HTI
+XJ.YUT    81.9970 36.4291  2147 KS2000           SMART24          100 B N |   0.0000 -0.0001     0
+XJ.QMO    85.4710 37.3110  2986 CTS-1E           EDAS24L6         100 B N |   0.0100 -0.0180     0  XJ.QIM
+XJ.RUQ    88.8040 38.9670  1390 CTS-1E           EDAS24L6         100 B N |   0.0240  0.0060     0
+XJ.KOL    85.8050 41.8880  1093 JCZ-1E           EDAS24L6         100 B N |   0.0000  0.0000     0
+XJ.YMS    94.0000 41.9400  1013 CTS-1E           EDAS24L6         100 B R |   0.0020  0.0040     0
+XJ.ALT    88.1000 47.8000   871 BBVS-60          EDAS24IP         100 B R |   0.0000  0.1000     0
+XJ.KSH    75.9231 39.5167  1309 CTS-1            EDAS24C          100 B N |  -0.3531  -0.3667  239 MCH CMG-3ESPC EDAS24IP
+XJ.YPH    76.7370 39.2090  1189 FSS-3BDH	     EDAS24IP         100 S R |  -0.4270  -0.6490  632 BBVS-60 EDAS24IP  
+XJ.MUL    90.2900 43.8100  1366 CTS-1            EDAS24L          100 B R NT  0.0050 -0.0014     1     CTS-1E EDAS24IP
+XJ.BKO	  93.0142 43.5233  1734 CTS-1            EDAS24L           50 B N NT -0.0042  0.0467    92 XJ.BLK     CTS-1E EDAS24L6
+XJ.TZ0    79.0594 37.1641  1577 CTS-1            EDAS-24IP        100 B R |   0.0000  0.0000     0 XJ.HTTZ0
+XJ.TZ1    79.0595 37.1641  1592 CMG-40T          EDAS-24IP        100 S O |   0.0000  0.0000     0 XJ.HTTZ1
+XJ.TZ2    79.0540 37.1608  1610 CMG-40T          EDAS-24IP        100 S O |   0.0000  0.0000     0 XJ.HTTZ2
+XJ.TZ3    79.0586 37.1695  1580 CMG-40T          EDAS-24IP        100 S O |   0.0000  0.0000     0 XJ.HTTZ3
+XJ.TZ4    79.0656 37.1620  1615 CMG-40T          EDAS-24IP        100 S O |   0.0000  0.0000     0 XJ.HTTZ4
+XJ.TZ5    79.0722 37.1731  1570 CMG-40T          EDAS-24IP        100 S O |   0.0000  0.0000     0 XJ.HTTZ5
+XJ.TZ6    79.0749 37.1586  1603 CMG-40T          EDAS-24IP        100 S O |   0.0000  0.0000     0 XJ.HTTZ6
+XJ.TZ7    79.0575 37.1506  1653 CMG-40T          EDAS-24IP        100 S O |   0.0000  0.0000     0 XJ.HTTZ7
+XJ.TZ8    79.0429 37.1616  1622 CMG-40T          EDAS-24IP        100 S O |   0.0000  0.0000     0 XJ.HTTZ8
+XJ.TZ9    79.0522 37.1763  1640 CMG-40T          EDAS-24IP        100 S O |   0.0000  0.0000     0 XJ.HTTZ9
+XJ.DSZ    84.8640 44.2910  794
+XJ.LOK    82.4900 43.4100  3146
+XJ.KEL    86.1900 41.8100 	1016
+#TIBET    lon_Q   lat_Q                                                  lon(Q-S) lat(Q-S)  alt(Q-S)
+#Q: Quyu file, S: SHIWU file
+XZ.CAD    97.1720 31.1400  3345 CTS-1            EDAS24L           50 B N |  -0.0720 -0.0400    -7 XZ.CDU
+XZ.CHY    97.4651 28.6616  2297 CTS-1            EDAS24L          100 B N |  -0.1830 -0.2588    13
+XZ.DXI    91.0652 30.5341  4708 CMG-3ESPC        EDAS24IP         100 B R |   0.0000  0.0000     0
+XZ.GZE    84.8300 32.2900  4095 CTS-1            EDAS24L          100 B N |   0.0000  0.0000     0
+XZ.LIZ    94.2200 29.7000  3158 CTS-1            EDAS24L          100 B N |   0.0000 -0.3500   -28
+XZ.LKZ    90.3938 28.9678  4464 CMG-3ESPC        EDAS24IP         100 B R |   0.0000  0.0000     0
+XZ.LSA    91.1000 27.7300  3789 STS-1            TDE324CI         100 B N |  -0.0258  1.6941     0 XZ.LSA CTS-1EF	EDAS-24IP 50
+XZ.MZG    91.7477 29.8471  3809 CMG-3ESPC        EDAS24IP         100 B R |   0.0000  0.0000     0
+XZ.NAQ    92.0900 31.4500  4500 CTS-1            EDAS24L          100 B N NQ -0.0730  0.3000    0
+XZ.NMU    90.1503 29.4276  3797 CMG-3ESPC        EDAS24IP         100 B R |   0.0000  0.0000     0
+XZ.PLA    81.2753 30.1987  3787 KS2000           SMART24          100 B N |   0.0000  0.0000     0
+XZ.RKZ    88.8700 29.2300  3862 KS2000           SMART24          100 B N |  -0.3487 -0.0844     0
+XZ.SQHE   80.0100 32.5200  4403 CTS-1            EDAS24L          100 B N |   0.0000  0.0000     0
+XZ.SNA    91.7539 29.2242  3588 CMG-3E           EDAS24IP         100 B R |   0.0000  0.0000     0 XZ.ZDA
+XZ.NVA0   92.0940 31.4948  4567 DS-4D            EDAS24IP         100 B O |   0.0000  0.0000     0  InstrumentType unlist
+XZ.NVA1   92.0901 31.4959  4555 DS-4D            EDAS24IP         100 B O |   0.0000  0.0000     0  InstrumentType unlist
+XZ.NVA2   92.0968 31.4973  4563 DS-4D            EDAS24IP         100 B O |   0.0000  0.0000     0  InstrumentType unlist
+XZ.NVA3   92.0948 31.4912  4587 DS-4D            EDAS24IP         100 B O |   0.0000  0.0000     0  InstrumentType unlist
+XZ.NVB1   92.1016 31.5059  4615 DS-4D            EDAS24IP         100 B O |   0.0000  0.0000     0  InstrumentType unlist
+XZ.NVB2   92.1086 31.4920  4602 DS-4D            EDAS24IP         100 B O |   0.0000  0.0000     0  InstrumentType unlist
+XZ.NVB3   92.0962 31.4818  4601 DS-4D            EDAS24IP         100 B O |   0.0000  0.0000     0  InstrumentType unlist
+XZ.NVB4   92.0803 31.4887  4576 DS-4D            EDAS24IP         100 B O |   0.0000  0.0000     0  InstrumentType unlist
+XZ.NVB5   92.0833 31.5041  4613 DS-4D            EDAS24IP         100 B O |   0.0000  0.0000     0  InstrumentType unlist
+XZ.NVC3   92.0882 31.4938  4558 DS-4D            EDAS24IP         100 B O |   0.0000  0.0000     0  InstrumentType unlist
+XZ.NA0   92.0940 31.4948  4567 DS-4D            EDAS24IP         100 B O |   0.0000  0.0000     0  InstrumentType unlist  NV
+XZ.NA1   92.0901 31.4959  4555 DS-4D            EDAS24IP         100 B O |   0.0000  0.0000     0  InstrumentType unlist
+XZ.NA2   92.0968 31.4973  4563 DS-4D            EDAS24IP         100 B O |   0.0000  0.0000     0  InstrumentType unlist
+XZ.NA3   92.0948 31.4912  4587 DS-4D            EDAS24IP         100 B O |   0.0000  0.0000     0  InstrumentType unlist
+XZ.NB1   92.1016 31.5059  4615 DS-4D            EDAS24IP         100 B O |   0.0000  0.0000     0  InstrumentType unlist
+XZ.NB2   92.1086 31.4920  4602 DS-4D            EDAS24IP         100 B O |   0.0000  0.0000     0  InstrumentType unlist
+XZ.NB3   92.0962 31.4818  4601 DS-4D            EDAS24IP         100 B O |   0.0000  0.0000     0  InstrumentType unlist
+XZ.NB4   92.0803 31.4887  4576 DS-4D            EDAS24IP         100 B O |   0.0000  0.0000     0  InstrumentType unlist
+XZ.NB5   92.0833 31.5041  4613 DS-4D            EDAS24IP         100 B O |   0.0000  0.0000     0  InstrumentType unlist
+XZ.NC3   92.0882 31.4938  4558 DS-4D            EDAS24IP         100 B O |   0.0000  0.0000     0  InstrumentType unlist
+#YUNNAN    lon_Q   lat_Q                                                  lon(Q-S) lat(Q-S)  alt(Q-S)
+#Q: Quyu file, S: SHIWU file
+YN.BAS	  99.1500 25.1200  1675 KS2000           EDAS24IP         100 B R |   0.0000  0.0000     0  YN.BaS
+YN.CAY	  99.2600 23.1300  1390 KS2000           EDAS24IP         100 B R |   0.0000  0.0000     0	YN.CaY
+YN.CUX	 101.5400 25.0300  1840 KS2000           EDAS24IP         100 B R |   0.0000  0.0000     0	YN.CuX
+YN.CZS	  98.6668 24.9037  1333 KS2000           EDAS24IP         100 B O |   0.0000  0.0000     0
+YN.DAY	 101.3200 25.7300  1860 KS2000           EDAS24IP         100 B R |   0.0000  0.0000     0	YN.DaY
+YN.DOC	 103.2000 26.1100  1228 KS2000           EDAS24IP         100 B R |   0.0000  0.0000     0	YN.DoC
+YN.EYA	  99.9500 26.1100  2072 CTS-1E_BBAS-3    EDAS24IP         100 B N |   0.0000  0.0000     0
+YN.FUN	 105.6200 23.6200   684 CTS-1E_BBAS-3    EDAS24IP         100 B N |   0.0000  0.0000     0
+YN.GEJ	 103.1600 23.3600  1840 CTS-1E_BBAS-3    EDAS24IP         100 B N |   0.0000  0.0000     0
+YN.GOS	  98.6700 27.7400  1470 KS2000           EDAS24IP         100 B R |   0.0000  0.0000     0	YN.GoS
+YN.HEQ	 100.1500 26.5500  2210 KS2000           EDAS24IP         100 B R |   0.0000  0.0000     0	YN.HeQ
+YN.HLT	 102.7500 25.1500  1892 KS2000           EDAS24IP         100 B R |   0.0000  0.0000     0
+YN.HUP	 101.2000 26.5900  1286 KS2000           EDAS24IP         100 B R |   0.0000  0.0000     0	YN.HuP
+YN.JIG	 100.7400 23.5000  1030 KS2000           EDAS24IP         100 B R |   0.0000  0.0000     0	YN.JiG
+YN.JIH	 100.7400 22.0200   570 KS2000           EDAS24IP         100 B R |   0.0000  0.0000     0	YN.JiH
+YN.JIP	 103.2200 22.7800  1305 KS2000           EDAS24IP         100 B R |   0.0000  0.0000     0	YN.JiP
+YN.JIS	 102.7600 23.6500  1380 KS2000           EDAS24IP         100 B R |   0.0000  0.0000     0	YN.JiS
+YN.KMI	 102.7400 25.1200  1975 STS-2            Q680              50 B N |   0.0000  0.0030     0
+YN.LAC	  99.9200 22.5500  1222 KS2000           EDAS24IP         100 B R |   0.0000  0.0000     0	YN.LaC
+YN.LIC	 100.0700 23.8800  1580 KS2000           EDAS24IP         100 B R |   0.0000  0.0000     0	YN.LiC
+YN.LIJ	 100.2300 26.9000  2480 KS2000           EDAS24IP         100 B R |   0.0000  0.0000     0	YN.LiJ
+YN.LOP	 104.2900 24.8900  1478 KS2000           EDAS24IP         100 B R |   0.0000  0.0000     0	YN.LoP
+YN.LUQ	 102.4500 25.5400  1777 KS2000           EDAS24IP         100 B R |   0.0000  0.0000     0	YN.LuQ
+YN.LUS	  98.8500 25.8300   845 KS2000           EDAS24IP         100 B R |   0.0000  0.0000     0	YN.LuS
+YN.MAL	 103.5800 25.4300  2010 KS2000           EDAS24IP         100 B R |   0.0000  0.0000     0	YN.MaL
+YN.MAS	  98.5900 24.4200   920 KS2000           EDAS24IP         100 B R |   0.0000  0.0000     0	YN.MaS
+YN.MEL	  99.5900 22.3400   934 CTS-1E_BBAS-3    EDAS24IP         100 B N |   0.0000  0.0000     0
+YN.MIL	 103.3900 24.4100  1550 KS2000           EDAS24IP         100 B R |   0.0000  0.0000     0	YN.MiL
+YN.MIZ	  98.4198 25.1320  1850 KS2000           EDAS24IP         100 B O |   0.0000  0.0000     0
+YN.MLA	 101.5300 21.4300   647 CTS-1E_BBAS-3    EDAS24IP         100 B N |   0.0000  0.0000     0
+YN.MLP	 104.7000 23.1300  1054 KS2000           EDAS24IP         100 B R |   0.0000  0.0000     0
+YN.MZT	  98.4945 25.2145  1880 KS2000           EDAS24IP         100 B O |   0.0000  0.0000     0
+YN.QIJ	 102.9400 26.9100  1112 KS2000           EDAS24IP         100 B R |   0.0000  0.0000     0	YN.QiJ
+YN.QKT	  98.3348 25.2174  1825 KS2000           EDAS24IP         100 B O |   0.0000  0.0000     0
+YN.RHT	  98.4382 24.9545  1490 KS2000           EDAS24IP         100 B O |   0.0000  0.0000     0
+YN.RST	  98.3912 24.9100  1191 KS2000           EDAS24IP         100 B O |   0.0000  0.0000     0
+YN.SBT	  98.5410 24.9534  1682 KS2000           EDAS24IP         100 B O |   0.0000  0.0000     0
+YN.SIM	 101.0100 22.7800  1360 KS2000           EDAS24IP         100 B R |   0.0000  0.0000     0	YN.SiM
+YN.TNC	  98.5200 25.0300  1650 CTS-1            EDASC24A         100 B N |   0.0000 -0.0300     0
+YN.TOH	 102.7900 24.1100  1870 KS2000           EDAS24IP         100 B R |   0.0000  0.0000     0	YN.ToH
+YN.TUS	 100.2500 25.6100  1967 KS2000           EDAS24IP         100 B R |   0.0000  0.0000     0	YN.TuS
+YN.WAD	  98.0700 24.0900   920 KS2000           EDAS24IP         100 B R |   0.0000  0.0000     0	YN.WaD
+YN.WES	 104.2500 23.4100  1480 KS2000           EDAS24IP         100 B R |   0.0000  0.0000     0	YN.WeS
+YN.XHT	  98.4848 24.7485  1207 KS2000           EDAS24IP         100 B O |   0.0000  0.0000     0	
+YN.XUW	 104.1400 26.0900  2073 KS2000           EDAS24IP         100 B R |   0.0000  0.0000     0	YN.XuW
+YN.YAJ	 104.2300 28.1100   575 KS2000           EDAS24IP         100 B R |   0.0000  0.0000     0	YN.YaJ
+YN.YIM	 102.2000 24.7200  1630 KS2000           EDAS24IP         100 B R |   0.0000  0.0000     0	YN.YiM
+YN.YOD	  99.2500 24.0400  1690 KS2000           EDAS24IP         100 B R |   0.0000  0.0000     0	YN.YoD
+YN.YOS	 100.7700 26.6900  2200 KS2000           EDAS24IP         100 B R |   0.0000  0.0000     0	YN.YoS
+YN.YUJ	 101.9800 23.5700   529 KS2000           EDAS24IP         100 B R |   0.0000  0.0000     0	YN.YuJ
+YN.YUL	  99.3700 25.8900  1700 KS2000           EDAS24IP         100 B R |   0.0000  0.0000     0	YN.YuL
+YN.YUM	 101.8607 25.6894  1085 KS2000           EDAS24IP         100 B R |  -0.0007  0.0006     0	YN.YuM
+YN.YUX	 100.1400 24.4400  1110 KS2000           EDAS24IP         100 B R |   0.0000  0.0000     0	YN.YuX
+YN.ZAT	 103.7200 27.3200  1940 CTS-1E_BBAS-3    EDAS24IP         100 B N |   0.0000  0.0000     0
+YN.ZOD	  99.7000 27.8200  3248 KS2000_PA-23     Smart24R         100 B N |   0.0000  0.0000     0	
+#ZHEJIANG    lon_Q   lat_Q                                                  lon(Q-S) lat(Q-S)  alt(Q-S)
+#Q: Quyu file, S: SHIWU file
+#ZJ.QIY and ZJ.YOK is listed as short-period station, but the waveform looks like a broadbband data
+ZJ.ZHS   122.1165 30.0378    40 BBVS-60          EDAS24IP         100 B R |   0.0000  0.0000     0
+ZJ.WEZ   120.6677 27.9271    20 CTS-1            EDAS24IP          50 B N |   0.0000  0.0000     0
+ZJ.WXJ   118.8256 28.6961   162 BBVS-60          EDAS24IP         100 B R |   0.0000  0.0000     0
+ZJ.YOK   120.2008 28.9621   210 FSS-3B           EDAS24IP         100 B R |   0.0000  0.0000     0  
+ZJ.QIY   119.0635 27.6164   435 FSS-3B           EDAS24IP         100 B R |   0.0000  0.0000     0
+ZJ.XIC   120.8622 29.4818   122 BBVS-60          EDAS24IP         100 B R |   0.0000  0.0000     0
+ZJ.CHA   118.4130 29.4695   228 BBVS-60          EDAS24IP          50 B R |   0.0000  0.0000     0
+ZJ.HAY   120.8476 30.3831    60 BBVS-60          EDAS24IP         100 B R |   0.0000  0.0000     0
+ZJ.CHX   119.6578 31.0865   135 BBVS-60          EDAS24IP         100 B R |   0.0000  0.0000     0
+ZJ.SHS   122.4507 30.7055    76 BBVS-60          EDAS24IP         100 B R |   0.0000  0.0000     0
+ZJ.TIT   121.0373 29.1451   -21 FSS-3DBH         EDAS24IP          50 S R |   0.0000  0.0000   108
+ZJ.BEL   121.8329 29.8873   -61 FSS-3DBH         EDAS24IP          50 S R |   0.0000  0.0000    86
+ZJ.JIN   119.6296 27.9805    29 FSS-3DBH         EDAS24IP          50 S R |   0.0000  0.0000    67
+ZJ.YUQ   121.0803 28.4149    85 BBVS-60          EDAS24IP         100 B R |   0.0000  0.0000     0
+ZJ.HAZ   120.1140 30.2665    50 BBVS-60          EDAS24IP         100 B R |   0.0000  0.0000     0
+ZJ.JAX   120.8877 30.7802     5 BBVS-60          EDAS24IP         100 B R |   0.0000  0.0000     0
+ZJ.LIA   118.9578 30.1433   230 BBVS-60          EDAS24IP          50 B R |   0.0000  0.0000     0
+ZJ.NIB   121.5202 29.9837    20 BBVS-60          EDAS24IP         100 B R |   0.0000  0.0000     0
+ZJ.XSH   120.1052 29.8938    40 BBVS-60          EDAS24IP         100 B R |   0.0000  0.0000     0
+ZJ.YIX   121.3262 29.8008    50 BBVS-60          EDAS24IP         100 B R |   0.0000  0.0000     0
+ZJ.YUY   121.0939 29.9534    45 BBVS-60          EDAS24IP         100 B R |   0.0000  0.0000     0
+ZJ.HUZ   120.0952 30.8423    12 CTS-1            EDAS24L6         100 B N |   0.0000  0.0000     0
+ZJ.XAJ   119.2708 29.4817    90 KS2000           SMART-24         100 B N |   0.0000  0.0000     0
+ZJ.NIH   121.7042 29.2458    60 BBVS-60          EDAS24IP         100 B R |   0.0000  0.0000     0
+#2007
+#elevation based on googleearth
+CQ.SNB   108.1190 29.9930 	623
+CQ.WRC   108.1540 30.5430 	465
+CQ.ZSG   107.8510 30.1750 	918
+#2008
+OC.L0201 105.8680 32.4900  623 
+OC.L0202 106.0140 32.4020  572
+OC.L0203 104.6960 31.6740  520
+OC.L0204 105.6230 32.4850  564
+OC.L0205 105.4710 32.6740  587
+OC.L0206 104.8140 31.8990  630
+OC.L0207 105.3140 32.2060  566
+OC.L0208 105.6750 32.3330  773
+OC.L0209 105.8100 32.3970  852
+OC.L0211 105.2110 32.0410  804
+OC.L0212 105.1140 32.0210  653
+OC.L0214 105.8680 32.4900  624
+OC.L0215 106.0140 32.4020  568
+OC.L0216 104.4540 31.8060  982
+OC.L0217 104.7630 32.2890  784
+#added after the 2nd distribution
+HA.LZH      113.84000  36.06000   324
+TW.KMNB     118.39000  24.46000   13
+TW.NACB     121.59000  24.17000   242
+TW.SSLB     120.95000  23.79000   405
+TW.TPUB     120.63000  23.30000   354
+TW.TWGB     121.08000  22.82000   204
+TW.YHNB     121.37000  24.67000   731
+TW.YULB     121.30000  23.39000   1167
+XZ.SUH       88.80000  33.20000   4969
+#added after the 3rd distribution
+HA.HX       113.44000  35.45000   697
+XZ.NMA       87.23000  31.80000   4536
+CQ.L5503.SHZ   102.81340    30.37070  1010.00000
+CQ.L5504.SHZ   103.16100    31.43790  1870.00000
+HB.LDC.SHZ   104.46500    31.26660   553.00000
+QH.L6301.SHZ    97.10840    33.36890  3847.00000
+QH.L6302.SHZ    96.60750    32.66550  3942.00000
+QH.L6303.BHZ    97.03710    32.84030  3904.00000
+QH.L6303.SHZ    97.03710    32.84030  3904.00000
+QH.L6304.SHZ    96.55240    33.20580  4217.00000
+QH.L6305.BHZ    97.29720    33.41510  4258.00000
+QH.L6306.BHZ    96.75440    33.76840  4144.00000
+QH.L6307.BHZ    96.06390    33.60290  4291.00000
+SC.L5120.SHZ    97.93160    33.13850  4075.00000
+SN.LD1.SHZ   105.70710    32.79440   555.00000
+SN.LD3.SHZ   107.89170    32.53800   666.00000
+SN.LD4.SHZ   108.53220    32.52740   487.00000
+SN.LD6.SHZ   107.14450    32.60610   844.00000
+SN.LD7.SHZ   106.51560    33.91350   976.00000
+#added 
+LW.LAK	104.9782	18.1919	503	CTS-1E	EDAS-24IP	100
+LW.LAP	102.1654	19.8983	270	CTS-1E	EDAS-24IP	100
+MM.NAM	97.7711	20.8961	300	CTS-1E	EDAS-24IP	100	1259	1259	1259	10
+MM.MYI	97.4742	25.5212	300	CTS-1E	EDAS-24IP	100	1259	1259	1259	10
+CN.AAII	128.194	-3.6871	300	BBVS-60	EDAS-24IP	50	1259	1259	1259	10
+CN.GTOI	122.87	0.7628	300	BBVS-60	EDAS-24IP	50	1259	1259	1259	10
+CN.IGBI	115.146	-8.818	300	BBVS-60	EDAS-24IP	50	1259	1259	1259	10
+CN.JMBI	103.608	-1.588	300	BBVS-60	EDAS-24IP	50	1259	1259	1259	10
+CN.RUSI	120.478	-8.5978	300	BBVS-60	EDAS-24IP	50	1259	1259	1259	10
+CN.TNGI	106.647	-6.172	300	BBVS-6	EDAS-24IP	50	1259	1259	1259	10
+CN.KLSI	104.7317	-4.6871	300	BBVS-60	EDAS-24IP	50	1259	1259	1259	10
+CN.YOGI	110.295	-7.8166	300	BBVS-60	EDAS-24IP	50	1259	1259	1259	10
+CN.TPTI	97.1774	3.2618	300	BBVS-6	EDAS-24IP	50	1259	1259	1259	10
+CN.MMSI	118.909	-2.6892	300	BBVS-60	EDAS-24IP	50	1259	1259	1259	10
+DZ.TTAM	5.5284	22.7917	300	BBVS-6	EDAS-24IP	100	1259	1259	1259	10
+DZ.CSVB	6.4963	36.2715	300	BBVS-60	EDAS-24IP	20	1259	1259	1259	10

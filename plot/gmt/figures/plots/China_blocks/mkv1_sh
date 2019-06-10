@@ -1,0 +1,59 @@
+#!/bin/csh -f
+set crustP = /opt/local/seis/data/China/Pn.txt
+set crustS = /opt/local/seis/data/China/Sn.txt
+if( "$#argv" != 1 && "$#argv" != 3) then
+  echo  "Usage :  $0   [staLIST | lon lat staCode]"
+  exit
+endif
+if("$#argv" == 1) then
+	grep -v "^#" $1  >tmpSTA.lst
+else 
+	echo "$3 $1 $2"  > tmpSTA.lst
+endif
+@ nn = `wc -l tmpSTA.lst |awk '{print $1}'`
+@ i = 1
+while ($i <= $nn) 
+	set sta = `sed -n ${i},${i}p tmpSTA.lst |awk '{print $1}'`
+	set v1file = ${sta}.v1
+	set lon = `sed -n ${i},${i}p tmpSTA.lst |awk '{print $2}'`
+	set lat = `sed -n ${i},${i}p tmpSTA.lst |awk '{print $3}'`
+	set  key = `echo $lon $lat |awk '{printf("%3d.0 %2d.0\n", $1+0.5, $2+0.5)}'`
+echo "$sta $lon $lat $key"
+	grep "$key" $crustP > vp_tmp$$
+	grep "$key" $crustS > vs_tmp$$
+set  vp1 = `head -1 vp_tmp$$ | awk '{print $4}'`
+set  vp2 = `head -1 vp_tmp$$ | awk '{print $5}'`
+set  vp3 = `head -1 vp_tmp$$ | awk '{print $6}'`
+set  vp4 = `head -1 vp_tmp$$ | awk '{print $7}'`
+set  vpm = `head -1 vp_tmp$$ | awk '{print $8}'`
+set  z1  = `head -1 vp_tmp$$ | awk '{print $9}'`
+set  z2 = `head -1 vp_tmp$$ | awk '{print $9+$10}'`
+set  z3 = `head -1 vp_tmp$$ | awk '{print $9+$10+$11}'`
+set  z4 = `head -1 vp_tmp$$ | awk '{print $9+$10+$11+$12}'`
+#
+set  vs1 = `head -1 vs_tmp$$ | awk '{print $4}'`
+set  vs2 = `head -1 vs_tmp$$ | awk '{print $5}'`
+set  vs3 = `head -1 vs_tmp$$ | awk '{print $6}'`
+set  vs4 = `head -1 vs_tmp$$ | awk '{print $7}'`
+set  vsm = `head -1 vs_tmp$$ | awk '{print $8}'`
+echo "$vp1 $vs1 2.92 0.0"  |\
+awk '{printf("%8.3f %8.3f %8.3f %7.2f %7.4f\n", $1, $2, $3, $4, $1/$2)}' >$v1file
+echo "$vp1 $vs1 2.92 $z1"  |\
+awk '{printf("%8.3f %8.3f %8.3f %7.2f %7.4f\n", $1, $2, $3, $4, $1/$2)}' >>$v1file
+echo "$vp2 $vs2 2.92 $z2"  |\
+awk '{printf("%8.3f %8.3f %8.3f %7.2f %7.4f\n", $1, $2, $3, $4, $1/$2)}' >>$v1file
+echo "$vp3 $vs3 3.02 $z3"  |\
+awk '{printf("%8.3f %8.3f %8.3f %7.2f %7.4f\n", $1, $2, $3, $4, $1/$2)}' >>$v1file
+echo "$vp4 $vs4 3.02 $z4"  |\
+awk '{printf("%8.3f %8.3f %8.3f %7.2f %7.4f\n", $1, $2, $3, $4, $1/$2)}' >>$v1file
+echo "$vpm $vsm 3.32 9999.99"  |\
+awk '{printf("%8.3f %8.3f %8.3f %7.2f %7.4f\n", $1, $2, $3, $4, $1/$2)}' >>$v1file
+#
+echo "" >>$v1file
+cat vp_tmp$$ vs_tmp$$ >>$v1file
+sed -n ${i},${i}p tmpSTA.lst |awk '{print "#", $0}' >>$v1file
+\rm vp_tmp$$ vs_tmp$$
+
+@ i++
+end
+\rm tmpSTA.lst
