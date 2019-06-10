@@ -17,7 +17,7 @@ size = comm.Get_size()
 
 def get_dirs(processedurl):
     processedurl = "/mnt/research/seismolab2/japan_slab/data/upload_temp_ziyi/extract_cea/extract/processed"
-    search_urls = join(processedurl, "*")
+    search_urls = join(processedurl, "*Z")
     return glob(search_urls)
 
 
