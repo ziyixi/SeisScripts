@@ -16,7 +16,6 @@ size = comm.Get_size()
 
 
 def get_dirs(processedurl):
-    processedurl = "/mnt/research/seismolab2/japan_slab/data/upload_temp_ziyi/extract_cea/extract/processed"
     search_urls = join(processedurl, "*")
     return glob(search_urls)
 
@@ -54,7 +53,6 @@ def calsnr(st, starttime, parrival, sarrival):
 
 
 def maincal(search_urls):
-    print(search_urls)
     cal_search_urls = np.array_split(search_urls, size)[rank]
     proc_result_list = []
     model = TauPyModel(model="ak135")
