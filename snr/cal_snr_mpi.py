@@ -59,6 +59,7 @@ def maincal(search_urls):
     model = TauPyModel(model="ak135")
     for cal_search_url in cal_search_urls:
         wave_urls = glob(join(cal_search_url, "*Z"))
+        print(wave_urls)
         for wave_url in wave_urls:
             fname = wave_url.split("/")[-1].split(".")
             try:
