@@ -17,7 +17,7 @@ size = comm.Get_size()
 
 def get_dirs(processedurl):
     processedurl = "/mnt/research/seismolab2/japan_slab/data/upload_temp_ziyi/extract_cea/extract/processed"
-    search_urls = join(processedurl, "*Z")
+    search_urls = join(processedurl, "*")
     return glob(search_urls)
 
 
@@ -58,7 +58,7 @@ def maincal(search_urls):
     proc_result_list = []
     model = TauPyModel(model="ak135")
     for cal_search_url in cal_search_urls:
-        wave_urls = glob(join(cal_search_url, "*"))
+        wave_urls = glob(join(cal_search_url, "*Z"))
         for wave_url in wave_urls:
             fname = wave_url.split("/")[-1].split(".")
             try:
