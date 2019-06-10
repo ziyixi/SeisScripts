@@ -57,9 +57,10 @@ def maincal(search_urls):
     cal_search_urls = np.array_split(search_urls, size)[rank]
     proc_result_list = []
     model = TauPyModel(model="ak135")
+    print(cal_search_urls)
     for cal_search_url in cal_search_urls:
         wave_urls = glob(join(cal_search_url, "*Z"))
-        print(wave_urls)
+        print(cal_search_urls, cal_search_url, wave_urls)
         for wave_url in wave_urls:
             fname = wave_url.split("/")[-1].split(".")
             try:
