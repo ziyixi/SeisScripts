@@ -10,7 +10,8 @@
 
 . activate seismology
 PY="/mnt/home/xiziyi/anaconda3/envs/seismology/bin/python"
+work_dir="/mnt/research/seismolab2/japan_slab/data/upload_temp_ziyi/20190325.SEED.structed"
 
-srun -n 92 $PY cal_snr_mpi.py        ### call your executable (similar to mpirun)
+srun -n 92 $PY cal_snr_mpi.py  --processedurl  $work_dir     ### call your executable (similar to mpirun)
 
 scontrol show job $SLURM_JOB_ID     ### write job information to output file
