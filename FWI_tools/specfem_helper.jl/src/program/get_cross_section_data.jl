@@ -2,7 +2,7 @@ include("../types/types.jl")
 include("../setting/constants.jl")
 include("../utils/readfiles.jl")
 include("../utils/kdtree.jl")
-include("../utils/parse_commandline.jl")
+include("../utils/parse_commandline_profile.jl")
 
 
 function generate_profile_points(hnpts, vnpts, lon1, lat1, dep1, lon2, lat2, dep2)
@@ -59,9 +59,8 @@ function generate_profile_points(hnpts, vnpts, lon1, lat1, dep1, lon2, lat2, dep
 end
 
 
-function run_interp(myrank::Int64, nrank::Int64, command_args::Dict{String,Any})
+function run_interp( command_args::Dict{String,Any})
     # * init some variables
-    isroot = (myrank == 0)
     nproc_old = command_args["nproc_old"]
     old_mesh_dir = command_args["old_mesh_dir"]
     old_model_dir = command_args["old_model_dir"]
@@ -78,10 +77,9 @@ function run_interp(myrank::Int64, nrank::Int64, command_args::Dict{String,Any})
     # * parse model tags 
     model_names = String.(split(model_tags, ","))
     nmodel = length(model_names)
-    if isroot
-        @info "[$(myrank)]# nmodel=$(nmodel)"
-        @info "[$(myrank)]# model names=$(model_names)"
-    end
+
+    @info "# nmodel=$(nmodel)"
+    @info "# model names=$(model_names)"
 
 
     # * interpolate old mesh/model onto new mesh
@@ -114,7 +112,7 @@ function run_interp(myrank::Int64, nrank::Int64, command_args::Dict{String,Any})
 
     # * loop for all points in xyz_new
     for iproc_old = 0:nproc_old - 1
-        @info "[$(myrank)]# iproc_old=$(iproc_old)"
+        @info "# iproc_old=$(iproc_old)"
         # read old mesh slice
         mesh_old = sem_mesh_read(old_mesh_dir, iproc_old)
         nspec_old = mesh_old.nspec
@@ -143,7 +141,7 @@ function run_interp(myrank::Int64, nrank::Int64, command_args::Dict{String,Any})
 
         for igll = 1:ngll_new
             if (stat_final[igll] == 1 && location_1slice[igll].stat == 1)
-                @info "[$(myrank)]# multi-located, $(xyz_new[:,igll])"
+                @info "# multi-located, $(xyz_new[:,igll])"
                 continue
             end
             # for point located inside one element in the first time or closer to one element than located before
@@ -183,3 +181,11 @@ function run_interp(myrank::Int64, nrank::Int64, command_args::Dict{String,Any})
         end
     end
 end
+
+
+function main()
+    command_args = parse_commandline()  
+    run_interp(  command_args)  
+end
+
+main()
