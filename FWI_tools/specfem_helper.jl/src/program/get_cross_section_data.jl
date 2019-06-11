@@ -1,3 +1,5 @@
+using Geodesics
+
 include("../types/types.jl")
 include("../setting/constants.jl")
 include("../utils/readfiles.jl")
@@ -163,10 +165,16 @@ function run_interp( command_args::Dict{String,Any})
 
     open(output_file,"w") do io
         if is_cut_vertically
+            a, f = Geodesics.EARTH_R_MAJOR_WGS84, Geodesics.F_WGS84;
             for (vindex, dep) in enumerate(range(dep1, stop = dep2, length = vnpts))
                 for (hindex, (lon, lat)) in enumerate(zip(range(lon1, stop = lon2, length = hnpts), range(lat1, stop = lat2, length = hnpts)))
                     id = (vindex - 1) * hnpts + hindex
-                    write(io,"$lon $lat $dep $(model_interp[:,id]) \n")
+                    dist, az, baz = Geodesics.inverse(deg2rad.((lon1, lat1, lon, lat))..., a, f)
+                    if size(model_interp)[1]==1
+                        write(io,"$lon $lat $dep $(model_interp[1,id]) $(dist/1000.0) \n")
+                    else
+                        write(io,"$lon $lat $dep $(model_interp[:,id]) $(dist/1000.0) \n")
+                    end
                 end
             end
         else
@@ -175,7 +183,11 @@ function run_interp( command_args::Dict{String,Any})
             for (lonindex, lon) in enumerate(range(lon1, stop = lon2, length = lonnpts))
                 for (latindex, lat) in enumerate(range(lat1, stop = lat2, length = latnpts))
                     id = (lonindex - 1) * latnpts + latindex
-                    write(io,"$lon $lat $dep1 $(model_interp[:,id]) \n")
+                    if size(model_interp)[1]==1
+                        write(io,"$lon $lat $dep1 $(model_interp[1,id]) \n")
+                    else
+                        write(io,"$lon $lat $dep1 $(model_interp[:,id]) \n")
+                    end
                 end
             end
         end
