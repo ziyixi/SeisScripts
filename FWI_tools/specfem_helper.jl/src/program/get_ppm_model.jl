@@ -82,7 +82,7 @@ function run_interp( command_args::Dict{String,Any})
     max_misloc = typical_size / 4.0
 
     # get xyz_new
-    xyz_new=generate_profile_points(hnpts, vnpts, lon1, lat1, dep1, lon2, lat2, dep2)
+    xyz_new=generate_profile_points(latnpts, lonnpts, lon1, lat1, dep1, lon2, lat2, dep2)
 
     ngll_new = size(xyz_new)[2]
     idoubling_new = zeros(Int64, ngll_new)
