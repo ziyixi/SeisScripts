@@ -59,6 +59,10 @@ end
 
 
 function run_interp( command_args::Dict{String,Any},comm::MPI.Comm)
+    # MPI
+    rank=MPI.Comm_rank(comm)
+    isroot=(rank==0)
+
     # * init some variables
     nproc_old = command_args["nproc_old"]
     old_mesh_dir = command_args["old_mesh_dir"]
@@ -79,9 +83,10 @@ function run_interp( command_args::Dict{String,Any},comm::MPI.Comm)
     model_names = String.(split(model_tags, ","))
     nmodel = length(model_names)
 
-    @info "# nmodel=$(nmodel)"
-    @info "# model names=$(model_names)"
-
+    if isroot
+        @info "# nmodel=$(nmodel)"
+        @info "# model names=$(model_names)"
+    end
 
     # * interpolate old mesh/model onto new mesh
 
@@ -113,7 +118,7 @@ function run_interp( command_args::Dict{String,Any},comm::MPI.Comm)
 
     # * loop for all points in xyz_new
     for iproc_old = 0:nproc_old - 1
-        @info "# iproc_old=$(iproc_old)"
+        @info "[$rank]# iproc_old=$(iproc_old)"
         # read old mesh slice
         mesh_old = sem_mesh_read(old_mesh_dir, iproc_old)
         nspec_old = mesh_old.nspec
@@ -128,7 +133,7 @@ function run_interp( command_args::Dict{String,Any},comm::MPI.Comm)
             min_dist=min(min_dist,dist_this_spec)
         end
         if min_dist>max_search_dist
-            @info "#$(iproc_old) slices too far away, skip"
+            @info "[$rank]#$(iproc_old) slices too far away, skip"
             continue
         end
 
@@ -142,7 +147,7 @@ function run_interp( command_args::Dict{String,Any},comm::MPI.Comm)
 
         for igll = 1:ngll_new_this_rank
             if (stat_final[igll] == 1 && location_1slice[igll].stat == 1)
-                @info "# multi-located, $(xyz_new[:,igll])"
+                @info "[$rank]# multi-located, $(xyz_new[:,igll])"
                 continue
             end
             # for point located inside one element in the first time or closer to one element than located before
