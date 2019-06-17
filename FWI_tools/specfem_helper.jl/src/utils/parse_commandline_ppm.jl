@@ -31,6 +31,10 @@ function parse_commandline()
         help = "latnpts/lonnpts/vnpts if cut vertically"
         arg_type = String
         required = true
+        """--nproc"""
+        help = "latnproc/lonnproc for proc numbers in each direction"
+        arg_type = String
+        required = true
     end
     return parse_args(s)
 end
