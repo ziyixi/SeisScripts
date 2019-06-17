@@ -35,7 +35,7 @@ function generate_profile_points(latnpts,lonnpts, vnpts, lon1, lat1, dep1, lon2,
         end
     end
 
-
+    xyz_new = zeros(Float64, 3, ngll_new_this_rank)
     # convert dep,lat,lon to x,y,z
     for id in 1:ngll_new_this_rank
         (dep,lat,lon)=deplatlon_new_this_rank[:,id]
