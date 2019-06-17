@@ -26,10 +26,12 @@ function generate_profile_points(latnpts,lonnpts, vnpts, lon1, lat1, dep1, lon2,
 
     deplatlon_new_this_rank=zeros(Float64, 3, ngll_new_this_rank)
     # fill in deplatlon_new of this rank
+    latnpts_this_rank=length(coor_lat)
+    lonnpts_this_rank=length(coor_lon)
     for (vindex,dep) in enumerate(range(dep1,stop=dep2,length=vnpts))
         for (latindex,lat) in enumerate(range(lat1,stop=lat2,length=latnpts)[coor_lat])
             for (lonindex,lon) in enumerate(range(lon1,stop=lon2,length=lonnpts)[coor_lon])
-                id=(vindex-1)*latnpts*lonnpts+(latindex-1)*lonnpts+lonindex
+                id=(vindex-1)*latnpts_this_rank*lonnpts_this_rank+(latindex-1)*lonnpts_this_rank+lonindex
                 deplatlon_new_this_rank[:,id]=[dep,lat,lon]
             end
         end
