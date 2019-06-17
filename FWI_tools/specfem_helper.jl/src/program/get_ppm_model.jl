@@ -24,6 +24,7 @@ function generate_profile_points(latnpts,lonnpts, vnpts, lon1, lat1, dep1, lon2,
     # init rθϕ_new
     ngll_new_this_rank=length(coor_lat)*length(coor_lon)*vnpts
 
+    deplatlon_new_this_rank=zeros(Float64, 3, ngll_new_this_rank)
     # fill in deplatlon_new of this rank
     for (vindex,dep) in enumerate(range(dep1,stop=dep2,length=vnpts))
         for (latindex,lat) in enumerate(range(lat1,stop=lat2,length=latnpts)[coor_lat])
