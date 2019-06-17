@@ -17,7 +17,7 @@ function generate_profile_points(latnpts,lonnpts, vnpts, lon1, lat1, dep1, lon2,
 
     # get ranges for the three directions
     rank_lat=rank%latproc+1
-    rank_lon=Int64(rank/latproc)+1
+    rank_lon=div(rank,latproc)+1
     coor_lat=np[:array_split](1:latnpts,size)[rank_lat]
     coor_lon=np[:array_split](1:lonnpts,size)[rank_lon]
 
