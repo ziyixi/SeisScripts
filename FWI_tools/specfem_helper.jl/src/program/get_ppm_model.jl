@@ -168,11 +168,22 @@ function run_interp( command_args::Dict{String,Any},comm::MPI.Comm)
 
 
     # * write out gll files for this new mesh slice
+    # get latnpts_this_rank and lonnpts_this_rank
+    rank = MPI.Comm_rank(comm)
+    size = MPI.Comm_size(comm)
+
+    rank_lat=rank%latproc+1
+    rank_lon=div(rank,latproc)+1
+    coor_lat=np[:array_split](1:latnpts,size)[rank_lat]
+    coor_lon=np[:array_split](1:lonnpts,size)[rank_lon]
+
+    latnpts_this_rank=length(coor_lat)
+    lonnpts_this_rank=length(coor_lon)
     open(output_file*"$(MPI.Comm_rank(comm))","w") do io
         for (vindex,dep) in enumerate(range(dep1,stop=dep2,length=vnpts))
-            for (latindex,lat) in enumerate(range(lat1,stop=lat2,length=latnpts))
-                for (lonindex,lon) in enumerate(range(lon1,stop=lon2,length=lonnpts))
-                    id=(vindex-1)*latnpts*lonnpts+(latindex-1)*lonnpts+lonindex
+            for (latindex,lat) in enumerate(range(lat1,stop=lat2,length=latnpts)[coor_lat])
+                for (lonindex,lon) in enumerate(range(lon1,stop=lon2,length=lonnpts)[coor_lon])
+                    id=(vindex-1)*latnpts_this_rank*lonnpts_this_rank+(latindex-1)*lonnpts_this_rank+lonindex
                     if size(model_interp_this_rank)[1]==1
                         write(io,"$lon $lat $dep $(model_interp_this_rank[1,id]) \n")
                     else
