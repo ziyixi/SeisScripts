@@ -196,6 +196,7 @@ function run_interp( command_args::Dict{String,Any},comm::MPI.Comm)
                         out_string="$lon $lat $dep "
                         for item in model_interp_this_rank[:,id]
                             out_string*="$item "
+                        end
                         out_string*="\n"
                         write(io,out_string)
                     end
