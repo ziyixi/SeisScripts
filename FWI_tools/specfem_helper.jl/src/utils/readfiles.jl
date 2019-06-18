@@ -3,6 +3,7 @@ include("../setting/constants.jl")
 include("../types/types.jl")
 
 # * mesh
+# nspec for my simulation setting is 4480
 function sem_mesh_read(basedir::String, iproc::Int64)
     # * init
     mesh_data = sem_mesh_data()

@@ -179,7 +179,7 @@ function run_interp( command_args::Dict{String,Any},comm::MPI.Comm)
 
     latnpts_this_rank=length(coor_lat)
     lonnpts_this_rank=length(coor_lon)
-    open(output_file*"$(MPI.Comm_rank(comm))","w") do io
+    open(output_file*"/$rank","w") do io
         for (vindex,dep) in enumerate(range(dep1,stop=dep2,length=vnpts))
             for (latindex,lat) in enumerate(range(lat1,stop=lat2,length=latnpts)[coor_lat])
                 for (lonindex,lon) in enumerate(range(lon1,stop=lon2,length=lonnpts)[coor_lon])
