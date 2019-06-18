@@ -13,13 +13,13 @@ include("../utils/parse_commandline_ppm.jl")
 function generate_profile_points(latnpts,lonnpts, vnpts, lon1, lat1, dep1, lon2, lat2, dep2,comm,latproc,lonproc)
     # MPI parameters
     rank = MPI.Comm_rank(comm)
-    size = MPI.Comm_size(comm)
+    size_mpi = MPI.Comm_size(comm)
 
     # get ranges for the three directions
     rank_lat=rank%latproc+1
     rank_lon=div(rank,latproc)+1
-    coor_lat=np[:array_split](1:latnpts,size)[rank_lat]
-    coor_lon=np[:array_split](1:lonnpts,size)[rank_lon]
+    coor_lat=np[:array_split](1:latnpts,size_mpi)[rank_lat]
+    coor_lon=np[:array_split](1:lonnpts,size_mpi)[rank_lon]
 
     # init rθϕ_new
     ngll_new_this_rank=length(coor_lat)*length(coor_lon)*vnpts
@@ -170,12 +170,12 @@ function run_interp( command_args::Dict{String,Any},comm::MPI.Comm)
     # * write out gll files for this new mesh slice
     # get latnpts_this_rank and lonnpts_this_rank
     rank = MPI.Comm_rank(comm)
-    size = MPI.Comm_size(comm)
+    size_mpi = MPI.Comm_size(comm)
 
     rank_lat=rank%latproc+1
     rank_lon=div(rank,latproc)+1
-    coor_lat=np[:array_split](1:latnpts,size)[rank_lat]
-    coor_lon=np[:array_split](1:lonnpts,size)[rank_lon]
+    coor_lat=np[:array_split](1:latnpts,size_mpi)[rank_lat]
+    coor_lon=np[:array_split](1:lonnpts,size_mpi)[rank_lon]
 
     latnpts_this_rank=length(coor_lat)
     lonnpts_this_rank=length(coor_lon)
