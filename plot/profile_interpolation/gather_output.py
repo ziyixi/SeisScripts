@@ -11,7 +11,7 @@ import click
 def get_pd(julia_output_dir, nproc, parameter_list):
     column_names = ["lon", "lat", "dep"]+parameter_list
     data = pd.DataFrame(columns=column_names)
-    for rank in range(nproc):
+    for rank in range(int(nproc)):
         readin_name = join(julia_output_dir, str(rank))
         data_this_rank = pd.read_csv(
             readin_name, sep=" ", columns=column_names)
