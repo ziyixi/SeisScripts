@@ -4,6 +4,20 @@ import pandas as pd
 import click
 from spherical_geometry.polygon import SphericalPolygon
 
+lon = [91.3320117152011, 74.6060844556399,
+       174.409435753150, 144.284491292185, 91.3320117152011]
+lat = [9.37366242174489, 61.1396992149365,
+       48.6744705245903, 2.08633373396527, 9.37366242174489]
+coordinate = []
+for i, j in zip(lon, lat):
+    phi = np.deg2rad(i)
+    theta = np.deg2rad(90-j)
+    x = np.sin(theta)*np.cos(phi)
+    y = np.sin(theta)*np.sin(phi)
+    z = np.cos(theta)
+    coordinate.append((x, y, z))
+sp = SphericalPolygon(coordinate)
+
 
 def prepare_data(data_pd, parameter):
     lon_set = set(data_pd["lon"])
@@ -20,15 +34,16 @@ def prepare_data(data_pd, parameter):
     x_mesh = np.zeros_like(lon_mesh)
     y_mesh = np.zeros_like(lon_mesh)
     z_mesh = np.zeros_like(lon_mesh)
+    r_mesh = np.zeros_like(lon_mesh)
 
     for i in range(dx):
         for j in range(dy):
             for k in range(dz):
-                x_mesh[i, j, k], y_mesh[i, j, k], z_mesh[i, j, k] = lld2xyz(
+                x_mesh[i, j, k], y_mesh[i, j, k], z_mesh[i, j, k], r_mesh[i, j, k] = lld2xyzr(
                     lat_mesh[i, j, k], lon_mesh[i, j, k], dep_mesh[i, j, k])
 
 
-def lld2xyz(lat, lon, dep):
+def lld2xyzr(lat, lon, dep):
     R_EARTH_KM = 6371.0
     r = (R_EARTH_KM-dep)/R_EARTH_KM
     theta = 90-lat
@@ -39,7 +54,7 @@ def lld2xyz(lat, lon, dep):
     x = h*cosd(phi)
     y = h*sind(phi)
 
-    return (x, y, z)
+    return (x, y, z, r)
 
 
 def cosd(x):
