@@ -181,7 +181,11 @@ function run_interp( command_args::Dict{String,Any},comm::MPI.Comm)
     lonnpts_this_rank=length(coor_lon)
 
     # output files
-    run(`mkdir -p $output_file`)
+    if isroot
+        run(`rm -rf $output_file`)
+        run(`mkdir -p $output_file`)
+    end
+    MPI.Barrier(comm)
 
     open(output_file*"/$rank","w") do io
         for (vindex,dep) in enumerate(range(dep1,stop=dep2,length=vnpts))
