@@ -181,7 +181,6 @@ function run_interp( command_args::Dict{String,Any},comm::MPI.Comm)
     lonnpts_this_rank=length(coor_lon)
 
     # output files
-    run(`rm -rf $output_file`)
     run(`mkdir -p $output_file`)
 
     open(output_file*"/$rank","w") do io
