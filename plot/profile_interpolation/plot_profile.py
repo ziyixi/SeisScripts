@@ -30,7 +30,7 @@ def prepare_data(data_pd, parameter):
 
     lon_mesh, lat_mesh, dep_mesh = np.meshgrid(lon_list, lat_list, dep_list)
     dx, dy, dz = np.shape(lon_mesh)
-    value = np.zeros_like(lon_mesh)
+    value_mesh = np.zeros_like(lon_mesh)
     x_mesh = np.zeros_like(lon_mesh)
     y_mesh = np.zeros_like(lon_mesh)
     z_mesh = np.zeros_like(lon_mesh)
@@ -41,6 +41,24 @@ def prepare_data(data_pd, parameter):
             for k in range(dz):
                 x_mesh[i, j, k], y_mesh[i, j, k], z_mesh[i, j, k], r_mesh[i, j, k] = lld2xyzr(
                     lat_mesh[i, j, k], lon_mesh[i, j, k], dep_mesh[i, j, k])
+
+    x_mesh_projection = x_mesh/r_mesh  # rmesh couldn't be 0
+    y_mesh_projection = y_mesh/r_mesh
+    z_mesh_projection = z_mesh/r_mesh
+
+    # get value_mesh
+    for i in range(dx):
+        for j in range(dy):
+            for k in range(dz):
+                projected_x = x_mesh_projection[i, j, k]
+                projected_y = y_mesh_projection[i, j, k]
+                projected_z = z_mesh_projection[i, j, k]
+                if(sp.contains_point(projected_x, projected_y, projected_z)):
+                    value_mesh[i, j, k] = get_value(
+                        data_pd, lat_mesh[i, j, k], lon_mesh[i, j, k], dep_mesh[i, j, k])
+                else:
+                    value_mesh[i, j, k] = np.nan
+    return x_mesh_projection, y_mesh_projection, z_mesh_projection, value_mesh
 
 
 def lld2xyzr(lat, lon, dep):

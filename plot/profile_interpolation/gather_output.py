@@ -15,7 +15,7 @@ def get_pd(julia_output_dir, nproc, parameter_list):
         readin_name = join(julia_output_dir, str(rank))
         data_this_rank = pd.read_csv(
             readin_name, sep=" ", names=column_names)
-        data = data.append(data_this_rank)
+        data = data.append(data_this_rank, ignore_index=True)
     return data
 
 
