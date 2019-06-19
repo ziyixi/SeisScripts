@@ -182,7 +182,7 @@ function run_interp( command_args::Dict{String,Any},comm::MPI.Comm)
 
     # output files
     run(`rm -rf $output_file`)
-    run(`mkdir $output_file`)
+    run(`mkdir -p $output_file`)
 
     open(output_file*"/$rank","w") do io
         for (vindex,dep) in enumerate(range(dep1,stop=dep2,length=vnpts))
