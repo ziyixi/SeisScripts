@@ -27,7 +27,7 @@ def get_pd(julia_output_dir, nproc, parameter_list):
 def main(julia_output_dir, nproc, parameters, output):
     parameter_list = parameters.split(",")
     data = get_pd(julia_output_dir, nproc, parameter_list)
-    data.to_pickle(output)
+    data.to_hdf(output)
 
 
 if __name__ == "__main__":
