@@ -10,11 +10,12 @@ import click
 
 def get_pd(julia_output_dir, nproc, parameter_list):
     column_names = ["lon", "lat", "dep"]+parameter_list
+    print(column_names)
     data = pd.DataFrame(columns=column_names)
     for rank in range(int(nproc)):
         readin_name = join(julia_output_dir, str(rank))
         data_this_rank = pd.read_csv(
-            readin_name, sep=" ", names=column_names)
+            readin_name, sep="s+", names=column_names)
         data = data.append(data_this_rank, ignore_index=True)
     return data
 
