@@ -29,15 +29,6 @@ def generate_new_cmtsolution_files(cmts_dir, generated_cmts_dir, depth_perturbat
             # print(event_this_depth.origins[0], generated_name)
             event_this_depth.write(generated_name, format="CMTSOLUTION")
 
-        # we should modify the names in cmts_dir
-        sh.mkdir("-p", join(generated_cmts_dir, "cmts_raw"))
-        event.write(join(generated_cmts_dir, "cmts_raw",
-                         gcmt_id), format="CMTSOLUTION")
-
-    # mv back
-    sh.rm("-rf", cmts_dir)
-    sh.mv(join(generated_cmts_dir, "cmts_raw"), cmts_dir)
-
 
 def setup_basic_structure(main_dir, ref_dir, cmts_dir, depth_perturbation_list):
     # main
