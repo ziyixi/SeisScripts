@@ -73,8 +73,8 @@ def get_scripts(thedirs):
 
 
 def submit_job(thecommand):
-    s = Slurm("sync", {"nodes": 92, "ntasks": 4416,
-                       "partition": 'skx-normal', "time": "06:00:00"})
+    s = Slurm("relocation", {"nodes": 83, "ntasks": 3969,
+                             "partition": 'skx-normal', "time": "02:00:00"})
     s.run(thecommand)
 
 
