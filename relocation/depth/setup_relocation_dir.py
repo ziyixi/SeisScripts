@@ -23,8 +23,8 @@ def generate_new_cmtsolution_files(cmts_dir, generated_cmts_dir, depth_perturbat
         for depth_per in depth_perturbation_list:
             generated_name = join(generated_cmts_dir, f"d{depth_per}", gcmt_id)
             # there are always problem in copy event, so here I'd like to read in the event again
-            # event_this_depth = obspy.read_events(cmt_file)[0]
-            event_this_depth = event.copy()
+            event_this_depth = obspy.read_events(cmt_file)[0]
+            # event_this_depth = event.copy()
             event_this_depth.origins[0].depth += 1000.0*depth_per
             # print(event_this_depth.origins[0], generated_name)
             event_this_depth.write(generated_name, format="CMTSOLUTION")
@@ -140,8 +140,9 @@ def main(main_dir, output_dir, ref_dir, cmts_dir, depth_perturbation):
                                for item in depth_perturbation.split(",")]
     setup_basic_structure(main_dir, ref_dir, cmts_dir, depth_perturbation_list)
     generated_cmts_dir = join(main_dir, "cmts", "cmts_generated")
+    working_cmts_dir = join(main_dir, "cmts", "cmts_raw")
     generate_new_cmtsolution_files(
-        cmts_dir, generated_cmts_dir, depth_perturbation_list)
+        working_cmts_dir, generated_cmts_dir, depth_perturbation_list)
     setup_structure_after_generat_cmts(
         main_dir, output_dir, depth_perturbation_list)
 
