@@ -74,7 +74,7 @@ def get_scripts(thedirs):
 
 def submit_job(thecommand):
     s = Slurm("relocation", {"nodes": 83, "ntasks": 3969,
-                             "partition": 'skx-normal', "time": "02:00:00"})
+                             "partition": 'skx-normal', "time": "02:00:00", "account": "TG-EAR140030"})
     s.run(thecommand)
 
 
