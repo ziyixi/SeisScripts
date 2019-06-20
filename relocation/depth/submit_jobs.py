@@ -6,8 +6,8 @@ from os.path import join
 from slurmpy import Slurm
 
 N_total = 9
-N_each = 9
-N_iter = 1
+N_each = 3
+N_iter = 3
 nproc = 441
 
 
@@ -73,8 +73,8 @@ def get_scripts(thedirs):
 
 
 def submit_job(thecommand):
-    s = Slurm("relocation", {"nodes": 83, "ntasks": 3969,
-                             "partition": 'skx-normal', "time": "02:00:00", "account": "TG-EAR140030"})
+    s = Slurm("relocation", {"nodes": 28, "ntasks": 1323,
+                             "partition": 'skx-normal', "time": "05:00:00", "account": "TG-EAR140030"})
     s.run(thecommand)
 
 
