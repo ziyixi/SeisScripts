@@ -80,11 +80,11 @@ def init_structure(base, cmtfiles, ref, output):
             sh.ln("-s", join(base, "ref", "DATA", lnfile),
                   join(base, "work", dir, "DATA", lnfile))
 
-    # ln in workfiles
-    toln_work = ["utils"]
-    for lnfile in toln_work:
-        sh.ln("-s", join(base, "ref", lnfile),
-              join(base, "work", dir, lnfile))
+        # ln in workfiles
+        toln_work = ["utils"]
+        for lnfile in toln_work:
+            sh.ln("-s", join(base, "ref", lnfile),
+                  join(base, "work", dir, lnfile))
 
     # mkdir and ln DATABASES_MPI and OUTPUT_FILES
     sh.mkdir("-p", output)
