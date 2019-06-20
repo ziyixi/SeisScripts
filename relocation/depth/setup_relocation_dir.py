@@ -17,7 +17,7 @@ def generate_new_cmtsolution_files(cmts_dir, generated_cmts_dir, depth_perturbat
         event = obspy.read_events(cmt_file)[0]
         # gcmt_id = event.resource_id.id.split("/")[-2]
         # there are some problems in changing names
-        gcmt_id = cmt_file
+        gcmt_id = cmt_file.split("/")[-1]
 
         # assume dirs like f"{generated_cmts_dir}/d-3" have already been created
         for depth_per in depth_perturbation_list:
