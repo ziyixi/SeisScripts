@@ -57,7 +57,7 @@ def setup_basic_structure(main_dir, ref_dir, cmts_dir, depth_perturbation_list):
     sh.mkdir("-p", join(main_dir, "cmts", "cmts_generated"))
     for depth_per in depth_perturbation_list:
         sh.mkdir("-p", join(main_dir, "cmts",
-                            "cmts_generated"), f"d{depth_per}")
+                            "cmts_generated", f"d{depth_per}"))
 
     # working directory
     sh.mkdir("-p", join(main_dir, "work"))
