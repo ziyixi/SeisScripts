@@ -138,3 +138,7 @@ def main(main_dir, output_dir, ref_dir, cmts_dir, depth_perturbation):
         cmts_dir, generated_cmts_dir, depth_perturbation_list)
     setup_structure_after_generat_cmts(
         main_dir, output_dir, depth_perturbation_list)
+
+
+if __name__ == "__main__":
+    main()
