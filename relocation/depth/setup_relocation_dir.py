@@ -20,7 +20,8 @@ def generate_new_cmtsolution_files(cmts_dir, generated_cmts_dir, depth_perturbat
         # assume dirs like f"{generated_cmts_dir}/d-3" have already been created
         for depth_per in depth_perturbation_list:
             generated_name = join(generated_cmts_dir, f"d{depth_per}", gcmt_id)
-            event_this_depth = copy.deepcopy(event)
+            # there are always problem in copy event, so here I'd like to read in the event again
+            event_this_depth = obspy.read_events(cmt_file)[0]
             event_this_depth.origins[0].depth += 1000.0*depth_per
             # print(event_this_depth.origins[0], generated_name)
             event_this_depth.write(generated_name, format="CMTSOLUTION")
