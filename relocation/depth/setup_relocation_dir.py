@@ -21,6 +21,7 @@ def generate_new_cmtsolution_files(cmts_dir, generated_cmts_dir, depth_perturbat
             generated_name = join(generated_cmts_dir, f"d{depth_per}", gcmt_id)
             event_this_depth = event.copy()
             event_this_depth.origins[0].depth += 1000.0*depth_per
+            print(event_this_depth, generated_name)
             event_this_depth.write(generated_name, format="CMTSOLUTION")
 
         # we should modify the names in cmts_dir
