@@ -26,7 +26,7 @@ def generate_new_cmtsolution_files(cmts_dir, generated_cmts_dir, depth_perturbat
             event_this_depth = obspy.read_events(cmt_file)[0]
             # event_this_depth = event.copy()
             event_this_depth.origins[0].depth += 1000.0*depth_per
-            print(generated_name)
+            print(generated_name, generated_cmts_dir, f"d{depth_per}", gcmt_id)
             event_this_depth.write(generated_name, format="CMTSOLUTION")
 
 
