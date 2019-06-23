@@ -30,7 +30,7 @@ def process_single_event(min_periods, max_periods, asdf_filename, waveform_lengt
                 st.taper(max_percentage=0.05, type="hann")
 
                 st.remove_response(output="DISP", pre_filt=pre_filt, zero_mean=False,
-                                   taper=False)
+                                   taper=False, inventory=inv)
 
                 # this is not included by Dr. Chen's script
                 st.detrend("linear")
