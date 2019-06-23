@@ -64,8 +64,7 @@ def process_single_event(min_periods, max_periods, asdf_filename, waveform_lengt
                 "raw": tag_name
             }
 
-            ds.process(process_function, join(
-                output_directory, tag_name + ".h5"), tag_map=tag_map)
+            ds.process(process_function, tag_name + ".h5", tag_map=tag_map)
 
 
 if __name__ == "__main__":
