@@ -15,7 +15,7 @@ def generate_asdf_for_single_event(seed_directory, cmt_path, output_path, with_m
         ds = pyasdf.ASDFDataSet(output_path, compression="gzip-3")
         print("not with mpi, use gzip-3")
     else:
-        ds = pyasdf.ASDFDataSet(output_path, compression="None")
+        ds = pyasdf.ASDFDataSet(output_path, compression=None)
         print("will use mpi, no compression")
 
     # generate a tmp file to store stationxml
