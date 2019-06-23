@@ -27,7 +27,7 @@ from email.mime.text import MIMEText
 #
 # Email accout, password, SMTP host and port
 sender = "ziyixi@mail.ustc.edu.cn"
-passwd = "********"
+passwd = "******"
 host = "mail3.ustc.edu.cn"
 port = 465
 
@@ -59,4 +59,4 @@ for mail in sys.argv[1:]:
     print("{}/{}: {} is sent.".format(count, len(sys.argv[1:]), mail))
     # sleep some time
     if count < len(sys.argv[1:]):
-        time.sleep(random.uniform(3, 10))
+        time.sleep(3)
