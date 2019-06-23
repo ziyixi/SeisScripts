@@ -48,3 +48,18 @@ def generate_asdf_for_single_event(seed_directory, cmt_path, output_path, with_m
     ds.add_stationxml(station_xml)
     del ds
     print(f"success in creating {output_path}")
+
+
+if __name__ == "__main__":
+    import click
+
+    @click.command()
+    @click.option('--seed_directory', required=True, type=str, help="the directory containing all the seed files for this event")
+    @click.option('--cmt_path', required=True, type=str, help="the CMTSOLUTION file for this event")
+    @click.option('--seed_directory', required=True, type=str, help="the output path for hdf5 file")
+    @click.option('--with_mpi/--no-with_mpi', default=False, help="if this file will be used with mpi (compression or not)")
+    def main(seed_directory, cmt_path, output_path, with_mpi):
+        generate_asdf_for_single_event(
+            seed_directory, cmt_path, output_path, with_mpi)
+
+    main()
