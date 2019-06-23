@@ -49,9 +49,6 @@ def process_single_event(min_periods, max_periods, asdf_filename, waveform_lengt
             components = [tr.stats.channel[-1] for tr in st]
             if "N" in components and "E" in components:
                 st.rotate(method="NE->RT", back_azimuth=baz)
-            else:
-                print(
-                    f"problem in rotating {st[0].stats.network}.{st[0].stats.station}")
 
             # Convert to single precision to save space.
             for tr in st:
