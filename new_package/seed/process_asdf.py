@@ -91,6 +91,6 @@ def main(asdf_fname, tag):
 
 
 if __name__ == "__main__":
-    asdf_fname = "/mnt/home/xiziyi/SeisScripts/new_package/seed/example.h5"
+    asdf_fname = "/mnt/home/xiziyi/SeisScripts/new_package/seed/201110040137308.cea.h5"
     tag = "raw"
     main(asdf_fname, tag)
