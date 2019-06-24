@@ -83,6 +83,15 @@ def process_single_event(min_periods, max_periods, asdf_filename, waveform_lengt
             else:
                 raise Exception("unknown status code")
 
+            status_code = check_time(st, event_time, waveform_length, inv)
+            if(status_code == 0):
+                pass
+            elif(status_code == -1):
+                logger.error(
+                    f"[{rank}/{size}] {inv.get_contents()['stations'][0]} error in cutting data")
+                return
+            else:
+                raise Exception("unknown status code")
             st.trim(event_time, event_time+waveform_length)
 
             st.detrend("linear")
@@ -205,7 +214,7 @@ def func_correct_cea(baz, inv, event_time, correction_data):
         return baz
     else:
         info_for_this_station = correction_data.loc[(
-            correction_data.network == network) & (correction_data.station == station) & (correction_data.starttime < event_time) & (correction_data.endtime > event_time)]
+            correction_data.network == network) & (correction_data.station == station) & (correction_data.starttime <= event_time) & (correction_data.endtime >= event_time)]
         if(len(info_for_this_station) == 0):
             logger.error(
                 f"[{rank}/{size}] {inv.get_contents()['stations'][0]} has no correcting orientation's information!")
@@ -223,6 +232,21 @@ def func_correct_cea(baz, inv, event_time, correction_data):
             logger.error(
                 f"[{rank}/{size}] {inv.get_contents()['stations'][0]} has more than one row of orientation information")
             return None
+
+
+def check_time(st, event_time, waveform_length, inv):
+    for trace in st:
+        starttime = trace.stats.starttime
+        endtime = trace.stats.endtime
+        if(starttime > event_time):
+            logger.error(
+                f"[{rank}/{size}] {inv.get_contents()['stations'][0]} starttime:{str(starttime)} > event_time:{str(event_time)}")
+            return -1
+        if(endtime < event_time+waveform_length):
+            logger.error(
+                f"[{rank}/{size}] {inv.get_contents()['stations'][0]} endtime:{str(endtime)} < cut_time:{str(event_time+waveform_length)}")
+            return -1
+    return 0
 
 
 if __name__ == "__main__":
