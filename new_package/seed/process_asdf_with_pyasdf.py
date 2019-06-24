@@ -60,7 +60,13 @@ def process_single_event(min_periods, max_periods, asdf_filename, waveform_lengt
             elif(status_code == 0):
                 pass
             elif(status_code == 1):
-                st.merge(method=1, fill_value=0, interpolation_samples=0)
+                # merge may have roblem (samplign rate is not equal)
+                try:
+                    st.merge(method=1, fill_value=0, interpolation_samples=0)
+                except:
+                    logger.error(
+                        f"[{rank}/{size}] {inv.get_contents()['stations'][0]} error in merging")
+                    return
             else:
                 raise Exception("unknown status code")
 
@@ -88,10 +94,16 @@ def process_single_event(min_periods, max_periods, asdf_filename, waveform_lengt
 
             components = [tr.stats.channel[-1] for tr in st]
             if "N" in components and "E" in components:
-                st.rotate(method="NE->RT", back_azimuth=baz, inventory=inv)
+                # there may be some problem in rotating (time span is not equal for three channels)
+                try:
+                    st.rotate(method="NE->RT", back_azimuth=baz, inventory=inv)
+                except:
+                    logger.error(
+                        f"[{rank}/{size}] {inv.get_contents()['stations'][0]} error in rotating")
+                    return
             else:
                 logger.error(
-                    f"[{rank}/{size}] {inv.get_contents()['stations'][0]} has problem in rotation")
+                    f"[{rank}/{size}] {inv.get_contents()['stations'][0]} doesn't have both N and E")
                 return
 
             # Convert to single precision to save space.
