@@ -71,7 +71,7 @@ def main(asdf_fname, tag):
 
     name_list_collection, waveform_list_collection, stationxml_list_collection, event = None, None, None, None
     if(isroot):
-        ds = pyasdf.ASDFDataSet(asdf_fname)
+        ds = pyasdf.ASDFDataSet(asdf_fname, mpi=False)
         name_list_collection, waveform_list_collection, stationxml_list_collection, event = set_scatter_list(
             ds, tag)
 
