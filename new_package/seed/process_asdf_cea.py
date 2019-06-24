@@ -224,9 +224,14 @@ def func_correct_cea(baz, inv, event_time, correction_data):
             if(np.isnan(median_value)):
                 if_has_been_corrected = (
                     info_for_this_station["endtime"].values[0] == obspy.UTCDateTime("2099-09-01"))
-                logger.error(
-                    f"[{rank}/{size}] {inv.get_contents()['stations'][0]} median value is nan")
-                return None
+                if(if_has_been_corrected):
+                    logger.info(
+                        f"[{rank}/{size}] {inv.get_contents()['stations'][0]} is later than {str(info_for_this_station['starttime'].values[0])}")
+                    return baz
+                else:
+                    logger.error(
+                        f"[{rank}/{size}] {inv.get_contents()['stations'][0]} median value is nan")
+                    return None
             logger.info(
                 f"[{rank}/{size}] {inv.get_contents()['stations'][0]} ({baz},{median_value})->({baz-median_value})")
             return baz-median_value
