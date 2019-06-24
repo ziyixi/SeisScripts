@@ -222,6 +222,8 @@ def func_correct_cea(baz, inv, event_time, correction_data):
         elif(len(info_for_this_station) == 1):
             median_value = info_for_this_station["median"].values[0]
             if(np.isnan(median_value)):
+                if_has_been_corrected = (
+                    info_for_this_station["endtime"].values[0] == obspy.UTCDateTime("2099-09-01"))
                 logger.error(
                     f"[{rank}/{size}] {inv.get_contents()['stations'][0]} median value is nan")
                 return None
