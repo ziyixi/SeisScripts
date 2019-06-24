@@ -89,6 +89,8 @@ def process_single_event(min_periods, max_periods, asdf_filename, waveform_lengt
             station_latitude = inv[0][0].latitude
             station_longitude = inv[0][0].longitude
 
+            # baz is calculated using station and event's location
+            # for cea stations, we can directly add an angle to it
             _, baz, _ = gps2dist_azimuth(station_latitude, station_longitude,
                                          event_latitude, event_longitude)
 
@@ -96,7 +98,7 @@ def process_single_event(min_periods, max_periods, asdf_filename, waveform_lengt
             if "N" in components and "E" in components:
                 # there may be some problem in rotating (time span is not equal for three channels)
                 try:
-                    st.rotate(method="NE->RT", back_azimuth=baz, inventory=inv)
+                    st.rotate(method="NE->RT", back_azimuth=baz)
                 except:
                     logger.error(
                         f"[{rank}/{size}] {inv.get_contents()['stations'][0]} error in rotating")
