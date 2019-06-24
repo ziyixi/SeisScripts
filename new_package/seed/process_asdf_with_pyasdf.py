@@ -49,6 +49,10 @@ def process_single_event(min_periods, max_periods, asdf_filename, waveform_lengt
                 f"[{rank}/{size}] {asdf_filename} is filtered with {f1} {f2} {f3} {f4}")
 
         def process_function(st, inv):
+            # log
+            logger.info(
+                f"[{rank}/{size}] processing {inv.get_contents()['stations'][0]}")
+
             # overlap the previous trace
             status_code = check_st_numberlap(st, inv)
             if(status_code == -1):
