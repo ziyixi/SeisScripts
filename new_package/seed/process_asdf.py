@@ -43,7 +43,7 @@ def distribute_data(name_list_collection, waveform_list_collection, stationxml_l
     waveform_list_this_rank = comm.scatter(waveform_list_collection, root=0)
     stationxml_list_this_rank = comm.scatter(
         stationxml_list_collection, root=0)
-    event_this_rank = comm.bcast(event, event=0)
+    event_this_rank = comm.bcast(event, root=0)
 
     return name_list_this_rank, waveform_list_this_rank, stationxml_list_this_rank, event_this_rank
 
