@@ -1,106 +1,188 @@
-"""
-the other script has problem in using pyasdf, use serial IO instead.
-"""
-from mpi4py import MPI
-import pyasdf
+from os.path import join
+
 import numpy as np
+import obspy
+import pyasdf
+from loguru import logger
+from obspy.geodetics.base import gps2dist_azimuth
+from pyasdf import ASDFDataSet
 
-comm = MPI.COMM_WORLD
-rank = comm.Get_rank()
-size = comm.Get_size()
+# global parameters
+rank = None
+size = None
 
 
-def set_scatter_list(ds, tag):
-    """
-    only for the root process
-    """
-    name_list = ds.waveforms.list()
-    name_list_collection = np.array_split(name_list, size)
+def process_single_event(min_periods, max_periods, asdf_filename, waveform_length, sampling_rate, output_directory, logfile):
+    # with pyasdf.ASDFDataSet(asdf_filename) as ds:
+    ds = pyasdf.ASDFDataSet(asdf_filename)
 
-    # get waveform data for each rank
-    waveform_list = [ds.waveforms[name_item][tag]
-                     for name_item in name_list]
-    waveform_list_collection = np.array_split(waveform_list, size)
+    # add logger information
+    global rank
+    global size
+    rank = ds.mpi.comm.Get_rank()
+    size = ds.mpi.comm.Get_size()
+    isroot = (rank == 0)
+    logger.add(logfile, format="{time} {level} {message}", level="INFO")
 
-    # get station_xml data for each rank
-    stationxml_list = [ds.waveforms[name_item]["StationXML"]
-                       for name_item in name_list]
-    stationxml_list_collection = np.array_split(stationxml_list, size)
-
-    # get event_xml information
+    # some parameters
     event = ds.events[0]
+    origin = event.preferred_origin() or event.origins[0]
+    event_time = origin.time
+    event_latitude = origin.latitude
+    event_longitude = origin.longitude
 
-    return name_list_collection, waveform_list_collection, stationxml_list_collection, event
+    for min_period, max_period in zip(min_periods, max_periods):
+        # log
+        if(isroot):
+            logger.success(
+                f"[{rank}/{size}] start to process {asdf_filename} from {min_period}s to {max_period}s")
+
+        f2 = 1.0 / max_period
+        f3 = 1.0 / min_period
+        f1 = 0.8 * f2
+        f4 = 1.2 * f3
+        pre_filt = (f1, f2, f3, f4)
+
+        # log
+        if(isroot):
+            logger.success(
+                f"[{rank}/{size}] {asdf_filename} is filtered with {f1} {f2} {f3} {f4}")
+
+        def process_function(st, inv):
+            # log
+            logger.info(
+                f"[{rank}/{size}] processing {inv.get_contents()['stations'][0]}")
+
+            # overlap the previous trace
+            status_code = check_st_numberlap(st, inv)
+            if(status_code == -1):
+                return
+            elif(status_code == 0):
+                pass
+            elif(status_code == 1):
+                # merge may have roblem (samplign rate is not equal)
+                try:
+                    st.merge(method=1, fill_value=0, interpolation_samples=0)
+                except:
+                    logger.error(
+                        f"[{rank}/{size}] {inv.get_contents()['stations'][0]} error in merging")
+                    return
+            else:
+                raise Exception("unknown status code")
+
+            st.trim(event_time, event_time+waveform_length)
+
+            st.detrend("linear")
+            st.detrend("demean")
+            st.taper(max_percentage=0.05, type="hann")
+
+            st.remove_response(output="DISP", pre_filt=pre_filt, zero_mean=False,
+                               taper=False, inventory=inv)
+
+            # this is not included by Dr. Chen's script
+            st.detrend("linear")
+            st.detrend("demean")
+            st.taper(max_percentage=0.05, type="hann")
+
+            st.interpolate(sampling_rate=sampling_rate)
+
+            station_latitude = inv[0][0].latitude
+            station_longitude = inv[0][0].longitude
+
+            # baz is calculated using station and event's location
+            # for cea stations, we can directly add an angle to it
+            _, baz, _ = gps2dist_azimuth(station_latitude, station_longitude,
+                                         event_latitude, event_longitude)
+
+            components = [tr.stats.channel[-1] for tr in st]
+            if "N" in components and "E" in components:
+                # there may be some problem in rotating (time span is not equal for three channels)
+                try:
+                    st.rotate(method="NE->RT", back_azimuth=baz)
+                except:
+                    logger.error(
+                        f"[{rank}/{size}] {inv.get_contents()['stations'][0]} error in rotating")
+                    return
+            else:
+                logger.error(
+                    f"[{rank}/{size}] {inv.get_contents()['stations'][0]} doesn't have both N and E")
+                return
+
+            # Convert to single precision to save space.
+            for tr in st:
+                tr.data = np.require(tr.data, dtype="float32")
+
+            return st
+
+        tag_name = "preprocessed_%is_to_%is" % (
+            int(min_period), int(max_period))
+        tag_map = {
+            "raw": tag_name
+        }
+
+        ds.process(process_function, join(
+            output_directory, tag_name + ".h5"), tag_map=tag_map)
+        logger.success(
+            f"[{rank}/{size}] success in processing {asdf_filename} from {min_period}s to {max_period}s")
+
+    del ds
 
 
-def distribute_data(name_list_collection, waveform_list_collection, stationxml_list_collection, event):
-    name_list_this_rank = None
-    waveform_list_this_rank = None
-    stationxml_list_this_rank = None
-    event_this_rank = None
-
-    name_list_this_rank = comm.scatter(name_list_collection, root=0)
-    # waveform_list_this_rank = comm.scatter(waveform_list_collection, root=0)
-    waveform_list_this_rank = scatter_waveforms(waveform_list_collection)
-    stationxml_list_this_rank = comm.scatter(
-        stationxml_list_collection, root=0)
-    event_this_rank = comm.bcast(event, root=0)
-
-    return name_list_this_rank, waveform_list_this_rank, stationxml_list_this_rank, event_this_rank
-
-
-def scatter_waveforms(waveform_list_collection):
-    isroot = (rank == 0)
-    if(isroot):
-        stats_list_collection = []
-        for waveform_list_each_rank in waveform_list_collection:
-            stats_list_collection.append(
-                [item.stats for item in waveform_list_each_rank])
-
-
-def process_data(st, inv, event, name):
-    try:
-        length = len(st)
-        print(f"#{rank} {name} {length}")
-        return st
-    except:
-        print(f"#{rank} {name} problems!")
-        return None
-
-
-def process_in_each_rank(name_list_this_rank, waveform_list_this_rank, stationxml_list_this_rank, event_this_rank):
-    result_sts = []
-    for st, inv, name in zip(waveform_list_this_rank, stationxml_list_this_rank, name_list_this_rank):
-        result_st = process_data(st, inv, event_this_rank, name)
-        result_sts.append(result_st)
-    return result_sts
-
-
-def main(asdf_fname, tag):
-    isroot = (rank == 0)
-
-    name_list_collection, waveform_list_collection, stationxml_list_collection, event = None, None, None, None
-    if(isroot):
-        ds = pyasdf.ASDFDataSet(asdf_fname, mpi=False)
-        name_list_collection, waveform_list_collection, stationxml_list_collection, event = set_scatter_list(
-            ds, tag)
-
-    # distribute data
-    name_list_this_rank, waveform_list_this_rank, stationxml_list_this_rank, event_this_rank = distribute_data(
-        name_list_collection, waveform_list_collection, stationxml_list_collection, event)
-
-    comm.barrier()
-
-    # process data in each process
-    process_in_each_rank(name_list_this_rank, waveform_list_this_rank,
-                         stationxml_list_this_rank, event_this_rank)
-
-    # finish
-    if(isroot):
-        del ds
+def check_st_numberlap(st, inv):
+    """
+    detect overlapping
+    """
+    if(len(st) == 0):
+        logger.error(
+            f"[{rank}/{size}] {inv.get_contents()['stations'][0]} has only 0 traces")
+        return -1
+    elif(len(st) < 3):
+        logger.error(
+            f"[{rank}/{size}] {inv.get_contents()['stations'][0]} has less than 3 traces")
+        return -1
+    elif(len(st) == 3):
+        channel_set = set()
+        for item in st:
+            channel_set.add(item.id[-1])
+        if(len(channel_set) == 3):
+            return 0
+        else:
+            logger.error(
+                f"[{rank}/{size}] {inv.get_contents()['stations'][0]} has less than 3 channels")
+            return -1
+    else:
+        channel_set = set()
+        for item in st:
+            channel_set.add(item.id[-1])
+        if(len(channel_set) == 3):
+            logger.warning(
+                f"[{rank}/{size}] {inv.get_contents()['stations'][0]} has {len(st)} traces, need to merge")
+            return 1
+        elif(len(channel_set) < 3):
+            logger.error(
+                f"[{rank}/{size}] {inv.get_contents()['stations'][0]} has less than 3 channels")
+            return -1
+        else:
+            logger.error(
+                f"[{rank}/{size}] {inv.get_contents()['stations'][0]} has {len(channel_set)} channels, error!")
+            return -1
 
 
 if __name__ == "__main__":
-    asdf_fname = "/mnt/home/xiziyi/SeisScripts/new_package/seed/201110040137308.cea.h5"
-    tag = "raw"
-    main(asdf_fname, tag)
+    import click
+
+    @click.command()
+    @click.option('--min_periods', required=True, type=str, help="min periods in seconds, eg: 10,40")
+    @click.option('--max_periods', required=True, type=str, help="max periods in seconds, eg: 120,120")
+    @click.option('--asdf_filename', required=True, type=str, help="asdf raw data file name")
+    @click.option('--waveform_length', required=True, type=float, help="waveform length to cut (from event start time)")
+    @click.option('--sampling_rate', required=True, type=int, help="sampling rate in HZ")
+    @click.option('--output_directory', required=True, type=str, help="output directory")
+    @click.option('--logfile', required=True, type=str, help="the logging file")
+    def main(min_periods, max_periods, asdf_filename, waveform_length, sampling_rate, output_directory, logfile):
+        min_periods = [float(item) for item in min_periods.split(",")]
+        max_periods = [float(item) for item in max_periods.split(",")]
+        process_single_event(min_periods, max_periods, asdf_filename,
+                             waveform_length, sampling_rate, output_directory, logfile)
+
+    main()

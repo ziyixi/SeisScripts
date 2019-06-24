@@ -6,15 +6,25 @@ import pyasdf
 from loguru import logger
 from obspy.geodetics.base import gps2dist_azimuth
 from pyasdf import ASDFDataSet
+import pandas as pd
 
 # global parameters
 rank = None
 size = None
 
 
-def process_single_event(min_periods, max_periods, asdf_filename, waveform_length, sampling_rate, output_directory, logfile):
+def process_single_event(min_periods, max_periods, asdf_filename, waveform_length, sampling_rate, output_directory, logfile, correct_cea, cea_correction_file):
     # with pyasdf.ASDFDataSet(asdf_filename) as ds:
     ds = pyasdf.ASDFDataSet(asdf_filename)
+
+    # load cea correction file
+    if(correct_cea):
+        correction_data = pd.read_csv(cea_correction_file, sep="|", comment="#", names=[
+            "network", "station", "eventno", "mean", "std", "median", "mad", "starttime", "endtime"])
+        correction_data["starttime"] = correction_data["starttime"].apply(
+            modify_time)
+        correction_data["endtime"] = correction_data["endtime"].apply(
+            modify_time)
 
     # add logger information
     global rank
@@ -36,6 +46,9 @@ def process_single_event(min_periods, max_periods, asdf_filename, waveform_lengt
         if(isroot):
             logger.success(
                 f"[{rank}/{size}] start to process {asdf_filename} from {min_period}s to {max_period}s")
+            if(correct_cea):
+                logger.success(
+                    f"[{rank}/{size}] will correct cea dataset according to the cea station orientation information")
 
         f2 = 1.0 / max_period
         f3 = 1.0 / min_period
@@ -93,6 +106,12 @@ def process_single_event(min_periods, max_periods, asdf_filename, waveform_lengt
             # for cea stations, we can directly add an angle to it
             _, baz, _ = gps2dist_azimuth(station_latitude, station_longitude,
                                          event_latitude, event_longitude)
+            if(correct_cea):
+                baz = func_correct_cea(baz, inv, event_time, correction_data)
+            if(baz == None):
+                logger.error(
+                    f"[{rank}/{size}] {inv.get_contents()['stations'][0]} error in correcting orientation")
+                return
 
             components = [tr.stats.channel[-1] for tr in st]
             if "N" in components and "E" in components:
@@ -168,6 +187,44 @@ def check_st_numberlap(st, inv):
             return -1
 
 
+def modify_time(time_str):
+    if(type(time_str) != str):
+        return obspy.UTCDateTime("2099-09-01")
+    else:
+        return obspy.UTCDateTime(time_str)
+
+
+def func_correct_cea(baz, inv, event_time, correction_data):
+    network, station = inv.get_contents()["channels"][0].split(".")[:2]
+
+    # after 2013-09-01T11:52:00Z, all the stations have been corrected
+    trunc_datetime = obspy.UTCDateTime("2013-09-01T11:52:00Z")
+    if(event_time > trunc_datetime):
+        logger.info(
+            f"[{rank}/{size}] {inv.get_contents()['stations'][0]} is later than 2013-09-01T11:52:00Z")
+        return baz
+    else:
+        info_for_this_station = correction_data.loc[(
+            correction_data.network == network) & (correction_data.station == station) & (correction_data.starttime < event_time) & (correction_data.endtime > event_time)]
+        if(len(info_for_this_station) == 0):
+            logger.error(
+                f"[{rank}/{size}] {inv.get_contents()['stations'][0]} has no correcting orientation's information!")
+            return None
+        elif(len(info_for_this_station) == 1):
+            median_value = info_for_this_station["median"].values[0]
+            if(np.isnan(median_value)):
+                logger.error(
+                    f"[{rank}/{size}] {inv.get_contents()['stations'][0]} median value is nan")
+                return None
+            logger.info(
+                f"[{rank}/{size}] {inv.get_contents()['stations'][0]} ({baz},{median_value})->({baz-median_value})")
+            return baz-median_value
+        else:
+            logger.error(
+                f"[{rank}/{size}] {inv.get_contents()['stations'][0]} has more than one row of orientation information")
+            return None
+
+
 if __name__ == "__main__":
     import click
 
@@ -179,10 +236,12 @@ if __name__ == "__main__":
     @click.option('--sampling_rate', required=True, type=int, help="sampling rate in HZ")
     @click.option('--output_directory', required=True, type=str, help="output directory")
     @click.option('--logfile', required=True, type=str, help="the logging file")
-    def main(min_periods, max_periods, asdf_filename, waveform_length, sampling_rate, output_directory, logfile):
+    @click.option('--correct_cea/--no-correct_cea', default=False, help="if handling cea dataset")
+    @click.option('--cea_correction_file', required=False, type=str, help="the cea correction file")
+    def main(min_periods, max_periods, asdf_filename, waveform_length, sampling_rate, output_directory, logfile, correct_cea, cea_correction_file):
         min_periods = [float(item) for item in min_periods.split(",")]
         max_periods = [float(item) for item in max_periods.split(",")]
         process_single_event(min_periods, max_periods, asdf_filename,
-                             waveform_length, sampling_rate, output_directory, logfile)
+                             waveform_length, sampling_rate, output_directory, logfile, correct_cea, cea_correction_file)
 
     main()
