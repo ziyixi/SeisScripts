@@ -24,6 +24,7 @@ def process_single_event(min_periods, max_periods, asdf_filename, waveform_lengt
         pre_filt = (f1, f2, f3, f4)
 
         def process_function(st, inv):
+            st.merge()
             st.trim(event_time, event_time+waveform_length)
 
             st.detrend("linear")
@@ -49,6 +50,8 @@ def process_single_event(min_periods, max_periods, asdf_filename, waveform_lengt
             components = [tr.stats.channel[-1] for tr in st]
             if "N" in components and "E" in components:
                 st.rotate(method="NE->RT", back_azimuth=baz)
+            else:
+                return
 
             # Convert to single precision to save space.
             for tr in st:
