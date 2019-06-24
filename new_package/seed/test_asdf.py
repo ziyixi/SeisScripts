@@ -8,7 +8,7 @@ from os.path import join
 
 def process_single_event(min_periods, max_periods, asdf_filename, waveform_length, sampling_rate, output_directory):
     # with pyasdf.ASDFDataSet(asdf_filename) as ds:
-    ds = pyasdf.ASDFDataSet(asdf_filename)
+    ds = pyasdf.ASDFDataSet(asdf_filename, mode="a")
     # some parameters
     event = ds.events[0]
     origin = event.preferred_origin() or event.origins[0]
