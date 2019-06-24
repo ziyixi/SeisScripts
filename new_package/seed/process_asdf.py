@@ -40,12 +40,22 @@ def distribute_data(name_list_collection, waveform_list_collection, stationxml_l
     event_this_rank = None
 
     name_list_this_rank = comm.scatter(name_list_collection, root=0)
-    waveform_list_this_rank = comm.scatter(waveform_list_collection, root=0)
+    # waveform_list_this_rank = comm.scatter(waveform_list_collection, root=0)
+    waveform_list_this_rank = scatter_waveforms(waveform_list_collection)
     stationxml_list_this_rank = comm.scatter(
         stationxml_list_collection, root=0)
     event_this_rank = comm.bcast(event, root=0)
 
     return name_list_this_rank, waveform_list_this_rank, stationxml_list_this_rank, event_this_rank
+
+
+def scatter_waveforms(waveform_list_collection):
+    isroot = (rank == 0)
+    if(isroot):
+        stats_list_collection = []
+        for waveform_list_each_rank in waveform_list_collection:
+            stats_list_collection.append(
+                [item.stats for item in waveform_list_each_rank])
 
 
 def process_data(st, inv, event, name):
