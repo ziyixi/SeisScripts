@@ -1,87 +1,96 @@
-import obspy
-import numpy as np
-from pyasdf import ASDFDataSet
+"""
+the other script has problem in using pyasdf, use serial IO instead.
+"""
+from mpi4py import MPI
 import pyasdf
-from obspy.geodetics.base import gps2dist_azimuth
-from os.path import join
+import numpy as np
+
+comm = MPI.COMM_WORLD
+rank = comm.Get_rank()
+size = comm.Get_size()
 
 
-def process_single_event(min_periods, max_periods, asdf_filename, waveform_length, sampling_rate, output_directory):
-    # with pyasdf.ASDFDataSet(asdf_filename) as ds:
-    ds = pyasdf.ASDFDataSet(asdf_filename)
-    # some parameters
+def set_scatter_list(ds, tag):
+    """
+    only for the root process
+    """
+    name_list = ds.waveforms.list()
+    name_list_collection = np.array_split(name_list, size)
+
+    # get waveform data for each rank
+    waveform_list = [ds.waveforms[name_item][tag]
+                     for name_item in name_list]
+    waveform_list_collection = np.array_split(waveform_list, size)
+
+    # get station_xml data for each rank
+    stationxml_list = [ds.waveforms[name_item]["StationXML"]
+                       for name_item in name_list]
+    stationxml_list_collection = np.array_split(stationxml_list, size)
+
+    # get event_xml information
     event = ds.events[0]
-    origin = event.preferred_origin() or event.origins[0]
-    event_time = origin.time
-    event_latitude = origin.latitude
-    event_longitude = origin.longitude
 
-    for min_period, max_period in zip(min_periods, max_periods):
-        f2 = 1.0 / max_period
-        f3 = 1.0 / min_period
-        f1 = 0.8 * f2
-        f4 = 1.2 * f3
-        pre_filt = (f1, f2, f3, f4)
+    return name_list_collection, waveform_list_collection, stationxml_list_collection, event
 
-        def process_function(st, inv):
-            st.trim(event_time, event_time+waveform_length)
 
-            st.detrend("linear")
-            st.detrend("demean")
-            st.taper(max_percentage=0.05, type="hann")
+def distribute_data(name_list_collection, waveform_list_collection, stationxml_list_collection, event):
+    name_list_this_rank = None
+    waveform_list_this_rank = None
+    stationxml_list_this_rank = None
+    event_this_rank = None
 
-            st.remove_response(output="DISP", pre_filt=pre_filt, zero_mean=False,
-                               taper=False, inventory=inv)
+    name_list_this_rank = comm.scatter(name_list_collection, root=0)
+    waveform_list_this_rank = comm.scatter(waveform_list_collection, root=0)
+    stationxml_list_this_rank = comm.scatter(
+        stationxml_list_collection, root=0)
+    event_this_rank = comm.bcast(event, event=0)
 
-            # this is not included by Dr. Chen's script
-            st.detrend("linear")
-            st.detrend("demean")
-            st.taper(max_percentage=0.05, type="hann")
+    return name_list_this_rank, waveform_list_this_rank, stationxml_list_this_rank, event_this_rank
 
-            st.interpolate(sampling_rate=sampling_rate)
 
-            station_latitude = inv[0][0].latitude
-            station_longitude = inv[0][0].longitude
+def process_data(st, inv, event, name):
+    try:
+        length = len(st)
+        print(f"#{rank} {name} {length}")
+        return st
+    except:
+        print(f"#{rank} {name} problems!")
+        return None
 
-            _, baz, _ = gps2dist_azimuth(station_latitude, station_longitude,
-                                         event_latitude, event_longitude)
 
-            components = [tr.stats.channel[-1] for tr in st]
-            if "N" in components and "E" in components:
-                st.rotate(method="NE->RT", back_azimuth=baz)
+def process_in_each_rank(name_list_this_rank, waveform_list_this_rank, stationxml_list_this_rank, event_this_rank):
+    result_sts = []
+    for st, inv, name in zip(waveform_list_this_rank, stationxml_list_this_rank, name_list_this_rank):
+        result_st = process_data(st, inv, event_this_rank, name)
+        result_sts.append(result_st)
+    return result_sts
 
-            # Convert to single precision to save space.
-            for tr in st:
-                tr.data = np.require(tr.data, dtype="float32")
 
-            return st
+def main(asdf_fname, tag):
+    isroot = (rank == 0)
 
-        tag_name = "preprocessed_%is_to_%is" % (
-            int(min_period), int(max_period))
-        tag_map = {
-            "raw": tag_name
-        }
+    name_list_collection, waveform_list_collection, stationxml_list_collection, event = None, None, None, None
+    if(isroot):
+        ds = pyasdf.ASDFDataSet(asdf_fname)
+        name_list_collection, waveform_list_collection, stationxml_list_collection, event = set_scatter_list(
+            ds, tag)
 
-        ds.process(process_function, join(
-            output_directory, tag_name + ".h5"), tag_map=tag_map)
+    # distribute data
+    name_list_this_rank, waveform_list_this_rank, stationxml_list_this_rank, event_this_rank = distribute_data(
+        name_list_collection, waveform_list_collection, stationxml_list_collection, event)
 
-    del ds
+    comm.barrier()
+
+    # process data in each process
+    process_in_each_rank(name_list_this_rank, waveform_list_this_rank,
+                         stationxml_list_this_rank, event_this_rank)
+
+    # finish
+    if(isroot):
+        del ds
 
 
 if __name__ == "__main__":
-    import click
-
-    @click.command()
-    @click.option('--min_periods', required=True, type=str, help="min periods in seconds, eg: 10,40")
-    @click.option('--max_periods', required=True, type=str, help="max periods in seconds, eg: 120,120")
-    @click.option('--asdf_filename', required=True, type=str, help="asdf raw data file name")
-    @click.option('--waveform_length', required=True, type=float, help="waveform length to cut (from event start time)")
-    @click.option('--sampling_rate', required=True, type=int, help="sampling rate in HZ")
-    @click.option('--output_directory', required=True, type=str, help="output directory")
-    def main(min_periods, max_periods, asdf_filename, waveform_length, sampling_rate, output_directory):
-        min_periods = [float(item) for item in min_periods.split(",")]
-        max_periods = [float(item) for item in max_periods.split(",")]
-        process_single_event(min_periods, max_periods, asdf_filename,
-                             waveform_length, sampling_rate, output_directory)
-
-    main()
+    asdf_fname = "/mnt/home/xiziyi/SeisScripts/new_package/seed/example.h5"
+    tag = "raw"
+    main(asdf_fname, tag)
