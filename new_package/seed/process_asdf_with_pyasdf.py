@@ -90,7 +90,7 @@ def process_single_event(min_periods, max_periods, asdf_filename, waveform_lengt
             if "N" in components and "E" in components:
                 st.rotate(method="NE->RT", back_azimuth=baz, inventory=inv)
             else:
-                logger.info(
+                logger.error(
                     f"[{rank}/{size}] {inv.get_contents()['stations'][0]} has problem in rotation")
                 return
 
@@ -119,11 +119,11 @@ def check_st_numberlap(st, inv):
     detect overlapping
     """
     if(len(st) == 0):
-        logger.info(
+        logger.error(
             f"[{rank}/{size}] {inv.get_contents()['stations'][0]} has only 0 traces")
         return -1
     elif(len(st) < 3):
-        logger.info(
+        logger.error(
             f"[{rank}/{size}] {inv.get_contents()['stations'][0]} has less than 3 traces")
         return -1
     elif(len(st) == 3):
@@ -133,7 +133,7 @@ def check_st_numberlap(st, inv):
         if(len(channel_set) == 3):
             return 0
         else:
-            logger.info(
+            logger.error(
                 f"[{rank}/{size}] {inv.get_contents()['stations'][0]} has less than 3 channels")
             return -1
     else:
@@ -141,15 +141,15 @@ def check_st_numberlap(st, inv):
         for item in st:
             channel_set.add(item.id[-1])
         if(len(channel_set) == 3):
-            logger.info(
+            logger.warning(
                 f"[{rank}/{size}] {inv.get_contents()['stations'][0]} has {len(st)} traces, need to merge")
             return 1
         elif(len(channel_set) < 3):
-            logger.info(
+            logger.error(
                 f"[{rank}/{size}] {inv.get_contents()['stations'][0]} has less than 3 channels")
             return -1
         else:
-            logger.info(
+            logger.error(
                 f"[{rank}/{size}] {inv.get_contents()['stations'][0]} has {len(channel_set)} channels, error!")
             return -1
 
