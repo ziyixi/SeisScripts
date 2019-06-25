@@ -9,7 +9,7 @@ from obspy.signal.util import _npts2nfft
 from os.path import join
 from loguru import logger
 
-comm = MPI.Comm
+comm = MPI.COMM_WORLD
 rank = comm.Get_rank()
 size = comm.Get_size()
 isroot = (rank == 0)
