@@ -6,10 +6,10 @@ import obspy
 import pyasdf
 
 
-def convert_sync_to_asdf(gll_directory, cmt_file, output_path, with_mpi):
+def convert_sync_to_asdf(sac_directory, cmt_file, output_path, with_mpi):
     # sync_directory = join(specfem_directory, "OUTPUT_FILES")
     # cmt_file = join(specfem_directory, "DATA", "CMTSOLUTION")
-    sync_directory = output_path
+    sync_directory = sac_directory
 
     # generate asdf file
     if(not with_mpi):
@@ -40,11 +40,11 @@ if __name__ == "__main__":
     import click
 
     @click.command()
-    @click.option('--gll_directory', required=True, type=str, help="the used gll files directory")
+    @click.option('--sac_directory', required=True, type=str, help="the used gll files directory")
     @click.option('--cmt_file', required=True, type=str, help="the cmt file")
     @click.option('--output_path', required=True, type=str, help="the output file path")
     @click.option('--with_mpi/--no-with_mpi', default=False, help="if this file will be used with mpi (compression or not)")
-    def main(gll_directory, cmt_file, output_path, with_mpi):
-        convert_sync_to_asdf(gll_directory, cmt_file, output_path, with_mpi)
+    def main(sac_directory, cmt_file, output_path, with_mpi):
+        convert_sync_to_asdf(sac_directory, cmt_file, output_path, with_mpi)
 
     main()
