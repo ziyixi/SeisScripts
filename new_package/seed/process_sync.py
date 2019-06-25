@@ -102,6 +102,16 @@ def process_single_event(min_periods, max_periods, asdf_filename, waveform_lengt
                 tr.data = np.require(tr.data, dtype="float32")
 
             return st
+        tag_name = "preprocessed_%is_to_%is" % (
+            int(min_period), int(max_period))
+        tag_map = {
+            "sync": tag_name
+        }
+
+        ds.process(process_function, join(
+            output_directory, tag_name + ".h5"), tag_map=tag_map)
+        logger.success(
+            f"[{rank}/{size}] success in processing {asdf_filename} from {min_period}s to {max_period}s")
 
 
 def check_time(st, event_time, waveform_length, inv):

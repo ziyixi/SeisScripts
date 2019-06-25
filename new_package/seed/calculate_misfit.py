@@ -14,7 +14,7 @@ from obspy.geodetics.base import gps2dist_azimuth, locations2degrees
 from obspy.taup import TauPyModel
 
 model = TauPyModel(model='ak135')
-comm = MPI.Comm
+comm = MPI.COMM_WORLD
 rank = comm.Get_rank()
 size = comm.Get_size()
 isroot = (rank == 0)
