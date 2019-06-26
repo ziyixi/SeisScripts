@@ -32,3 +32,7 @@ def main(asdf_file, logfile, output_file):
 
     remove_stations(ds)
     logger.success("finish removing missing stations")
+
+
+if __name__ == "__main__":
+    main()
