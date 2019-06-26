@@ -33,6 +33,7 @@ def generate_asdf_for_single_event(seed_directory, cmt_path, output_path, with_m
     # readin waves
     files = glob(join(seed_directory, "*"))
     station_xml = obspy.core.inventory.inventory.Inventory()
+    waveform_read_status = None
 
     for i, filename in enumerate(files):
         logger.info(f"adding waves #{i} {filename}")
@@ -40,12 +41,14 @@ def generate_asdf_for_single_event(seed_directory, cmt_path, output_path, with_m
         try:
             waveform_stream = obspy.read(filename)
             logger.info(f"{filename} is able to use obspy to read waveforms")
+            waveform_read_status = 1
         except:
             dirpath = tempfile.mkdtemp()
             command = f"rdseed -d -f {filename} -q {dirpath}"
             subprocess.call(command, shell=True)
             waveform_stream = obspy.read(join(dirpath, "*SAC"))
             logger.info(f"{filename} could only use rdseed to read waveforms")
+            waveform_read_status = 2
 
         ds.add_waveforms(waveform_stream, tag="raw", event_id=event)
 
@@ -62,6 +65,17 @@ def generate_asdf_for_single_event(seed_directory, cmt_path, output_path, with_m
             station_xml_this_seed = obspy.read_inventory(station_xml_file_path)
             logger.info(f"{filename} could use obspy to read stationxml")
         except:
+            # since such an error occurs, we might have to use the except part to read the waveform to get the sac head
+            if(waveform_read_status==1):
+                # re readin waveform_stream
+                dirpath = tempfile.mkdtemp()
+                command = f"rdseed -d -f {filename} -q {dirpath}"
+                subprocess.call(command, shell=True)
+                waveform_stream = obspy.read(join(dirpath, "*SAC"))
+                logger.info(f"{filename} uses rdseed to read in head information")
+            else:
+                pass # should already have the head information
+
             dirpath = tempfile.mkdtemp()
             command = f"rdseed -R -f {filename} -q {dirpath}"
             subprocess.call(command, shell=True)
