@@ -272,7 +272,7 @@ def filter_st(st, inv):
         net, sta, loc, cha = theid.split(".")
 
         con1 = ((loc == "") or (loc == "00"))
-        con2 = (cha[:2] == "BH")
+        con2 = (cha[:2] == "BH" or ((net in CEA_NETWORKS) and (cha[:2]=="SH")))
         if(con1 and con2):
             newst += trace
         else:
