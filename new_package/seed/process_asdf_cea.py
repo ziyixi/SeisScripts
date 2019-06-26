@@ -12,6 +12,9 @@ import pandas as pd
 rank = None
 size = None
 
+# CEA_NETWORKS
+CEA_NETWORKS = ["AH","BJ","BU","CQ","FJ","GD","GS","GX","GZ","HA","HB","HE","HI","HL","HN","JL","JS","JX","LN","NM","NX","QH","SC","SD","SH","SN","SX","TJ","XJ","XZ","YN","ZJ"]
+
 
 def process_single_event(min_periods, max_periods, asdf_filename, waveform_length, sampling_rate, output_directory, logfile, correct_cea, cea_correction_file):
     # with pyasdf.ASDFDataSet(asdf_filename) as ds:
@@ -118,8 +121,11 @@ def process_single_event(min_periods, max_periods, asdf_filename, waveform_lengt
             # for cea stations, we can directly add an angle to it
             _, baz, _ = gps2dist_azimuth(station_latitude, station_longitude,
                                          event_latitude, event_longitude)
-            if(correct_cea):
-                baz = func_correct_cea(baz, inv, event_time, correction_data)
+
+            network = inv.get_contents()['networks'][0]
+            if(correct_cea and (network in CEA_NETWORKS)):
+                baz = func_correct_cea(
+                    baz, inv, event_time, correction_data)
             if(baz == None):
                 logger.error(
                     f"[{rank}/{size}] {inv.get_contents()['stations'][0]} error in correcting orientation")
