@@ -131,6 +131,9 @@ def process_single_event(min_periods, max_periods, asdf_filename, waveform_lengt
                 logger.error(
                     f"[{rank}/{size}] {inv.get_contents()['stations'][0]} error in correcting orientation")
                 return
+            
+            # we have to limit baz to be in [0,360)
+            baz=np.mod(baz,360) 
 
             components = [tr.stats.channel[-1] for tr in st]
             if "N" in components and "E" in components:
