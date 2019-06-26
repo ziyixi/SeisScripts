@@ -66,6 +66,9 @@ def process_single_event(min_periods, max_periods, asdf_filename, waveform_lengt
             logger.info(
                 f"[{rank}/{size}] processing {inv.get_contents()['stations'][0]}")
 
+            # there are possibility that some stations has multiple loc codes or use HH stations. (should avoid in the future)
+            st = filter_st(st, inv)
+
             # overlap the previous trace
             status_code = check_st_numberlap(st, inv)
             if(status_code == -1):
@@ -254,6 +257,22 @@ def check_time(st, event_time, waveform_length, inv):
                 f"[{rank}/{size}] {inv.get_contents()['stations'][0]} endtime:{str(endtime)} < cut_time:{str(event_time+waveform_length)}")
             return -1
     return 0
+
+
+def filter_st(st, inv):
+    newst = obspy.Stream()
+    for trace in st:
+        theid = trace.id
+        net, sta, loc, cha = theid.split(".")
+
+        con1 = ((loc == "") or (loc == "00"))
+        con2 = (cha[:2] == "BH")
+        if(con1 and con2):
+            newst += trace
+        else:
+            logger.warning(
+                f"[{rank}/{size}] {inv.get_contents()['stations'][0]} remove id: {theid}")
+    return newst
 
 
 if __name__ == "__main__":
