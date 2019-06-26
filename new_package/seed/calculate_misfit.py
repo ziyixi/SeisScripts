@@ -35,8 +35,8 @@ def get_property_times(stla, stlo, evla, evlo, evdp):
     property_times["gcarc"] = gcarc
 
     # calculate first arrivals
-    arrivals = model.get_travel_times(source_depth_in_km=300,
-                                      distance_in_degree=20,
+    arrivals = model.get_travel_times(source_depth_in_km=evdp,
+                                      distance_in_degree=gcarc,
                                       phase_list=["p", "P", "s", "S", "3.5kmps"])
 
     for item in arrivals:

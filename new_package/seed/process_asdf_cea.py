@@ -114,6 +114,7 @@ def process_single_event(min_periods, max_periods, asdf_filename, waveform_lengt
 
             st.interpolate(sampling_rate=sampling_rate)
 
+            # ! have problem here (all value is zero)
             station_latitude = inv[0][0].latitude
             station_longitude = inv[0][0].longitude
 
