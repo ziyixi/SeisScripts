@@ -38,7 +38,7 @@ def generate_asdf_for_single_event(seed_directory, cmt_path, output_path, with_m
         dirpath = tempfile.mkdtemp()
         command = f"rdseed -d -f {filename} -q {dirpath}"
         subprocess.call(command, shell=True)
-        waveform_stream = read_stream(join(dirpath, "*"))
+        waveform_stream = obspy.read(join(dirpath, "*SAC"))
 
         ds.add_waveforms(waveform_stream, tag="raw", event_id=event)
 
@@ -68,14 +68,6 @@ def generate_asdf_for_single_event(seed_directory, cmt_path, output_path, with_m
     ds.add_stationxml(station_xml)
     del ds
     logger.success(f"success in creating {output_path}")
-
-
-def read_stream(filename):
-    # the directory to store sac files
-    dirpath = tempfile.mkdtemp()
-
-    # have to use rdseed
-    command = "rdseed -"
 
 
 if __name__ == "__main__":
