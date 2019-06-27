@@ -25,7 +25,7 @@ def remove_stations(ds):
             if(len(st) == 3):
                 continue
             else:
-                loc_set = {}
+                loc_set = set()
                 for trace in st:
                     net, sta, loc, cha = trace.id.split(".")
                     loc_set.add(loc)
