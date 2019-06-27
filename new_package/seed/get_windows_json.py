@@ -213,6 +213,7 @@ def main(obs_path, syn_path, status, logfile, jsonfile):
         # windows -> str
         for key in windows:
             windows[key] = str(windows[key])
+            similarity_result[key] = str(similarity_result[key])
 
         return {
             "windows": windows,
