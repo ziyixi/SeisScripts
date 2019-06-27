@@ -215,6 +215,7 @@ def cal_spec(starttime, endtime, obs_trace, syn_trace, freqmin, freqmax):
     specsyn = specsyn[freqs:freqe]
     misfit = np.sum(np.abs(np.log10(specobs / specsyn)) /
                     len(specobs))   # absolute value
+    return misfit
 
 
 @click.command()
