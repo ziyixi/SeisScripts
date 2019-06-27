@@ -39,8 +39,6 @@ def remove_stations(ds):
                     if(loc != reference_loc):
                         st.remove(trace)
 
-                # replace the old stream
-                ds.waveforms[item][tag] = newstream
                 inv = wg["StationXML"]
                 discard_locs = sorted(loc_set-set([reference_loc]))
                 logger.info(
