@@ -206,6 +206,10 @@ def main(obs_path, syn_path, status, logfile, jsonfile):
         logger.info(
             f"[{rank}/{size}] {station_info}: win_num:{windows_numbers}")
 
+        # windows -> str
+        for key in windows:
+            windows[key] = str(windows[key])
+
         return windows
 
     # here we have a dict, the key is {network}.{station}, and the value is the returned result.
