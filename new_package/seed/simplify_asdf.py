@@ -5,6 +5,7 @@ import pyasdf
 import subprocess
 from loguru import logger
 import click
+import obspy
 
 
 def remove_stations(ds):
@@ -16,6 +17,35 @@ def remove_stations(ds):
             inv = wg["StationXML"]
             logger.info(f"remove {inv.get_contents()['stations'][0]}")
             del ds.waveforms[item]
+        else:
+            # see if there are only three traces
+            tag = data_tags[0]
+            st = wg[tag]
+            # after procesing the data, the only possible is the case of mul locs
+            if(len(st) == 3):
+                continue
+            else:
+                loc_set = {}
+                for trace in st:
+                    net, sta, loc, cha = trace.id.split(".")
+                    loc_set.add(loc)
+                if("" in loc_set):
+                    reference_loc = ""
+                else:
+                    reference_loc = sorted(loc_set)[0]
+
+                newstream = obspy.Stream()
+                for trace in st:
+                    net, sta, loc, cha = trace.id.split(".")
+                    if(loc == reference_loc):
+                        newstream += trace
+
+                # replace the old stream
+                ds.waveforms[item][tag] = newstream
+                inv = wg["StationXML"]
+                discard_locs = sorted(loc_set-set([reference_loc]))
+                logger.info(
+                    f"{inv.get_contents()['stations'][0]} keeps the loc {reference_loc}, discard {discard_locs}")
 
 
 @click.command()

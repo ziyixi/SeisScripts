@@ -8,6 +8,8 @@ from obspy.geodetics.base import gps2dist_azimuth
 from pyasdf import ASDFDataSet
 import pandas as pd
 
+# TODO problems may be in "water level" somewhere
+
 # global parameters
 rank = None
 size = None
