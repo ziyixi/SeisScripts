@@ -295,10 +295,35 @@ def main(obs_path, syn_path, max_period, min_period, status, logfile, jsonfile):
 
         # result -> json
         result_json = {
-            "misfit_r": str(result["misfit_r"]),  # the misfit dict
-            "misfit_t": str(result["misfit_t"]),   # the misfit dict
-            "misfit_z": str(result["misfit_z"]),   # the misfit dict
-            "property_times": str(result["property_times"])
+            "misfit_r": {
+                "pn": result["misfit_r"]["pn"],
+                "p": result["misfit_r"]["p"],
+                "s": result["misfit_r"]["s"],
+                "surf_rs": result["misfit_r"]["surf_rs"],
+                "surf": result["misfit_r"]["surf"]
+            },
+            "misfit_t": {
+                "pn": result["misfit_t"]["pn"],
+                "p": result["misfit_t"]["p"],
+                "s": result["misfit_t"]["s"],
+                "surf_rs": result["misfit_t"]["surf_rs"],
+                "surf": result["misfit_t"]["surf"]
+            },
+            "misfit_z": {
+                "pn": result["misfit_z"]["pn"],
+                "p": result["misfit_z"]["p"],
+                "s": result["misfit_z"]["s"],
+                "surf_rs": result["misfit_z"]["surf_rs"],
+                "surf": result["misfit_z"]["surf"]
+            },
+            "property_times": {
+                "first_p": property_times["first_p"],
+                "first_s": property_times["first_s"],
+                "surface_wave": property_times["surface_wave"],
+                "local_station": property_times["local_station"],
+                "gcarc": property_times["gcarc"],
+                "azimuth": property_times["azimuth"]
+            }
         }
 
         return result_json
