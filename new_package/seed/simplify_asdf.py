@@ -34,11 +34,10 @@ def remove_stations(ds):
                 else:
                     reference_loc = sorted(loc_set)[0]
 
-                newstream = obspy.Stream()
                 for trace in st:
                     net, sta, loc, cha = trace.id.split(".")
-                    if(loc == reference_loc):
-                        newstream += trace
+                    if(loc != reference_loc):
+                        st.remove(trace)
 
                 # replace the old stream
                 ds.waveforms[item][tag] = newstream
