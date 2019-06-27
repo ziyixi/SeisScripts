@@ -144,14 +144,17 @@ def filter_windows(windows, obs, syn, status):
         for key in windows:
             windows[key] = None
 
+    similarity_result = {}
     # compare similarity
     for key in windows:
+        similarity_result[key] = None
         if(windows[key] != None):
             CCT = cal_waveform_similarity(
                 windows[key][0], windows[key][1], obs, syn)
+            similarity_result[key] = CCT
             if(CCT < 0.5):
                 windows[key] = None
-    return windows
+    return windows, similarity_result
 
 
 @click.command()
@@ -196,7 +199,8 @@ def main(obs_path, syn_path, status, logfile, jsonfile):
         windows = get_windows(starttime, endtime,  property_times)
 
         # discard windows
-        windows = filter_windows(windows, st_obs, st_syn, status)
+        windows, similarity_result = filter_windows(
+            windows, st_obs, st_syn, status)
 
         # output log information
         windows_numbers = 0
@@ -210,7 +214,10 @@ def main(obs_path, syn_path, status, logfile, jsonfile):
         for key in windows:
             windows[key] = str(windows[key])
 
-        return windows
+        return {
+            "windows": windows,
+            "similarity": similarity_result
+        }
 
     # here we have a dict, the key is {network}.{station}, and the value is the returned result.
     if(isroot):
