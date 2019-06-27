@@ -153,6 +153,7 @@ def filter_windows(windows, obs, syn, status):
                 windows[key] = None
     return windows
 
+
 @click.command()
 @click.option('--obs_path', required=True, type=str, help="the obs hdf5 file path")
 @click.option('--syn_path', required=True, type=str, help="the syn hdf5 file path")
@@ -178,9 +179,11 @@ def main(obs_path, syn_path, status, logfile, jsonfile):
         inv_obs = sg_obs["StationXML"]
         station_info = {inv_obs.get_contents()['stations'][0]}
 
-        tag = waveform_tags[0]  # should have only one tag, after we have simplify the asdf file
-        st_obs = sg_obs[tag]
-        st_syn = sg_syn["sync"]
+        # should have only one tag, after we have simplify the asdf file
+        tag_obs = waveform_tags[0]
+        tag_syn = sg_syn.get_waveform_tags()[0]
+        st_obs = sg_obs[tag_obs]
+        st_syn = sg_syn[tag_syn]
 
         # property times
         stla = inv_obs[0][0].latitude
