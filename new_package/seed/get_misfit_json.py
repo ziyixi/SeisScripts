@@ -4,6 +4,7 @@ calculate misfit between sync and data.
 import json
 
 import click
+import mtspec as mft
 import numpy as np
 import obspy
 import pyasdf
@@ -114,8 +115,33 @@ def get_windows(starttime, endtime,  property_times):
     return result
 
 
+def cal_misfit(windows, obs_trace, syn_trace, freqmin, freqmax):
+    result = {
+        "pn": None,
+        "p": None,
+        "s": None,
+        "surf_rs": None,
+        "surf": None
+    }
+
+    for key in windows:
+        if(windows[key] != None):
+            if(key != "surf"):
+                result[key] = cal_rs(
+                    windows[key][0], windows[key][1], obs_trace, syn_trace)
+            else:
+                result[key] = cal_spec(
+                    windows[key][0], windows[key][1], obs_trace, syn_trace, freqmin, freqmax)
+
+    if(result["surf"] != None):
+        key = "surf"
+        result["surf_rs"] = cal_rs(
+            windows[key][0], windows[key][1], obs_trace, syn_trace)
+
+    return result
+
+
 def cal_waveform_similarity(starttime, endtime, obs, syn):
-    # asdf stream is in the order of r,t,z
     obs_r = obs[0].slice(starttime, endtime).data
     obs_t = obs[1].slice(starttime, endtime).data
     obs_z = obs[2].slice(starttime, endtime).data
@@ -143,26 +169,65 @@ def filter_windows(windows, obs, syn, status):
         for key in windows:
             windows[key] = None
 
-    similarity_result = {}
     # compare similarity
     for key in windows:
-        similarity_result[key] = None
         if(windows[key] != None):
             CCT = cal_waveform_similarity(
                 windows[key][0], windows[key][1], obs, syn)
-            similarity_result[key] = CCT
             if(CCT < 0.5):
                 windows[key] = None
-    return windows, similarity_result
+    return windows
+
+
+def cal_rs(starttime, endtime, obs_trace, syn_trace):
+    obs = obs_trace.slice(starttime, endtime).data
+    syn = syn_trace.slice(starttime, endtime).data
+
+    # perform CAP
+    cor = np.correlate(syn, obs, mode='full')
+    cs = int(np.where(cor == np.max(cor))[0][0])-int(len(obs))
+    #print("time shift: "+str(0.1*cs))
+    if(cs > 0):
+        obs_trim = obs[0:len(obs)-cs]
+        syn_trim = syn[cs:]
+    else:
+        cs = np.abs(cs)
+        obs_trim = obs[cs:]
+        syn_trim = syn[0:len(syn)-cs]
+    misfit = np.sqrt(np.sum((obs_trim-syn_trim)**2))
+    return misfit
+
+
+def cal_spec(starttime, endtime, obs_trace, syn_trace, freqmin, freqmax):
+    obs = obs_trace.slice(starttime, endtime).data
+    syn = syn_trace.slice(starttime, endtime).data
+
+    # dt is the delta for obs_trace
+    dt = obs_trace.stats.delta
+
+    # perform rayleigh wave multitaper spectrum measurement
+    specobs, freq = mft.multitaper.mtspec(
+        obs, dt, time_bandwidth=3.5)  # returns power spectrum
+    specsyn, freq = mft.multitaper.mtspec(syn, dt, time_bandwidth=3.5)
+    freqs = np.where(freq >= freqmin)[0][0]
+    freqe = np.where(freq > freqmax)[0][0] - 1
+    specobs = specobs[freqs:freqe]
+    specsyn = specsyn[freqs:freqe]
+    misfit = np.sum(np.abs(np.log10(specobs / specsyn)) /
+                    len(specobs))   # absolute value
 
 
 @click.command()
 @click.option('--obs_path', required=True, type=str, help="the obs hdf5 file path")
 @click.option('--syn_path', required=True, type=str, help="the syn hdf5 file path")
+@click.option('--max_period', required=True, type=float, help="the max period used")
+@click.option('--min_period', required=True, type=float, help="the min period used")
 @click.option('--status', required=True, type=str, help="either body or surf, since surface waves will use a different frequency band")
 @click.option('--logfile', required=True, type=str, help="the log file path")
 @click.option('--jsonfile', required=True, type=str, help="the outputed json file path")
-def main(obs_path, syn_path, status, logfile, jsonfile):
+def main(obs_path, syn_path, max_period, min_period, status, logfile, jsonfile):
+    freqmin = 1.0/max_period
+    freqmax = 1.0/min_period
     obs_ds = pyasdf.ASDFDataSet(obs_path)
     syn_ds = pyasdf.ASDFDataSet(syn_path)
     event = obs_ds.events[0]
@@ -176,12 +241,20 @@ def main(obs_path, syn_path, status, logfile, jsonfile):
 
     # kernel function
     def process(sg_obs, sg_syn):
+        result = {
+            "misfit_r": None,  # the misfit dict
+            "misfit_t": None,  # the misfit dict
+            "misfit_z": None,  # the misfit dict
+            "property_times": None,
+        }
 
         waveform_tags = sg_obs.get_waveform_tags()
         inv_obs = sg_obs["StationXML"]
         station_info = {inv_obs.get_contents()['stations'][0]}
+        if(len(waveform_tags) == 0):
+            logger.info(f"[{rank}/{size}] {station_info}: no data")
+            return None  # no data for this station
 
-        # should have only one tag, after we have simplify the asdf file
         tag_obs = waveform_tags[0]
         tag_syn = sg_syn.get_waveform_tags()[0]
         st_obs = sg_obs[tag_obs]
@@ -198,8 +271,18 @@ def main(obs_path, syn_path, status, logfile, jsonfile):
         windows = get_windows(starttime, endtime,  property_times)
 
         # discard windows
-        windows, similarity_result = filter_windows(
-            windows, st_obs, st_syn, status)
+        windows = filter_windows(windows, st_obs, st_syn, status)
+
+        # get misfit
+        result["misfit_r"] = cal_misfit(
+            windows, st_obs[0], st_syn[0], freqmin, freqmax)
+        result["misfit_t"] = cal_misfit(
+            windows, st_obs[1], st_syn[1], freqmin, freqmax)
+        result["misfit_z"] = cal_misfit(
+            windows, st_obs[2], st_syn[2], freqmin, freqmax)
+
+        # other parameters
+        result["property_times"] = property_times
 
         # output log information
         windows_numbers = 0
@@ -207,30 +290,30 @@ def main(obs_path, syn_path, status, logfile, jsonfile):
             if(windows[key] != None):
                 windows_numbers += 1
         logger.info(
-            f"[{rank}/{size}] {station_info}: win_num:{windows_numbers}")
+            f"[{rank}/{size}] {station_info}: win_num:{windows_numbers} misfit_r:{result['misfit_r']} misfit_t:{result['misfit_t']} misfit_z:{result['misfit_z']}")
 
-        # windows -> str
-        for key in windows:
-            windows[key] = str(windows[key])
-            similarity_result[key] = str(similarity_result[key])
-
-        return {
-            "windows": windows,
-            "similarity": similarity_result
+        # result -> json
+        result_json = {
+            "misfit_r": str(result["misfit_r"]),  # the misfit dict
+            "misfit_t": str(result["misfit_t"]),   # the misfit dict
+            "misfit_z": str(result["misfit_z"]),   # the misfit dict
+            "property_times": str(result["property_times"])
         }
+
+        return result_json
 
     # here we have a dict, the key is {network}.{station}, and the value is the returned result.
     if(isroot):
         gcmt_id = origin.resource_id.id.split("/")[-2]
         logger.info(
-            f"start to get windows for {gcmt_id}, with {status}")
+            f"start to calculate misfit for {gcmt_id}, with {status}, from {min_period} to {max_period}")
     results = obs_ds.process_two_files_without_parallel_output(syn_ds, process)
 
     with open(jsonfile, 'w') as fp:
         json.dump(results, fp)
 
     if(isroot):
-        logger.success(f"success for event {gcmt_id}, store in {jsonfile}")
+        logger.success(f"success for event {gcmt_id}")
 
 
 if __name__ == "__main__":
