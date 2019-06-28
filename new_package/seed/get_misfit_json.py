@@ -218,6 +218,45 @@ def cal_spec(starttime, endtime, obs_trace, syn_trace, freqmin, freqmax):
     return misfit
 
 
+def get_amp_values(windows, st):
+    result = {
+        "r": {},
+        "t": {},
+        "z": {}
+    }
+    # r
+    trace = st[0]
+    for key in windows:
+        if(windows[key] == None):
+            result["r"][key] = None
+        else:
+            starttime = windows[key][0]
+            endtime = windows[key][1]
+            data = trace.slice(starttime, endtime).data
+            result["r"][key] = np.max(np.abs(data))
+    # t
+    trace = st[1]
+    for key in windows:
+        if(windows[key] == None):
+            result["t"][key] = None
+        else:
+            starttime = windows[key][0]
+            endtime = windows[key][1]
+            data = trace.slice(starttime, endtime).data
+            result["t"][key] = np.max(np.abs(data))
+    # z
+    trace = st[2]
+    for key in windows:
+        if(windows[key] == None):
+            result["z"][key] = None
+        else:
+            starttime = windows[key][0]
+            endtime = windows[key][1]
+            data = trace.slice(starttime, endtime).data
+            result["z"][key] = np.max(np.abs(data))
+    return result
+
+
 @click.command()
 @click.option('--obs_path', required=True, type=str, help="the obs hdf5 file path")
 @click.option('--syn_path', required=True, type=str, help="the syn hdf5 file path")
@@ -301,6 +340,9 @@ def main(obs_path, syn_path, max_period, min_period, status, logfile, jsonfile):
         logger.info(
             f"[{rank}/{size}] {station_info}: win_num:{windows_numbers} misfit_r:{result['misfit_r']} misfit_t:{result['misfit_t']} misfit_z:{result['misfit_z']}")
 
+        # we should collect information of the max amplitude for normalization
+        amp_values = get_amp_values(windows, st_syn)
+
         # result -> json
         result_json = {
             "misfit_r": {
@@ -331,6 +373,26 @@ def main(obs_path, syn_path, max_period, min_period, status, logfile, jsonfile):
                 "local_station": property_times["local_station"],  # bool
                 "gcarc": property_times["gcarc"],
                 "azimuth": property_times["azimuth"]
+            },
+            "amplitude": {
+                "r": {
+                    "pn": amp_values["r"]["pn"],
+                    "p": amp_values["r"]["p"],
+                    "s": amp_values["r"]["s"],
+                    "surf": amp_values["r"]["surf"]
+                },
+                "t": {
+                    "pn": amp_values["t"]["pn"],
+                    "p": amp_values["t"]["p"],
+                    "s": amp_values["t"]["s"],
+                    "surf": amp_values["t"]["surf"]
+                },
+                "z": {
+                    "pn": amp_values["z"]["pn"],
+                    "p": amp_values["z"]["p"],
+                    "s": amp_values["z"]["s"],
+                    "surf": amp_values["z"]["surf"]
+                }
             }
         }
 
