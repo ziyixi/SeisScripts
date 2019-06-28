@@ -218,8 +218,13 @@ def cal_spec(starttime, endtime, obs_trace, syn_trace, freqmin, freqmax):
     return misfit
 
 
-def get_amp_values(windows, st):
+def get_amp_timelen_values(windows, st):
     result = {
+        "r": {},
+        "t": {},
+        "z": {}
+    }
+    result_time = {
         "r": {},
         "t": {},
         "z": {}
@@ -229,32 +234,38 @@ def get_amp_values(windows, st):
     for key in windows:
         if(windows[key] == None):
             result["r"][key] = None
+            result_time["r"][key] = None
         else:
             starttime = windows[key][0]
             endtime = windows[key][1]
             data = trace.slice(starttime, endtime).data
             result["r"][key] = np.max(np.abs(data))
+            result_time["r"][key] = endtime-starttime
     # t
     trace = st[1]
     for key in windows:
         if(windows[key] == None):
             result["t"][key] = None
+            result_time["t"][key] = None
         else:
             starttime = windows[key][0]
             endtime = windows[key][1]
             data = trace.slice(starttime, endtime).data
             result["t"][key] = np.max(np.abs(data))
+            result_time["t"][key] = endtime-starttime
     # z
     trace = st[2]
     for key in windows:
         if(windows[key] == None):
             result["z"][key] = None
+            result_time["z"][key] = None
         else:
             starttime = windows[key][0]
             endtime = windows[key][1]
             data = trace.slice(starttime, endtime).data
             result["z"][key] = np.max(np.abs(data))
-    return result
+            result_time["z"][key] = endtime-starttime
+    return result, result_time
 
 
 @click.command()
@@ -341,7 +352,8 @@ def main(obs_path, syn_path, max_period, min_period, status, logfile, jsonfile):
             f"[{rank}/{size}] {station_info}: win_num:{windows_numbers} misfit_r:{result['misfit_r']} misfit_t:{result['misfit_t']} misfit_z:{result['misfit_z']}")
 
         # we should collect information of the max amplitude for normalization
-        amp_values = get_amp_values(windows, st_syn)
+        amp_values, time_length_values = get_amp_timelen_values(
+            windows, st_syn)
 
         # result -> json
         result_json = {
@@ -392,6 +404,26 @@ def main(obs_path, syn_path, max_period, min_period, status, logfile, jsonfile):
                     "p": amp_values["z"]["p"],
                     "s": amp_values["z"]["s"],
                     "surf": amp_values["z"]["surf"]
+                }
+            },
+            "window_length": {
+                "r": {
+                    "pn": time_length_values["r"]["pn"],
+                    "p": time_length_values["r"]["p"],
+                    "s": time_length_values["r"]["s"],
+                    "surf": time_length_values["r"]["surf"]
+                },
+                "t": {
+                    "pn": time_length_values["t"]["pn"],
+                    "p": time_length_values["t"]["p"],
+                    "s": time_length_values["t"]["s"],
+                    "surf": time_length_values["t"]["surf"]
+                },
+                "z": {
+                    "pn": time_length_values["z"]["pn"],
+                    "p": time_length_values["z"]["p"],
+                    "s": time_length_values["z"]["s"],
+                    "surf": time_length_values["z"]["surf"]
                 }
             }
         }
