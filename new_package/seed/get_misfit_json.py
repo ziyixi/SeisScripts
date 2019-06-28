@@ -258,8 +258,16 @@ def main(obs_path, syn_path, max_period, min_period, status, logfile, jsonfile):
 
         tag_obs = waveform_tags[0]
         tag_syn = sg_syn.get_waveform_tags()[0]
-        st_obs = sg_obs[tag_obs]
-        st_syn = sg_syn[tag_syn]
+        st_obs_raw = sg_obs[tag_obs]
+        st_syn_raw = sg_syn[tag_syn]
+
+        # since we couldn't return a float32, we have to modify st to float64
+        st_obs = st_obs_raw.copy()
+        st_syn = st_syn_raw.copy()
+        for trace in st_obs:
+            trace.data = np.require(trace.data, dtype="float64")
+        for trace in st_syn:
+            trace.data = np.require(trace.data, dtype="float64")
 
         # property times
         stla = inv_obs[0][0].latitude
@@ -296,33 +304,33 @@ def main(obs_path, syn_path, max_period, min_period, status, logfile, jsonfile):
         # result -> json
         result_json = {
             "misfit_r": {
-                "pn": float(result["misfit_r"]["pn"]),
-                "p": float(result["misfit_r"]["p"]),
-                "s": float(result["misfit_r"]["s"]),
-                "surf_rs": float(result["misfit_r"]["surf_rs"]),
-                "surf": float(result["misfit_r"]["surf"])
+                "pn": result["misfit_r"]["pn"],
+                "p": result["misfit_r"]["p"],
+                "s": result["misfit_r"]["s"],
+                "surf_rs": result["misfit_r"]["surf_rs"],
+                "surf": result["misfit_r"]["surf"]
             },
             "misfit_t": {
-                "pn": float(result["misfit_t"]["pn"]),
-                "p": float(result["misfit_t"]["p"]),
-                "s": float(result["misfit_t"]["s"]),
-                "surf_rs": float(result["misfit_t"]["surf_rs"]),
-                "surf": float(result["misfit_t"]["surf"])
+                "pn": result["misfit_t"]["pn"],
+                "p": result["misfit_t"]["p"],
+                "s": result["misfit_t"]["s"],
+                "surf_rs": result["misfit_t"]["surf_rs"],
+                "surf": result["misfit_t"]["surf"]
             },
             "misfit_z": {
-                "pn": float(result["misfit_z"]["pn"]),
-                "p": float(result["misfit_z"]["p"]),
-                "s": float(result["misfit_z"]["s"]),
-                "surf_rs": float(result["misfit_z"]["surf_rs"]),
-                "surf": float(result["misfit_z"]["surf"])
+                "pn": result["misfit_z"]["pn"],
+                "p": result["misfit_z"]["p"],
+                "s": result["misfit_z"]["s"],
+                "surf_rs": result["misfit_z"]["surf_rs"],
+                "surf": result["misfit_z"]["surf"]
             },
             "property_times": {
-                "first_p": float(property_times["first_p"]),
-                "first_s": float(property_times["first_s"]),
-                "surface_wave": float(property_times["surface_wave"]),
+                "first_p": property_times["first_p"],
+                "first_s": property_times["first_s"],
+                "surface_wave": property_times["surface_wave"],
                 "local_station": property_times["local_station"],  # bool
-                "gcarc": float(property_times["gcarc"]),
-                "azimuth": float(property_times["azimuth"])
+                "gcarc": property_times["gcarc"],
+                "azimuth": property_times["azimuth"]
             }
         }
 
