@@ -353,7 +353,7 @@ def main(obs_path, syn_path, max_period, min_period, status, logfile, jsonfile):
 
         # we should collect information of the max amplitude for normalization
         amp_values, time_length_values = get_amp_timelen_values(
-            windows, st_syn)
+            windows, st_obs)
 
         # result -> json
         result_json = {
