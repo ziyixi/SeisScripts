@@ -296,33 +296,33 @@ def main(obs_path, syn_path, max_period, min_period, status, logfile, jsonfile):
         # result -> json
         result_json = {
             "misfit_r": {
-                "pn": result["misfit_r"]["pn"],
-                "p": result["misfit_r"]["p"],
-                "s": result["misfit_r"]["s"],
-                "surf_rs": result["misfit_r"]["surf_rs"],
-                "surf": result["misfit_r"]["surf"]
+                "pn": float(result["misfit_r"]["pn"]),
+                "p": float(result["misfit_r"]["p"]),
+                "s": float(result["misfit_r"]["s"]),
+                "surf_rs": float(result["misfit_r"]["surf_rs"]),
+                "surf": float(result["misfit_r"]["surf"])
             },
             "misfit_t": {
-                "pn": result["misfit_t"]["pn"],
-                "p": result["misfit_t"]["p"],
-                "s": result["misfit_t"]["s"],
-                "surf_rs": result["misfit_t"]["surf_rs"],
-                "surf": result["misfit_t"]["surf"]
+                "pn": float(result["misfit_t"]["pn"]),
+                "p": float(result["misfit_t"]["p"]),
+                "s": float(result["misfit_t"]["s"]),
+                "surf_rs": float(result["misfit_t"]["surf_rs"]),
+                "surf": float(result["misfit_t"]["surf"])
             },
             "misfit_z": {
-                "pn": result["misfit_z"]["pn"],
-                "p": result["misfit_z"]["p"],
-                "s": result["misfit_z"]["s"],
-                "surf_rs": result["misfit_z"]["surf_rs"],
-                "surf": result["misfit_z"]["surf"]
+                "pn": float(result["misfit_z"]["pn"]),
+                "p": float(result["misfit_z"]["p"]),
+                "s": float(result["misfit_z"]["s"]),
+                "surf_rs": float(result["misfit_z"]["surf_rs"]),
+                "surf": float(result["misfit_z"]["surf"])
             },
             "property_times": {
-                "first_p": property_times["first_p"],
-                "first_s": property_times["first_s"],
-                "surface_wave": property_times["surface_wave"],
-                "local_station": property_times["local_station"],
-                "gcarc": property_times["gcarc"],
-                "azimuth": property_times["azimuth"]
+                "first_p": float(property_times["first_p"]),
+                "first_s": float(property_times["first_s"]),
+                "surface_wave": float(property_times["surface_wave"]),
+                "local_station": property_times["local_station"],  # bool
+                "gcarc": float(property_times["gcarc"]),
+                "azimuth": float(property_times["azimuth"])
             }
         }
 
