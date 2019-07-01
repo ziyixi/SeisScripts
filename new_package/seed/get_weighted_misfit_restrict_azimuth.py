@@ -151,8 +151,14 @@ def calculate_azimuth_weight(p_z, p_r, s_z, s_r, s_t, surf_z, surf_r, surf_z_mt,
                 azimuth_array, bin_angle, azimuth_this_station)
             # wait to normalize
             weight_store[index] = 1/N_in
+
+            # ! restrict azimuth range
+            if(15 < azimuth_this_station < 225):
+                weight_store[index] = 0
+
         weight_all = np.sum(weight_store)
         weight_store = weight_store/weight_all
+
         # now we can set the azimuth_weight
         for index, window_item in enumerate(pha_cha_item):
             pha_cha_item[index].azimuth_weight = weight_store[index]
@@ -239,6 +245,7 @@ def easy_main(bin_angle):
     sh_all = []
     ray_all = []
     theall = []
+    theall_nosurf = []
     for depth in thelist:
         surf_json = f"surf_d{depth}.json"
         body_json = f"body_d{depth}.json"
@@ -260,6 +267,8 @@ def easy_main(bin_angle):
         ray_all.append(0.5*(surf_z_misfit+surf_r_misfit))
         theall.append(0.25*(0.5*(p_z_misfit+p_r_misfit) +
                             0.5*(s_z_misfit+s_r_misfit)+s_t_misfit+0.5*(surf_z_misfit+surf_r_misfit)))
+        theall_nosurf.append(1/3*(0.5*(p_z_misfit+p_r_misfit) +
+                                  0.5*(s_z_misfit+s_r_misfit)+s_t_misfit))
     print("p_z_misfit", p_z)
     print("p_r_misfit", p_r)
     print("s_z_misfit", s_z)
@@ -274,3 +283,4 @@ def easy_main(bin_angle):
     print("sh_all", sh_all)
     print("ray_all", ray_all)
     print("theall", theall)
+    print("theall_nosurf", theall_nosurf)

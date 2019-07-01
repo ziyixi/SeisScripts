@@ -105,6 +105,24 @@ def adjust_timewindow_influence(p_z, p_r, s_z, s_r, s_t, surf_z, surf_r, surf_z_
     return p_z, p_r, s_z, s_r, s_t, surf_z, surf_r, surf_z_mt, surf_r_mt
 
 
+def adjust_amp_influence(p_z, p_r, s_z, s_r, s_t, surf_z, surf_r, surf_z_mt, surf_r_mt):
+    for item in p_z:
+        item.misfit = item.misfit/item.amplitude
+    for item in p_r:
+        item.misfit = item.misfit/item.amplitude
+    for item in s_z:
+        item.misfit = item.misfit/item.amplitude
+    for item in s_r:
+        item.misfit = item.misfit/item.amplitude
+    for item in s_t:
+        item.misfit = item.misfit/item.amplitude
+    for item in surf_z:
+        item.misfit = item.misfit/item.amplitude
+    for item in surf_r:
+        item.misfit = item.misfit/item.amplitude
+    return p_z, p_r, s_z, s_r, s_t, surf_z, surf_r, surf_z_mt, surf_r_mt
+
+
 def calculate_azimuth_weight(p_z, p_r, s_z, s_r, s_t, surf_z, surf_r, surf_z_mt, surf_r_mt, bin_angle=20):
     """
     only calculate azimuth weight, consider number of windows within the bin angle for the same kind of phase
@@ -206,6 +224,8 @@ def main(body_json, surf_json, bin_angle):
         p_z, p_r, s_z, s_r, s_t, surf_z, surf_r, surf_z_mt, surf_r_mt)
     p_z, p_r, s_z, s_r, s_t, surf_z, surf_r, surf_z_mt, surf_r_mt = adjust_timewindow_influence(
         p_z, p_r, s_z, s_r, s_t, surf_z, surf_r, surf_z_mt, surf_r_mt)
+    p_z, p_r, s_z, s_r, s_t, surf_z, surf_r, surf_z_mt, surf_r_mt = adjust_amp_influence(
+        p_z, p_r, s_z, s_r, s_t, surf_z, surf_r, surf_z_mt, surf_r_mt)
     p_z, p_r, s_z, s_r, s_t, surf_z, surf_r, surf_z_mt, surf_r_mt = calculate_azimuth_weight(
         p_z, p_r, s_z, s_r, s_t, surf_z, surf_r, surf_z_mt, surf_r_mt, bin_angle=bin_angle)
     p_z_misfit, p_r_misfit, s_z_misfit, s_r_misfit, s_t_misfit, surf_z_misfit, surf_r_misfit, surf_z_mt_misfit, surf_r_mt_misfit = get_weighted_misfit(
@@ -222,23 +242,20 @@ def main(body_json, surf_json, bin_angle):
     print("surf_z_mt_misfit", surf_z_mt_misfit)
     print("surf_r_mt_misfit", surf_r_mt_misfit)
 
-    # get the weighted misfit
     return p_z_misfit, p_r_misfit, s_z_misfit, s_r_misfit, s_t_misfit, surf_z_misfit, surf_r_misfit, surf_z_mt_misfit, surf_r_mt_misfit
-
+    # get the weighted misfit
 
 def easy_main(bin_angle):
     """
     for plotting purpose
     """
-    thelist = ["-16.0", "-12.0", "-8.0", "-4.0",
-               "0.0", "4.0", "8.0", "12.0", "16.0"]
-    p_z, p_r, s_z, s_r, s_t, surf_z, surf_r, surf_z_mt, surf_r_mt = [
-        [] for i in range(9)]
-    p_all = []
-    sv_all = []
-    sh_all = []
-    ray_all = []
-    theall = []
+    thelist=["-16.0","-12.0","-8.0","-4.0","0.0","4.0","8.0","12.0","16.0"]
+    p_z, p_r, s_z, s_r, s_t, surf_z, surf_r, surf_z_mt, surf_r_mt=[[] for i in range(9)]
+    p_all=[]
+    sv_all=[]
+    sh_all=[]
+    ray_all=[]
+    theall=[]
     for depth in thelist:
         surf_json = f"surf_d{depth}.json"
         body_json = f"body_d{depth}.json"
@@ -270,7 +287,7 @@ def easy_main(bin_angle):
     print("surf_z_mt_misfit", surf_z)
     print("surf_r_mt_misfit", surf_r)
     print("p_all", p_all)
-    print("sv_all", sv_all)
-    print("sh_all", sh_all)
-    print("ray_all", ray_all)
-    print("theall", theall)
+    print("sv_all",sv_all)
+    print("sh_all",sh_all)
+    print("ray_all",ray_all)
+    print("theall",theall)
