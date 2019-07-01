@@ -1,6 +1,8 @@
 import json
 import numpy as np
 
+# ! problem may be in amp*r
+
 
 def add_distance_weight(misfit_dict):
     body_phases = ["p", "s", "pn"]
@@ -158,6 +160,8 @@ def get_weighted_misfit(misfit_dict, pw, shw, svw, surfw):
     s_t_median = np.median(s_t)
     surf_z_median = np.median(surf_z)
     surf_r_median = np.median(surf_r)
+    print(p_z_median, p_r_median, s_z_median,
+          s_r_median, s_t_median, surf_z_median, surf_r_median)
 
     #  normalize using window length and median value
     for net_sta in misfit_dict:
@@ -287,12 +291,12 @@ def combine_json_dict(body_dict, surf_dict):
 
 def main(body_json, surf_json, weights, output_json):
 
-    # In[96]: def wrapper(depth, bw):
-    #     ...:     f = open(f"./surf_{depth}.json")
-    #     ...:     g = open(f"./body_{depth}.json")
-    #     ...:     surf = json.load(f)
-    #     ...:     body = json.load(g)
-    #     ...:     theall = combine_json_dict(body, surf)
-    #     ...:     theall = add_distance_weight(theall)
-    #     ...:     theall = add_azimuth_weight(theall, bw)
-    #     ...: return get_weighted_misfit(theall, 1, 1, 1, 1)
+    # def wrapper(depth, bw):
+    #     f = open(f"./surf_{depth}.json")
+    #     g = open(f"./body_{depth}.json")
+    #     surf = json.load(f)
+    #     body = json.load(g)
+    #     theall = combine_json_dict(body, surf)
+    #     theall = add_distance_weight(theall)
+    #     theall = add_azimuth_weight(theall, bw)
+    #     return get_weighted_misfit(theall, 1, 1, 1, 1)

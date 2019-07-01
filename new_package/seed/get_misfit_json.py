@@ -218,7 +218,7 @@ def cal_spec(starttime, endtime, obs_trace, syn_trace, freqmin, freqmax):
     return misfit
 
 
-def get_amp_timelen_values(windows, st):
+def get_amp_timelen_values(windows, st, st_syn):
     result = {
         "r": {},
         "t": {},
@@ -231,6 +231,7 @@ def get_amp_timelen_values(windows, st):
     }
     # r
     trace = st[0]
+    trace_syn = st_syn[0]
     for key in windows:
         if(windows[key] == None):
             result["r"][key] = None
@@ -241,8 +242,13 @@ def get_amp_timelen_values(windows, st):
             data = trace.slice(starttime, endtime).data
             result["r"][key] = np.max(np.abs(data))
             result_time["r"][key] = endtime-starttime
+            data_syn = trace_syn.slice(starttime, endtime).data
+            ratio = np.max(np.abs(data))/np.max(np.abs(data_syn))
+            if(ratio > 3 or ratio < 1/3):
+                result["r"][key] = None
     # t
     trace = st[1]
+    trace_syn = st_syn[1]
     for key in windows:
         if(windows[key] == None):
             result["t"][key] = None
@@ -253,8 +259,13 @@ def get_amp_timelen_values(windows, st):
             data = trace.slice(starttime, endtime).data
             result["t"][key] = np.max(np.abs(data))
             result_time["t"][key] = endtime-starttime
+            data_syn = trace_syn.slice(starttime, endtime).data
+            ratio = np.max(np.abs(data))/np.max(np.abs(data_syn))
+            if(ratio > 3 or ratio < 1/3):
+                result["t"][key] = None
     # z
     trace = st[2]
+    trace_syn = st_syn[2]
     for key in windows:
         if(windows[key] == None):
             result["z"][key] = None
@@ -265,6 +276,10 @@ def get_amp_timelen_values(windows, st):
             data = trace.slice(starttime, endtime).data
             result["z"][key] = np.max(np.abs(data))
             result_time["z"][key] = endtime-starttime
+            data_syn = trace_syn.slice(starttime, endtime).data
+            ratio = np.max(np.abs(data))/np.max(np.abs(data_syn))
+            if(ratio > 3 or ratio < 1/3):
+                result["z"][key] = None
     return result, result_time
 
 
@@ -353,7 +368,7 @@ def main(obs_path, syn_path, max_period, min_period, status, logfile, jsonfile):
 
         # we should collect information of the max amplitude for normalization
         amp_values, time_length_values = get_amp_timelen_values(
-            windows, st_obs)
+            windows, st_obs, st_syn)
 
         # result -> json
         result_json = {
