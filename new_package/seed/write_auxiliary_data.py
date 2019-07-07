@@ -11,9 +11,10 @@ def main(obs_path):
         results = pickle.load(handle)
     with pyasdf.ASDFDataSet(obs_path, mode="a") as obs_ds:
         for item in results:
-            print(item)
+            print(item, type(np.zeros(0, dtype=np.float)), type(
+                "Traveltimes"), type(item.replace(".", "/")), type(results[item]))
             obs_ds.add_auxiliary_data(
-                np.zeros(1, dtype=np.float), data_type="Traveltimes", path=item.replace(".", "/"), parameters=results[item])
+                np.zeros(0, dtype=np.float), data_type="Traveltimes", path=item.replace(".", "/"), parameters=results[item])
 
 
 if __name__ == "__main__":
