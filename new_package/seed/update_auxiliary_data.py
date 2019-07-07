@@ -9,6 +9,8 @@ import pyasdf
 from mpi4py import MPI
 from obspy.geodetics.base import gps2dist_azimuth, locations2degrees
 from obspy.taup import TauPyModel
+import pickle
+import tempfile
 
 model = TauPyModel(model='ak135')
 comm = MPI.COMM_WORLD
@@ -121,16 +123,15 @@ def main(obs_path, syn_path):
             results = obs_ds.process_two_files_without_parallel_output(
                 syn_ds, process)
 
-            comm.barrier()
             if(isroot):
                 # add auxiliary_data
                 print("[INFO] start to write data")
-                for item in results:
-                    print(item)
-                    obs_ds.add_auxiliary_data(
-                        np.zeros(0), data_type="Traveltimes", path=item.replace(".", "/"), parameters=results[item])
-
-    comm.barrier()
+                # for item in results:
+                #     print(item)
+                #     obs_ds.add_auxiliary_data(
+                #         np.zeros(0), data_type="Traveltimes", path=item.replace(".", "/"), parameters=results[item])
+                with open(obs_path+"traveltimes.pkl", 'wb') as handle:
+                    pickle.dump(results, handle)
 
 
 if __name__ == "__main__":
