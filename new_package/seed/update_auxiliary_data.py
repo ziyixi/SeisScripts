@@ -89,8 +89,8 @@ def get_property_times(stla, stlo, evla, evlo, evdp):
 @click.option('--syn_path', required=True, type=str, help="the syn hdf5 file path (not necessary, but have to provide one)")
 def main(obs_path, syn_path):
     results = None
-    with pyasdf.ASDFDataSet(obs_path, mode="r") as obs_ds:
-        with pyasdf.ASDFDataSet(syn_path, mode="r") as syn_ds:
+    with pyasdf.ASDFDataSet(obs_path, mode="a") as obs_ds:
+        with pyasdf.ASDFDataSet(syn_path, mode="a") as syn_ds:
             event = obs_ds.events[0]
             origin = event.preferred_origin() or event.origins[0]
             evla = origin.latitude
@@ -121,16 +121,14 @@ def main(obs_path, syn_path):
             results = obs_ds.process_two_files_without_parallel_output(
                 syn_ds, process)
 
-    comm.barrier()
-    if(isroot):
-        # add auxiliary_data
-        print("[INFO] start to write data")
-        obs_ds = pyasdf.ASDFDataSet(obs_path, mode="a")
-        for item in results:
-            print(item)
-            obs_ds.add_auxiliary_data(
-                np.zeros(0), data_type="travel_times", path=item, parameters=results[item])
-        del obs_ds
+            comm.barrier()
+            if(isroot):
+                # add auxiliary_data
+                print("[INFO] start to write data")
+                for item in results:
+                    print(item)
+                    obs_ds.add_auxiliary_data(
+                        np.zeros(0), data_type="travel_times", path=item, parameters=results[item])
 
     comm.barrier()
 
