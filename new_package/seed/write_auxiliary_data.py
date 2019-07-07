@@ -14,3 +14,7 @@ def main(obs_path):
             print(item)
             obs_ds.add_auxiliary_data(
                 np.zeros(0), data_type="Traveltimes", path=item.replace(".", "/"), parameters=results[item])
+
+
+if __name__ == "__main__":
+    main()
