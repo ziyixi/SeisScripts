@@ -84,7 +84,10 @@ def get_property_times(stla, stlo, evla, evlo, evdp):
     return property_times
 
 
-def main(obs_path, syn_path, logfile):
+@click.command()
+@click.option('--obs_path', required=True, type=str, help="the obs hdf5 file path")
+@click.option('--syn_path', required=True, type=str, help="the syn hdf5 file path (not necessary, but have to provide one)")
+def main(obs_path, syn_path):
     obs_ds = pyasdf.ASDFDataSet(obs_path)
     syn_ds = pyasdf.ASDFDataSet(syn_path)
     event = obs_ds.events[0]
@@ -128,3 +131,7 @@ def main(obs_path, syn_path, logfile):
         del obs_ds
 
     comm.barrier()
+
+
+if __name__ == "__main__":
+    main()
