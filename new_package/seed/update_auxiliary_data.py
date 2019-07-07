@@ -88,8 +88,8 @@ def get_property_times(stla, stlo, evla, evlo, evdp):
 @click.option('--obs_path', required=True, type=str, help="the obs hdf5 file path")
 @click.option('--syn_path', required=True, type=str, help="the syn hdf5 file path (not necessary, but have to provide one)")
 def main(obs_path, syn_path):
-    obs_ds = pyasdf.ASDFDataSet(obs_path)
-    syn_ds = pyasdf.ASDFDataSet(syn_path)
+    obs_ds = pyasdf.ASDFDataSet(obs_path, mode="r")
+    syn_ds = pyasdf.ASDFDataSet(syn_path, mode="r")
     event = obs_ds.events[0]
     origin = event.preferred_origin() or event.origins[0]
     evla = origin.latitude
@@ -124,8 +124,9 @@ def main(obs_path, syn_path):
     if(isroot):
         # add auxiliary_data
         print("[INFO] start to write data")
-        obs_ds = pyasdf.ASDFDataSet(obs_path)
+        obs_ds = pyasdf.ASDFDataSet(obs_path, mode="w")
         for item in results:
+            print(item)
             obs_ds.add_auxiliary_data(
                 np.zeros(0), data_type="travel_times", path=item, parameters=results[item])
         del obs_ds
