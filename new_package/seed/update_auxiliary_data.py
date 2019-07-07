@@ -128,7 +128,7 @@ def main(obs_path, syn_path):
                 for item in results:
                     print(item)
                     obs_ds.add_auxiliary_data(
-                        np.zeros(0), data_type="Traveltimes", path=item, parameters=results[item])
+                        np.zeros(0), data_type="Traveltimes", path=item.replace(".", "/"), parameters=results[item])
 
     comm.barrier()
 
