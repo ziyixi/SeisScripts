@@ -88,38 +88,39 @@ def get_property_times(stla, stlo, evla, evlo, evdp):
 @click.option('--obs_path', required=True, type=str, help="the obs hdf5 file path")
 @click.option('--syn_path', required=True, type=str, help="the syn hdf5 file path (not necessary, but have to provide one)")
 def main(obs_path, syn_path):
-    obs_ds = pyasdf.ASDFDataSet(obs_path, mode="r")
-    syn_ds = pyasdf.ASDFDataSet(syn_path, mode="r")
-    event = obs_ds.events[0]
-    origin = event.preferred_origin() or event.origins[0]
-    evla = origin.latitude
-    evlo = origin.longitude
-    evdp = origin.depth/1000
+    results = None
+    with pyasdf.ASDFDataSet(obs_path, mode="r") as obs_ds:
+        with pyasdf.ASDFDataSet(syn_path, mode="r") as syn_ds:
+            event = obs_ds.events[0]
+            origin = event.preferred_origin() or event.origins[0]
+            evla = origin.latitude
+            evlo = origin.longitude
+            evdp = origin.depth/1000
 
-    # kernel function
-    def process(sg_obs, sg_syn):
-        waveform_tags = sg_obs.get_waveform_tags()
-        inv_obs = sg_obs["StationXML"]
-        station_info = {inv_obs.get_contents()['stations'][0]}
+            # kernel function
+            def process(sg_obs, sg_syn):
+                waveform_tags = sg_obs.get_waveform_tags()
+                inv_obs = sg_obs["StationXML"]
+                station_info = {inv_obs.get_contents()['stations'][0]}
 
-        # should have only one tag, after we have simplify the asdf file
-        tag_obs = waveform_tags[0]
-        tag_syn = sg_syn.get_waveform_tags()[0]
-        st_obs = sg_obs[tag_obs]
-        st_syn = sg_syn[tag_syn]
+                # should have only one tag, after we have simplify the asdf file
+                tag_obs = waveform_tags[0]
+                tag_syn = sg_syn.get_waveform_tags()[0]
+                st_obs = sg_obs[tag_obs]
+                st_syn = sg_syn[tag_syn]
 
-        # property times
-        stla = inv_obs[0][0].latitude
-        stlo = inv_obs[0][0].longitude
-        property_times = get_property_times(stla, stlo, evla, evlo, evdp)
+                # property times
+                stla = inv_obs[0][0].latitude
+                stlo = inv_obs[0][0].longitude
+                property_times = get_property_times(
+                    stla, stlo, evla, evlo, evdp)
 
-        return property_times
-    if(isroot):
-        print("[INFO] start to calculate")
-    results = obs_ds.process_two_files_without_parallel_output(syn_ds, process)
+                return property_times
+            if(isroot):
+                print("[INFO] start to calculate")
+            results = obs_ds.process_two_files_without_parallel_output(
+                syn_ds, process)
 
-    del obs_ds
-    del syn_ds
     comm.barrier()
     if(isroot):
         # add auxiliary_data
