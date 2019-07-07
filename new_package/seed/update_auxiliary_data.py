@@ -120,7 +120,7 @@ def main(obs_path, syn_path):
 
     del obs_ds
     del syn_ds
-
+    comm.barrier()
     if(isroot):
         # add auxiliary_data
         print("[INFO] start to write data")
