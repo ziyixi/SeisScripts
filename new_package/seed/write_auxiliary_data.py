@@ -1,6 +1,7 @@
 import pyasdf
 import pickle
 import click
+import numpy as np
 
 
 @click.command()
@@ -12,7 +13,7 @@ def main(obs_path):
         for item in results:
             print(item)
             obs_ds.add_auxiliary_data(
-                None, data_type="Traveltimes", path=item.replace(".", "/"), parameters=results[item])
+                np.zeros(0, dtype=np.float), data_type="Traveltimes", path=item.replace(".", "/"), parameters=results[item])
 
 
 if __name__ == "__main__":
