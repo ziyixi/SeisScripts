@@ -124,7 +124,7 @@ def main(obs_path, syn_path):
     if(isroot):
         # add auxiliary_data
         print("[INFO] start to write data")
-        obs_ds = pyasdf.ASDFDataSet(obs_path, mode="w")
+        obs_ds = pyasdf.ASDFDataSet(obs_path, mode="a")
         for item in results:
             print(item)
             obs_ds.add_auxiliary_data(
