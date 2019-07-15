@@ -6,7 +6,7 @@ import subprocess
 
 
 def main():
-    mail_lists = glob("./mails/*")
+    mail_lists = glob("./mails_validation/*")
     command = "python send_mail.py "
     for item in mail_lists:
         command += item + " "
