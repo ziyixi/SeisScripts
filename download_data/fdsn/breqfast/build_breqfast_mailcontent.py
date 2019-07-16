@@ -5,7 +5,7 @@ import sh
 import obspy
 import pandas as pd
 
-template = """.NAME xiziyi
+template = """.NAME ziyixi
 .INST Michigan State University
 .MAIL CMSE, MSU, East Lansing, MI, 48824
 .EMAIL ziyixi@mail.ustc.edu.cn
@@ -26,8 +26,8 @@ template = """.NAME xiziyi
 
 def create_mail_contents():
     mail_list = []
-    events = obspy.read_events("./event_info.xml")
-    sh.mkdir("-p", "./mails")
+    events = obspy.read_events("./Japan_slab/*")
+    sh.mkdir("-p", "./mails_ziyixi")
 
     stations = pd.read_csv(
         "./fdsn_stations",
@@ -62,7 +62,7 @@ def create_mail_contents():
             station_information=station_information,
         )
 
-        with open(f"./mails/{item.origins[0].resource_id.id.split('/')[2]}", "w") as f:
+        with open(f"./mails_ziyixi/{item.origins[0].resource_id.id.split('/')[2]}", "w") as f:
             f.write(mail_content)
 
 
