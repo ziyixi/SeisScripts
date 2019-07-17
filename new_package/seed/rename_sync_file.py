@@ -31,7 +31,18 @@ def get_mapper(cmts_dir):
         event = obspy.read_events(event_path)[0]
         id = event.origins[0].resource_id.id.split("/")[-2]
         result[name] = id
+    return result
 
 
+@click.command()
+@click.option('--cmts_dir', required=True, type=str, help="the cmt directory")
+@click.option('--files_dir', required=True, type=str, help="the asdf files directory")
 def main(cmts_dir, files_dir):
     all_files = glob(join(files_dir, "*"))
+    mapper = get_mapper(cmts_dir)
+    for filepath in all_files:
+        rename_single(mapper, filepath)
+
+
+if __name__ == "__main__":
+    main()
