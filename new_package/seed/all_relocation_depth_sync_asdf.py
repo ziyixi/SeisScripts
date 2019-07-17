@@ -6,8 +6,7 @@ from mpi4py import MPI
 from glob import glob
 from os.path import join
 import numpy as np
-# from generate_sync_asdf_specfem import convert_sync_to_asdf
-import subprocess
+from generate_sync_asdf_specfem import convert_sync_to_asdf
 # ! no print, we have to find a way to log the process
 
 
@@ -36,9 +35,8 @@ def main(base_dir, out_dir):
         files_in_output = glob(join(out_dir, "*"))
         if(output_path in files_in_output):
             continue
-        # convert_sync_to_asdf(each_dir, output_path, True)
-        command = f"python generate_sync_asdf_specfem.py --specfem_directory {each_dir} --output_path {output_path} --with_mpi"
-        subprocess.call(command, shell=True)
+
+        convert_sync_to_asdf(each_dir, output_path, True)
         print(f"[{rank}] finish handling {each_dir}")
 
 
