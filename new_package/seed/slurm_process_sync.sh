@@ -26,7 +26,7 @@ PY=/mnt/home/xiziyi/anaconda3/envs/seismology/bin/python
 cd /mnt/home/xiziyi/script/SeisScripts/new_package/seed                  ### change to the directory where your code is located
 
 # rename file names
-$PY rename_sync_file.py --cmts_dir $cmts_dir --files_dir $RAW_DIR
+# $PY rename_sync_file.py --cmts_dir $cmts_dir --files_dir $RAW_DIR
 
 for filename in $RAW_DIR/*.h5; do 
     # rename FNET->BO

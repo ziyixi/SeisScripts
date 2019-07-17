@@ -28,7 +28,7 @@ def get_mapper(cmts_dir):
     event_name = [item.split("/")[-1] for item in event_path]
     result = {}
     for path, name in zip(event_path, event_name):
-        event = obspy.read_events(event_path)[0]
+        event = obspy.read_events(path)[0]
         id = event.origins[0].resource_id.id.split("/")[-2]
         result[name] = id
     return result
