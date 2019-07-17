@@ -31,6 +31,7 @@ def main(base_dir, out_dir):
         depth = split_path[-1]
         output_path = join(out_dir, f"sync_{event}_{depth}_raw.h5")
         convert_sync_to_asdf(each_dir, output_path, True)
+        print(f"[{rank}] finish handling {each_dir}")
 
 
 if __name__ == "__main__":
