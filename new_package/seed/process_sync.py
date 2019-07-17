@@ -39,7 +39,7 @@ def sync_remove_response(pre_filt, st):
 
 def process_single_event(min_periods, max_periods, asdf_filename, waveform_length, sampling_rate, output_directory, logfile):
     # with pyasdf.ASDFDataSet(asdf_filename) as ds:
-    ds = pyasdf.ASDFDataSet(asdf_filename)
+    ds = pyasdf.ASDFDataSet(asdf_filename, mode="r")
 
     # add logger information
     logger.add(logfile, format="{time} {level} {message}", level="INFO")

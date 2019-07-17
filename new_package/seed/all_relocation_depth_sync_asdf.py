@@ -48,7 +48,7 @@ def main(base_dir, out_dir):
 #         convert_sync_to_asdf(each_dir, output_path, True)
 #         print(f"finish handling {each_dir}")
 
-    with multiprocessing.Pool(processes=9) as pool:
+    with multiprocessing.Pool(processes=48) as pool:
         pool.map(partial(kernel, out_dir=out_dir), all_dirs)
 
 

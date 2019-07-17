@@ -25,8 +25,7 @@ PY=/mnt/home/xiziyi/anaconda3/envs/seismology/bin/python
 cd /mnt/home/xiziyi/script/SeisScripts/new_package/seed                  ### change to the directory where your code is located
 
 for filename in $RAW_DIR/*.h5; do 
-    echo $filename
     srun -n 150 $PY process_sync.py --min_periods $min_periods --max_periods $max_periods --asdf_filename $filename --waveform_length $waveform_length --sampling_rate $sampling_rate --output_directory $PROCESSED_DIR --logfile $logfile
 done
-
+ 
 scontrol show job $SLURM_JOB_ID     ### write job information to output file
