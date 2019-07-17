@@ -1,7 +1,7 @@
 #!/bin/bash --login
 ########## SBATCH Lines for Resource Request ##########
  
-#SBATCH --time=01:00:00             # limit of wall clock time - how long the job will run (same as -t)
+#SBATCH --time=05:00:00             # limit of wall clock time - how long the job will run (same as -t)
 #SBATCH --ntasks=150                  # number of tasks - how many tasks (nodes) that you require (same as -n)
 #SBATCH --mem-per-cpu=4G            # memory required per allocated CPU (or core) - amount of memory (in bytes)
 #SBATCH --job-name process_sync_asdf      # you can give your job a name for easier identification (same as -J)
