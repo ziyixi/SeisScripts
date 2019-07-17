@@ -7,6 +7,8 @@ from glob import glob
 from os.path import join
 import numpy as np
 from generate_sync_asdf_specfem import convert_sync_to_asdf
+# ! no print, we have to find a way to log the process
+
 
 comm = MPI.COMM_WORLD
 rank = comm.Get_rank()
@@ -30,6 +32,9 @@ def main(base_dir, out_dir):
         event = split_path[-2]
         depth = split_path[-1]
         output_path = join(out_dir, f"sync_{event}_{depth}_raw.h5")
+        files_in_output = glob(join(out_dir, "*"))
+        if(output_path in files_in_output):
+            continue
         convert_sync_to_asdf(each_dir, output_path, True)
         print(f"[{rank}] finish handling {each_dir}")
 
