@@ -66,15 +66,16 @@ def generate_asdf_for_single_event(seed_directory, cmt_path, output_path, with_m
             logger.info(f"{filename} could use obspy to read stationxml")
         except:
             # since such an error occurs, we might have to use the except part to read the waveform to get the sac head
-            if(waveform_read_status==1):
+            if(waveform_read_status == 1):
                 # re readin waveform_stream
                 dirpath = tempfile.mkdtemp()
                 command = f"rdseed -d -f {filename} -q {dirpath}"
                 subprocess.call(command, shell=True)
                 waveform_stream = obspy.read(join(dirpath, "*SAC"))
-                logger.info(f"{filename} uses rdseed to read in head information")
+                logger.info(
+                    f"{filename} uses rdseed to read in head information")
             else:
-                pass # should already have the head information
+                pass  # should already have the head information
 
             dirpath = tempfile.mkdtemp()
             command = f"rdseed -R -f {filename} -q {dirpath}"
@@ -89,7 +90,7 @@ def generate_asdf_for_single_event(seed_directory, cmt_path, output_path, with_m
                 if(inv_temp == None):
                     continue
                 station_xml_this_seed += inv_temp
-            logger.info(f"{filename} could on;y use rdseed to read stationxml")
+            logger.info(f"{filename} could only use rdseed to read stationxml")
 
         station_xml += station_xml_this_seed
 
