@@ -16,6 +16,18 @@ import multiprocessing
 # size = comm.Get_size()
 # isroot = (rank == 0)
 
+def kernel(each_dir):
+    print(f"start to handle {each_dir}")
+    split_path = each_dir.split("/")
+    event = split_path[-2]
+    depth = split_path[-1]
+    output_path = join(out_dir, f"sync_{event}_{depth}_raw.h5")
+    files_in_output = glob(join(out_dir, "*"))
+    if(output_path in files_in_output):
+        return
+    convert_sync_to_asdf(each_dir, output_path, True)
+    print(f"finish handling {each_dir}")
+
 
 @click.command()
 @click.option('--base_dir', required=True, type=str, help="the relocation working directory")
@@ -34,18 +46,6 @@ def main(base_dir, out_dir):
 
 #         convert_sync_to_asdf(each_dir, output_path, True)
 #         print(f"finish handling {each_dir}")
-
-    def kernel(each_dir):
-        print(f"start to handle {each_dir}")
-        split_path = each_dir.split("/")
-        event = split_path[-2]
-        depth = split_path[-1]
-        output_path = join(out_dir, f"sync_{event}_{depth}_raw.h5")
-        files_in_output = glob(join(out_dir, "*"))
-        if(output_path in files_in_output):
-            return
-        convert_sync_to_asdf(each_dir, output_path, True)
-        print(f"finish handling {each_dir}")
 
     with multiprocessing.Pool(processes=9) as pool:
         pool.map(kernel, all_dirs)
