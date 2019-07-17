@@ -7,14 +7,14 @@
 #SBATCH --job-name process_sync_asdf      # you can give your job a name for easier identification (same as -J)
  
 ########## Command Lines to Run ##########
-RAW_DIR=/mnt/research/seismolab2/japan_slab/data/asdf_for_validation
-PROCESSED_DIR=/mnt/research/seismolab2/japan_slab/processed_data/processed_for_first_iteration_validation
-SIMPLE_DIR=/mnt/research/seismolab2/japan_slab/relocation/for_first_iteration_validation/simplified
+RAW_DIR=/mnt/ls15/scratch/users/xiziyi/process_asdf/validation/asdf_for_validation
+PROCESSED_DIR=/mnt/ls15/scratch/users/xiziyi/process_asdf/validation/processed
+SIMPLE_DIR=/mnt/ls15/scratch/users/xiziyi/process_asdf/validation/processed_simple
 min_periods=10,20,40
 max_periods=120,120,120
 waveform_length=2400
 sampling_rate=10
-logfile=/mnt/research/seismolab2/japan_slab/processed_data/processed_for_first_iteration_validation.log
+logfile=/mnt/ls15/scratch/users/xiziyi/process_asdf/validation/processed_for_first_iteration_validation.log
 
 module purge
 module load GCC/8.2.0-2.31.1
