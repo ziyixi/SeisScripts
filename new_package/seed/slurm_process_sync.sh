@@ -7,13 +7,13 @@
 #SBATCH --job-name process_sync_asdf      # you can give your job a name for easier identification (same as -J)
  
 ########## Command Lines to Run ##########
-RAW_DIR=/mnt/research/seismolab2/japan_slab/relocation/for_first_iteration_validation/asdf 
-PROCESSED_DIR=/mnt/research/seismolab2/japan_slab/relocation/processed_for_first_iteration_validation
+RAW_DIR=/mnt/ls15/scratch/users/xiziyi/process_asdf/relocation/raw_sync
+PROCESSED_DIR=/mnt/ls15/scratch/users/xiziyi/process_asdf/relocation/processed
 min_periods=10,20,40
 max_periods=120,120,120
 waveform_length=2400
 sampling_rate=10
-logfile=/mnt/research/seismolab2/japan_slab/relocation/processed_for_first_iteration_validation.log
+logfile=/mnt/ls15/scratch/users/xiziyi/process_asdf/relocation/processed_for_first_iteration_validation.log
 cmts_dir=/mnt/research/seismolab2/japan_slab/cmts/cmts_from_new_cea_disk
 
 module purge
