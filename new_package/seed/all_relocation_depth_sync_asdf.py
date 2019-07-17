@@ -8,6 +8,7 @@ from os.path import join
 import numpy as np
 from generate_sync_asdf_specfem import convert_sync_to_asdf
 import multiprocessing
+from functools import partial
 # ! no print, we have to find a way to log the process
 
 
@@ -16,7 +17,7 @@ import multiprocessing
 # size = comm.Get_size()
 # isroot = (rank == 0)
 
-def kernel(each_dir):
+def kernel(each_dir, out_dir):
     print(f"start to handle {each_dir}")
     split_path = each_dir.split("/")
     event = split_path[-2]
@@ -48,7 +49,7 @@ def main(base_dir, out_dir):
 #         print(f"finish handling {each_dir}")
 
     with multiprocessing.Pool(processes=9) as pool:
-        pool.map(kernel, all_dirs)
+        pool.map(partial(kernel, out_dir=out_dir), all_dirs)
 
 
 if __name__ == "__main__":
