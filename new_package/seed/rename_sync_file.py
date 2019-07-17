@@ -14,7 +14,7 @@ def rename_single(mapper, filepath):
     # filepath_new = join(".".join(filename[:-1]), filename_new)
     filename = filepath.split("/")[-1]
     key = filename.split(".")[0].split("_")[1]
-    key_new = mapper(key)
+    key_new = mapper[key]
     all_split = filename.split(".")[0].split("_")
     all_split[1] = key_new
     filename_new = "_".join(all_split)+".h5"
