@@ -20,7 +20,7 @@ CEA_NETWORKS = ["AH","BJ","BU","CQ","FJ","GD","GS","GX","GZ","HA","HB","HE","HI"
 
 def process_single_event(min_periods, max_periods, asdf_filename, waveform_length, sampling_rate, output_directory, logfile, correct_cea, cea_correction_file):
     # with pyasdf.ASDFDataSet(asdf_filename) as ds:
-    ds = pyasdf.ASDFDataSet(asdf_filename)
+    ds = pyasdf.ASDFDataSet(asdf_filename,mode="r")
 
     # load cea correction file
     if(correct_cea):
@@ -162,9 +162,9 @@ def process_single_event(min_periods, max_periods, asdf_filename, waveform_lengt
         tag_map = {
             "raw": tag_name
         }
-
+        output_name_head = asdf_filename.split("/")[-1].split(".")[0]
         ds.process(process_function, join(
-            output_directory, tag_name + ".h5"), tag_map=tag_map)
+            output_directory, output_name_head+"."+tag_name + ".h5"), tag_map=tag_map)
         logger.success(
             f"[{rank}/{size}] success in processing {asdf_filename} from {min_period}s to {max_period}s")
 

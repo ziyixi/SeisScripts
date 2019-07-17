@@ -14,6 +14,7 @@ max_periods=120,120,120
 waveform_length=2400
 sampling_rate=10
 logfile=/mnt/research/seismolab2/japan_slab/relocation/processed_for_first_iteration_validation.log
+cmts_dir=/mnt/research/seismolab2/japan_slab/cmts/cmts_from_new_cea_disk
 
 module purge
 module load GCC/8.2.0-2.31.1
@@ -24,7 +25,13 @@ PY=/mnt/home/xiziyi/anaconda3/envs/seismology/bin/python
  
 cd /mnt/home/xiziyi/script/SeisScripts/new_package/seed                  ### change to the directory where your code is located
 
+# rename file names
+$PY rename_sync_file.py --cmts_dir $cmts_dir --files_dir $RAW_DIR
+
 for filename in $RAW_DIR/*.h5; do 
+    # rename FNET->BO
+    $PY rename_fnet.py --asdf_file $filename
+    # process
     echo $filename
     srun -n 150 $PY process_sync.py --min_periods $min_periods --max_periods $max_periods --asdf_filename $filename --waveform_length $waveform_length --sampling_rate $sampling_rate --output_directory $PROCESSED_DIR --logfile $logfile
 done

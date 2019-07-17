@@ -10,12 +10,13 @@ from generate_sync_asdf_specfem import convert_sync_to_asdf
 import multiprocessing
 from functools import partial
 # ! no print, we have to find a way to log the process
-
+# ! never use mpi to generate asdf files, otehrwise the file will be broken
 
 # comm = MPI.COMM_WORLD
 # rank = comm.Get_rank()
 # size = comm.Get_size()
 # isroot = (rank == 0)
+
 
 def kernel(each_dir, out_dir):
     print(f"start to handle {each_dir}")
