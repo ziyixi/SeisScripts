@@ -4,7 +4,7 @@
 #SBATCH --time=24:00:00             # limit of wall clock time - how long the job will run (same as -t)
 #SBATCH --ntasks=300          # number of tasks - how many tasks (nodes) that you require (same as -n)
 #SBATCH --mem-per-cpu=4G            # memory required per allocated CPU (or core) - amount of memory (in bytes)
-#SBATCH --job-name process_sync_asdf      # you can give your job a name for easier identification (same as -J)
+#SBATCH --job-name sync_10      # you can give your job a name for easier identification (same as -J)
  
 ########## Command Lines to Run ##########
 RAW_DIR=/mnt/ls15/scratch/users/xiziyi/process_asdf/relocation/raw_sync
