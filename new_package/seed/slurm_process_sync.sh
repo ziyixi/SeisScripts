@@ -14,7 +14,6 @@ max_periods=120,120,120
 waveform_length=2400
 sampling_rate=10
 logfile=/mnt/ls15/scratch/users/xiziyi/process_asdf/relocation/processed_for_first_iteration_validation.log
-cmts_dir=/mnt/research/seismolab2/japan_slab/cmts/cmts_from_new_cea_disk
 
 module purge
 module load GCC/8.2.0-2.31.1
@@ -24,9 +23,6 @@ PY=/mnt/home/xiziyi/anaconda3/envs/seismology/bin/python
 . activate seismology
  
 cd /mnt/home/xiziyi/script/SeisScripts/new_package/seed                  ### change to the directory where your code is located
-
-# rename file names
-# $PY rename_sync_file.py --cmts_dir $cmts_dir --files_dir $RAW_DIR
 
 for filename in $RAW_DIR/*.h5; do 
     # rename FNET->BO
