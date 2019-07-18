@@ -45,6 +45,7 @@ def get_scripts(run_files):
             result += f"srun -N 1 -n {N_cores_each_node} {PY} process_sync.py --min_periods {min_periods} --max_periods {max_periods} --asdf_filename {filename} --waveform_length {waveform_length} --sampling_rate {sampling_rate} --output_directory {PROCESSED_DIR} --logfile {logfile} &"
         result += f"wait; "
         result += f"echo 'end iteration {iiter}'; "
+    return result
 
 
 def submit_job(thecommand):
