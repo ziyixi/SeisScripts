@@ -6,8 +6,9 @@ import numpy as np
 
 @click.command()
 @click.option('--obs_path', required=True, type=str, help="the obs hdf5 file path")
-def main(obs_path):
-    with open(obs_path+"traveltimes.pkl", 'rb') as handle:
+@click.option('--pkl_path', required=True, type=str, help="the pickle file to store the auxiliary info")
+def main(obs_path, pkl_path):
+    with open(pkl_path, 'rb') as handle:
         results = pickle.load(handle)
     with pyasdf.ASDFDataSet(obs_path, mode="a") as obs_ds:
         for item in results:

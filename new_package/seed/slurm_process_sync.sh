@@ -3,7 +3,7 @@
  
 #SBATCH --time=34:00:00             # limit of wall clock time - how long the job will run (same as -t)
 #SBATCH --ntasks=300          # number of tasks - how many tasks (nodes) that you require (same as -n)
-#SBATCH --mem-per-cpu=2G            # memory required per allocated CPU (or core) - amount of memory (in bytes)
+#SBATCH --mem-per-cpu=4G            # memory required per allocated CPU (or core) - amount of memory (in bytes)
 #SBATCH --job-name process_sync_asdf      # you can give your job a name for easier identification (same as -J)
  
 ########## Command Lines to Run ##########
@@ -28,7 +28,12 @@ cd /mnt/home/xiziyi/script/SeisScripts/new_package/seed                  ### cha
 # rename file names
 # $PY rename_sync_file.py --cmts_dir $cmts_dir --files_dir $RAW_DIR
 
+count=0
 for filename in $RAW_DIR/*.h5; do 
+    count=`expr $count + 1`
+    if (($count<148)); then
+        continue
+    fi
     # rename FNET->BO
     $PY rename_fnet.py --asdf_file $filename
     # process
