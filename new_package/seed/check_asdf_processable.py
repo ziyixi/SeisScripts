@@ -7,6 +7,7 @@ import numpy as np
 import click
 from os.path import join
 import tqdm
+import multiprocessing
 
 
 def get_all_files(main_dir):
@@ -20,6 +21,7 @@ def check(fname):
                 maxvalue = np.max(ds.waveforms[item].sync[0].data)
         return True
     except:
+        print(fname)
         return False
 
 
@@ -27,12 +29,14 @@ def check(fname):
 @click.option('--main_dir', required=True, type=str, help="working directory")
 def main(main_dir):
     all_files = get_all_files(main_dir)
-    for item in tqdm.tqdm(all_files):
-        status = check(item)
-        if(status):
-            pass
-        else:
-            print(item)
+    # for item in tqdm.tqdm(all_files):
+    #     status = check(item)
+    #     if(status):
+    #         pass
+    #     else:
+    #         print(item)
+    with multiprocessing.Pool(processes=30) as pool:
+        r = list(tqdm.tqdm(pool.imap(check, all_files)))
 
 
 if __name__ == "__main__":
