@@ -14,9 +14,9 @@ def get_all_files(main_dir):
 
 def check(fname):
     try:
-        ds = pyasdf.ASDFDataSet(fname)
-        for item in ds.waveforms.list():
-            maxvalue = np.max(ds.waveforms[item].sync[0].data)
+        with pyasdf.ASDFDataSet(fname) as ds:
+            for item in ds.waveforms.list():
+                maxvalue = np.max(ds.waveforms[item].sync[0].data)
         return True
     except:
         return False
