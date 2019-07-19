@@ -6,6 +6,7 @@ import pyasdf
 import numpy as np
 import click
 from os.path import join
+import tqdm
 
 
 def get_all_files(main_dir):
@@ -26,7 +27,7 @@ def check(fname):
 @click.option('--main_dir', required=True, type=str, help="working directory")
 def main(main_dir):
     all_files = get_all_files(main_dir)
-    for item in all_files:
+    for item in tqdm.tqdm(all_files):
         status = check(item)
         if(status):
             pass
