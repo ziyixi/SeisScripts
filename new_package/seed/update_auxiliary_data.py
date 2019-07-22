@@ -93,7 +93,7 @@ def get_property_times(stla, stlo, evla, evlo, evdp):
 def main(obs_path, ref_path, pkl_path):
     results = None
     with pyasdf.ASDFDataSet(obs_path, mode="a") as obs_ds:
-        with pyasdf.ASDFDataSet(ref_path, mode="a") as ref_ds:
+        with pyasdf.ASDFDataSet(ref_path, mode="r") as ref_ds:
             event = obs_ds.events[0]
             origin = event.preferred_origin() or event.origins[0]
             evla = origin.latitude
@@ -117,14 +117,14 @@ def main(obs_path, ref_path, pkl_path):
                     stla, stlo, evla, evlo, evdp)
 
                 return property_times
-            if(isroot):
-                print("[INFO] start to calculate")
+            # if(isroot):
+                # print("[INFO] start to calculate")
             results = obs_ds.process_two_files_without_parallel_output(
                 ref_ds, process)
 
             if(isroot):
                 # add auxiliary_data
-                print("[INFO] start to write data")
+                # print("[INFO] start to write data")
                 # for item in results:
                 #     print(item)
                 #     obs_ds.add_auxiliary_data(

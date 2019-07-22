@@ -16,8 +16,8 @@ def main(obs_path, pkl_path):
                 if(results[item][key] == None):
                     results[item][key] = -1
 
-            print(item, (np.zeros(0, dtype=np.float)), (
-                "Traveltimes"), (item.replace(".", "/")), (results[item]))
+            # print(item, (np.zeros(0, dtype=np.float)), (
+            #     "Traveltimes"), (item.replace(".", "/")), (results[item]))
             obs_ds.add_auxiliary_data(
                 np.zeros(0, dtype=np.float), data_type="Traveltimes", path=item.replace(".", "_"), parameters=results[item])
 
