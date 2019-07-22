@@ -37,9 +37,15 @@ def read_single(pkl_file, ref_file, thefile):
     subprocess.call(command, shell=True)
 
 
+@click.command()
+@click.option('--main_dir', required=True, type=str, help="the directory storing all simplified data asdf file")
 def main(main_dir):
     all_files = get_all_files(main_dir)
     ref_file = get_ref_file(all_files)
     for each_file in tqdm.tqdm(all_files):
         pkl_file = write_single(each_file)
         read_single(pkl_file, ref_file, each_file)
+
+
+if __name__ == "__main__":
+    main()
